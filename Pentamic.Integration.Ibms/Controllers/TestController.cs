@@ -88,7 +88,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             };
             return new HttpResponseMessage
             {
-                Content = new StringContent(JsonConvert.SerializeObject(package), Encoding.UTF8, "application/json"),
+                Content = new StringContent(JsonConvert.SerializeObject(result), Encoding.UTF8, "application/json"),
             };
         }
 
