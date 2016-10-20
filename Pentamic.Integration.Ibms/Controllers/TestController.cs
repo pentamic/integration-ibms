@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mime;
 using System.Text;
 using System.Web.Http;
 
@@ -65,20 +66,40 @@ namespace Pentamic.Integration.Ibms.Controllers
             }
         }
 
+
         [HttpPost]
         [Route("json")]
-        public Package Json([FromBody]Package package)
+        public IHttpActionResult Json(Package package)
         {
-            return new Package
+            var result = package ?? new Package
             {
-                ProtocolId = package.ProtocolId,
-                ProtocolStatus = true,
-                Partner_name = "",
-                Partner_pass = "",
-                ErrCode = 0,
-                ErrMessage = null
+                ProtocolStatus = false
+            };
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("json2")]
+        public HttpResponseMessage Json2(Package package)
+        {
+            var result = package ?? new Package
+            {
+                ProtocolStatus = false
+            };
+            return new HttpResponseMessage
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(package), Encoding.UTF8, "application/json"),
             };
         }
 
+        [HttpPost]
+        [Route("json3")]
+        public Package Json3(Package package)
+        {
+            return package ?? new Package
+            {
+                ProtocolStatus = false
+            };
+        }
     }
 }
