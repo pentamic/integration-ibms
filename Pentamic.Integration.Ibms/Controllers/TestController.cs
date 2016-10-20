@@ -94,7 +94,7 @@ namespace Pentamic.Integration.Ibms.Controllers
 
         [HttpPost]
         [Route("json3")]
-        public Package Json3(Package package)
+        public Package Json3([FromBody]Package package)
         {
             return package ?? new Package
             {
