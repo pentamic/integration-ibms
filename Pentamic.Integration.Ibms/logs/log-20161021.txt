@@ -1,0 +1,22 @@
+2016-10-21 08:44:28.757 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 08:44:29.784 +07:00 [Error] HTTP "GET" "/" responded 404 in 1401ms
+System.Web.HttpException (0x80004005): The controller for path '/' was not found or does not implement IController.
+   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+2016-10-21 08:44:30.190 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 415 in 1811ms
+2016-10-21 08:44:55.203 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 08:44:55.260 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 415 in 57ms
+2016-10-21 08:44:56.332 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 08:44:56.388 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 415 in 56ms
+2016-10-21 08:45:02.196 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 08:45:02.252 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 415 in 57ms
+2016-10-21 08:45:10.198 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 08:45:10.253 +07:00 [Information] HTTP "POST" "/api/test/json" responded 415 in 55ms
+2016-10-21 08:45:15.193 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 08:45:15.248 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 415 in 56ms

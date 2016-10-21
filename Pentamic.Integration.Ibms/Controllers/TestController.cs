@@ -11,6 +11,7 @@ using System.Net.Mime;
 using System.Text;
 using System.Web;
 using System.Web.Http;
+using Pentamic.Integration.Ibms.Helpers;
 
 namespace Pentamic.Integration.Ibms.Controllers
 {
@@ -20,13 +21,14 @@ namespace Pentamic.Integration.Ibms.Controllers
         public TestController()
         {
             string path = HttpContext.Current.Server.MapPath("~/logs");
-            Log.Logger = new LoggerConfiguration().MinimumLevel.Verbose().WriteTo.RollingFile(path + "/log-{Date}.txt", shared: true).CreateLogger();
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Verbose().Enrich.With<HttpRequestIdEnricher>().WriteTo.RollingFile(path + "/log-{Date}.txt", shared: true).CreateLogger();
         }
 
         [HttpPost]
         [Route("string")]
         public string String([FromBody]string value)
         {
+            Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
             Log.Information("Received string: {value}", value);
             return $"String received: {value}";
         }
@@ -35,6 +37,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         [Route("base64")]
         public Package Base64([FromBody]string value)
         {
+            Log.Information("Request: ,{Content-Type}, {Charset}", Request.Content.Headers.ContentType.MediaType, Request.Content.Headers.ContentType.CharSet);
             if (value == null)
             {
                 Log.Warning("Received null string");
@@ -83,10 +86,11 @@ namespace Pentamic.Integration.Ibms.Controllers
 
         [HttpPost]
         [Route("json")]
-        public IHttpActionResult Json(Package package)
+        public IHttpActionResult Json(Package protocol)
         {
-            Log.Information("Received package: {Package}", JsonConvert.SerializeObject(package));
-            var result = package ?? new Package
+            Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
+            Log.Information("Received package: {Package}", JsonConvert.SerializeObject(protocol));
+            var result = protocol ?? new Package
             {
                 ProtocolStatus = false
             };
@@ -97,6 +101,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         [Route("json2")]
         public HttpResponseMessage Json2(Package package)
         {
+            Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
             Log.Information("Received package: {Package}", JsonConvert.SerializeObject(package));
             var result = package ?? new Package
             {
@@ -112,6 +117,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         [Route("json3")]
         public Package Json3([FromBody]Package package)
         {
+            Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
             Log.Information("Received package: {Package}", JsonConvert.SerializeObject(package));
             return package ?? new Package
             {

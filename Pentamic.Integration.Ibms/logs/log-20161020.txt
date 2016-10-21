@@ -1,6 +1,12 @@
-2016-10-20 15:52:06.814 +07:00 [Information] Received package: "{\"ProtocolId\":20011,\"ErrCode\":1,\"ErrMessage\":\"SUCCESS\",\"ProtocolStatus\":true,\"Partner_name\":\"admin\",\"Partner_pass\":\"admin\"}"
-2016-10-20 15:52:06.874 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 405ms
-2016-10-20 15:52:08.483 +07:00 [Information] Received package: "{\"ProtocolId\":20011,\"ErrCode\":1,\"ErrMessage\":\"SUCCESS\",\"ProtocolStatus\":true,\"Partner_name\":\"admin\",\"Partner_pass\":\"admin\"}"
-2016-10-20 15:52:08.485 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 4ms
-2016-10-20 15:52:09.207 +07:00 [Information] Received package: "{\"ProtocolId\":20011,\"ErrCode\":1,\"ErrMessage\":\"SUCCESS\",\"ProtocolStatus\":true,\"Partner_name\":\"admin\",\"Partner_pass\":\"admin\"}"
-2016-10-20 15:52:09.209 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 3ms
+2016-10-20 17:02:00.152 +07:00 [Information] Request body: {"protocolId":20011,"errCode":1,"errMessage":"SUCCESS","protocolStatus":true,"partner_name":"admin","partner_pass":"admin"}
+2016-10-20 17:02:00.374 +07:00 [Information] Request: "application/json"
+2016-10-20 17:02:00.402 +07:00 [Information] Received package: "{\"ProtocolId\":20011,\"ErrCode\":1,\"ErrMessage\":\"SUCCESS\",\"ProtocolStatus\":true,\"Partner_name\":\"admin\",\"Partner_pass\":\"admin\"}"
+2016-10-20 17:02:00.429 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 200 in 414ms
+2016-10-20 17:02:01.412 +07:00 [Information] Request body: {"protocolId":20011,"errCode":1,"errMessage":"SUCCESS","protocolStatus":true,"partner_name":"admin","partner_pass":"admin"}
+2016-10-20 17:02:01.417 +07:00 [Information] Request: "application/json"
+2016-10-20 17:02:01.418 +07:00 [Information] Received package: "{\"ProtocolId\":20011,\"ErrCode\":1,\"ErrMessage\":\"SUCCESS\",\"ProtocolStatus\":true,\"Partner_name\":\"admin\",\"Partner_pass\":\"admin\"}"
+2016-10-20 17:02:01.418 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 200 in 6ms
+2016-10-20 17:02:02.585 +07:00 [Information] Request body: {"protocolId":20011,"errCode":1,"errMessage":"SUCCESS","protocolStatus":true,"partner_name":"admin","partner_pass":"admin"}
+2016-10-20 17:02:02.588 +07:00 [Information] Request: "application/json"
+2016-10-20 17:02:02.589 +07:00 [Information] Received package: "{\"ProtocolId\":20011,\"ErrCode\":1,\"ErrMessage\":\"SUCCESS\",\"ProtocolStatus\":true,\"Partner_name\":\"admin\",\"Partner_pass\":\"admin\"}"
+2016-10-20 17:02:02.589 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 200 in 5ms

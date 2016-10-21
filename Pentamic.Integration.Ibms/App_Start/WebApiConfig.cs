@@ -14,6 +14,7 @@ namespace Pentamic.Integration.Ibms
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.MessageHandlers.Add(new LogRequestAndResponseHandler());
             config.Formatters.Insert(0, new TextMediaTypeFormatter());
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
