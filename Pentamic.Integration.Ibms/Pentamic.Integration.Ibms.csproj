@@ -186,7 +186,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\TextMediaTypeFormatter.cs" />
-    <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\Protocol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

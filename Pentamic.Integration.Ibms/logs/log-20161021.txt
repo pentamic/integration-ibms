@@ -20,3 +20,123 @@ System.Web.HttpException (0x80004005): The controller for path '/' was not found
 2016-10-21 08:45:10.253 +07:00 [Information] HTTP "POST" "/api/test/json" responded 415 in 55ms
 2016-10-21 08:45:15.193 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
 2016-10-21 08:45:15.248 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 415 in 56ms
+2016-10-21 10:29:05.054 +07:00 [Information] Request body: {"Protocol_Id":1,"Branch_Id":0,"Err_Code":0,"Err_Message":"","Protocol_Status":true,"Partner_Name":"admin","Partner_Pass":"pass"}
+2016-10-21 10:29:05.915 +07:00 [Information] Request: "application/json"
+2016-10-21 10:29:05.964 +07:00 [Information] Received package: "{\"Protocol_Id\":1,\"Branch_Id\":0,\"Err_Code\":0,\"Err_Message\":\"\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"pass\"}"
+2016-10-21 10:29:06.084 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 1314ms
+2016-10-21 10:29:06.146 +07:00 [Information] Request body: {"Protocol_Id":1,"Branch_Id":0,"Err_Code":0,"Err_Message":"","Protocol_Status":true,"Partner_Name":"admin","Partner_Pass":"pass"}
+2016-10-21 10:29:06.150 +07:00 [Information] Request: "application/json"
+2016-10-21 10:29:06.151 +07:00 [Information] Received package: "{\"Protocol_Id\":1,\"Branch_Id\":0,\"Err_Code\":0,\"Err_Message\":\"\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"pass\"}"
+2016-10-21 10:29:06.238 +07:00 [Information] HTTP "POST" "/api/test/json2" responded 200 in 94ms
+2016-10-21 10:29:06.245 +07:00 [Information] Request body: {"Protocol_Id":1,"Branch_Id":0,"Err_Code":0,"Err_Message":"","Protocol_Status":true,"Partner_Name":"admin","Partner_Pass":"pass"}
+2016-10-21 10:29:06.254 +07:00 [Information] Request: "application/json"
+2016-10-21 10:29:06.254 +07:00 [Information] Received package: "{\"Protocol_Id\":1,\"Branch_Id\":0,\"Err_Code\":0,\"Err_Message\":\"\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"pass\"}"
+2016-10-21 10:29:06.258 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 200 in 15ms
+2016-10-21 11:26:01.309 +07:00 [Information] Request body: {"Protocol_Id":1,"Branch_Id":0,"Err_Code":0,"Err_Message":"","Protocol_Status":true,"Partner_Name":"admin","Partner_Pass":"pass"}
+2016-10-21 11:26:01.990 +07:00 [Information] Request: "application/json"
+2016-10-21 11:26:02.044 +07:00 [Information] Received package: "{\"Protocol_Id\":1,\"Branch_Id\":0,\"Err_Code\":0,\"Err_Message\":\"\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"pass\"}"
+2016-10-21 11:26:02.121 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 16602ms
+2016-10-21 11:26:03.296 +07:00 [Information] Request body: {"Protocol_Id":1,"Branch_Id":0,"Err_Code":0,"Err_Message":"","Protocol_Status":true,"Partner_Name":"admin","Partner_Pass":"pass"}
+2016-10-21 11:26:03.313 +07:00 [Information] Request: "application/json"
+2016-10-21 11:26:03.314 +07:00 [Information] Received package: "{\"Protocol_Id\":1,\"Branch_Id\":0,\"Err_Code\":0,\"Err_Message\":\"\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"pass\"}"
+2016-10-21 11:26:03.385 +07:00 [Information] HTTP "POST" "/api/test/json2" responded 200 in 1243ms
+2016-10-21 11:26:04.234 +07:00 [Information] Request body: {"Protocol_Id":1,"Branch_Id":0,"Err_Code":0,"Err_Message":"","Protocol_Status":true,"Partner_Name":"admin","Partner_Pass":"pass"}
+2016-10-21 11:26:04.234 +07:00 [Information] Request: "application/json"
+2016-10-21 11:26:04.234 +07:00 [Information] Received package: "{\"Protocol_Id\":1,\"Branch_Id\":0,\"Err_Code\":0,\"Err_Message\":\"\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"pass\"}"
+2016-10-21 11:26:04.234 +07:00 [Information] HTTP "POST" "/api/test/json3" responded 200 in 842ms
+2016-10-21 11:27:08.672 +07:00 [Information] Request body: "protocol_id=20000&&branch_id=2&&err_code=1&&err_message=SUCCESS&&protocol_status=true&&partner_name=admin&&partner_pass=admin"
+2016-10-21 11:27:10.354 +07:00 [Information] Request: "application/json"
+2016-10-21 11:27:10.355 +07:00 [Information] Received package: "null"
+2016-10-21 11:27:10.355 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9631ms
+2016-10-21 11:27:25.471 +07:00 [Information] Request body: "protocol_id=20000&&branch_id=2&&err_code=1&&err_message=SUCCESS&&protocol_status=true&&partner_name=admin&&partner_pass=admin"
+2016-10-21 11:27:25.471 +07:00 [Information] Request: "application/json"
+2016-10-21 11:27:25.471 +07:00 [Information] Received package: "null"
+2016-10-21 11:27:25.471 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 1896ms
+2016-10-21 11:27:37.502 +07:00 [Information] Request body: "protocol_id=20000&&branch_id=2&&err_code=1&&err_message=SUCCESS&&protocol_status=true&&partner_name=admin&&partner_pass=admin"
+2016-10-21 11:27:37.502 +07:00 [Information] Request: "application/json"
+2016-10-21 11:27:37.502 +07:00 [Information] Received package: "null"
+2016-10-21 11:27:37.502 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 1468ms
+2016-10-21 11:28:11.182 +07:00 [Information] Request body: "protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D"
+2016-10-21 11:28:11.182 +07:00 [Information] Request: "application/json"
+2016-10-21 11:28:11.182 +07:00 [Information] Received package: "null"
+2016-10-21 11:28:11.182 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 5172ms
+2016-10-21 11:28:49.288 +07:00 [Information] Request body: "protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D"
+2016-10-21 11:28:56.794 +07:00 [Information] Request: "application/json"
+2016-10-21 11:28:56.795 +07:00 [Information] Received package: "null"
+2016-10-21 11:29:14.791 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 47104ms
+2016-10-21 11:30:00.930 +07:00 [Information] Request body: 
+2016-10-21 11:30:00.930 +07:00 [Information] Request: "application/json"
+2016-10-21 11:30:00.930 +07:00 [Information] Received string: null
+2016-10-21 11:30:04.352 +07:00 [Information] HTTP "POST" "/api/test/string" responded 200 in 13355ms
+2016-10-21 11:31:04.017 +07:00 [Information] Request body: 
+2016-10-21 11:31:04.017 +07:00 [Information] Request: "application/json"
+2016-10-21 11:31:04.017 +07:00 [Information] Received string: null
+2016-10-21 11:31:04.042 +07:00 [Information] HTTP "POST" "/api/test/string" responded 200 in 42940ms
+2016-10-21 11:31:18.931 +07:00 [Information] Request body: "protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D"
+2016-10-21 11:31:18.937 +07:00 [Information] Request: "application/json"
+2016-10-21 11:31:18.937 +07:00 [Information] Received package: "null"
+2016-10-21 11:32:03.229 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 51723ms
+2016-10-21 11:32:30.446 +07:00 [Information] Request body: protocol_id=20000&&branch_id=2&&err_code=1&&err_message=SUCCESS&&protocol_status=true&&partner_name=admin&&partner_pass=admin
+2016-10-21 11:32:30.492 +07:00 [Information] Request: "application/x-www-form-urlencoded"
+2016-10-21 11:32:30.492 +07:00 [Information] Received string: null
+2016-10-21 11:32:34.150 +07:00 [Information] HTTP "POST" "/api/test/string" responded 200 in 10078ms
+2016-10-21 11:33:01.001 +07:00 [Information] Request body: protocol_id=20000&branch_id=2&err_code=1&err_message=SUCCESS&protocol_status=true&partner_name=admin&partner_pass=admin
+2016-10-21 11:33:01.001 +07:00 [Information] Request: "application/x-www-form-urlencoded"
+2016-10-21 11:33:01.001 +07:00 [Information] Received string: null
+2016-10-21 11:33:03.223 +07:00 [Information] HTTP "POST" "/api/test/string" responded 200 in 9859ms
+2016-10-21 11:33:56.124 +07:00 [Information] Request body: protocol_id=20000&branch_id=2&err_code=1&err_message=SUCCESS&protocol_status=true&partner_name=admin&partner_pass=admin
+2016-10-21 11:34:00.889 +07:00 [Information] Request: "application/x-www-form-urlencoded"
+2016-10-21 11:35:51.924 +07:00 [Information] Received string: null
+2016-10-21 11:35:56.398 +07:00 [Information] HTTP "POST" "/api/test/string" responded 200 in 128998ms
+2016-10-21 11:36:05.289 +07:00 [Information] Request body: protocol_id=20000&branch_id=2&err_code=1&err_message=SUCCESS&protocol_status=true&partner_name=admin&partner_pass=admin
+2016-10-21 11:36:14.903 +07:00 [Information] Request: "application/x-www-form-urlencoded"
+2016-10-21 11:36:14.903 +07:00 [Information] Received package: "{\"Protocol_Id\":20000,\"Branch_Id\":2,\"Err_Code\":1,\"Err_Message\":\"SUCCESS\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"admin\"}"
+2016-10-21 11:36:19.385 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 17312ms
+2016-10-21 11:36:53.877 +07:00 [Information] Request body: protocol_id=20000&branch_id=2&err_code=1&err_message=SUCCESS&protocol_status=true&partner_name=admin&partner_pass=admin
+2016-10-21 11:38:49.415 +07:00 [Information] Request: "application/x-www-form-urlencoded"
+2016-10-21 11:38:49.415 +07:00 [Information] Received package: "{\"Protocol_Id\":20000,\"Branch_Id\":2,\"Err_Code\":1,\"Err_Message\":\"SUCCESS\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"admin\"}"
+2016-10-21 11:38:50.485 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 118871ms
+2016-10-21 11:39:02.294 +07:00 [Information] Request body: protocol={"protocol_id":20000,"branch_id":0,"err_code":1,"err_message":"SUCCESS","protocol_status":true,"partner_name":"admin","partner_pass":"admin"}
+2016-10-21 11:39:05.549 +07:00 [Information] Request: "application/json"
+2016-10-21 11:39:05.550 +07:00 [Information] Received package: "null"
+2016-10-21 11:39:06.979 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 10602ms
+2016-10-21 11:40:07.591 +07:00 [Information] Request body: {"protocol_id":20000,"branch_id":0,"err_code":1,"err_message":"SUCCESS","protocol_status":true,"partner_name":"admin","partner_pass":"admin"}
+2016-10-21 11:40:25.829 +07:00 [Information] Request: "application/json"
+2016-10-21 11:40:25.844 +07:00 [Information] Received package: "{\"Protocol_Id\":20000,\"Branch_Id\":0,\"Err_Code\":1,\"Err_Message\":\"SUCCESS\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"admin\"}"
+2016-10-21 11:40:52.282 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 48477ms
+2016-10-21 11:44:01.096 +07:00 [Information] Request body: "protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D"
+2016-10-21 11:44:05.811 +07:00 [Information] Request: "application/json"
+2016-10-21 11:44:05.826 +07:00 [Information] Received package: "null"
+2016-10-21 11:44:05.911 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9145ms
+2016-10-21 11:44:25.853 +07:00 [Information] Request body: "%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D"
+2016-10-21 11:44:30.674 +07:00 [Information] Request: "application/json"
+2016-10-21 11:44:30.674 +07:00 [Information] Received package: "null"
+2016-10-21 11:44:30.674 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 8916ms
+2016-10-21 11:44:44.299 +07:00 [Information] Request body: {"protocol_id":20000,"branch_id":0,"err_code":1,"err_message":"SUCCESS","protocol_status":true,"partner_name":"admin","partner_pass":"admin"}
+2016-10-21 11:44:49.555 +07:00 [Information] Request: "application/json"
+2016-10-21 11:44:49.563 +07:00 [Information] Received package: "{\"Protocol_Id\":20000,\"Branch_Id\":0,\"Err_Code\":1,\"Err_Message\":\"SUCCESS\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"admin\"}"
+2016-10-21 11:44:49.565 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 8786ms
+2016-10-21 11:45:43.769 +07:00 [Information] Request body: protocol=%7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 11:45:47.257 +07:00 [Information] Request: "application/json"
+2016-10-21 11:45:47.257 +07:00 [Information] Received package: "null"
+2016-10-21 11:45:47.257 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7139ms
+2016-10-21 11:46:02.548 +07:00 [Information] Request body: %7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 11:46:05.290 +07:00 [Information] Request: "application/json"
+2016-10-21 11:46:05.290 +07:00 [Information] Received package: "null"
+2016-10-21 11:46:05.306 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 6277ms
+2016-10-21 11:46:30.973 +07:00 [Information] Request body: %7B%22protocol_id%22%3A20000%2C%22branch_id%22%3A0%2C%22err_code%22%3A1%2C%22err_message%22%3A%22SUCCESS%22%2C%22protocol_status%22%3Atrue%2C%22partner_name%22%3A%22admin%22%2C%22partner_pass%22%3A%22admin%22%7D
+2016-10-21 11:46:39.269 +07:00 [Information] Request: "application/json"
+2016-10-21 11:46:39.269 +07:00 [Information] Received package: "null"
+2016-10-21 11:46:39.269 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 15367ms
+2016-10-21 11:47:27.970 +07:00 [Information] Request body: {"protocol_id":20000,"branch_id":0,"err_code":1,"err_message":"SUCCESS","protocol_status":true,"partner_name":"admin","partner_pass":"admin"}
+2016-10-21 11:47:31.821 +07:00 [Information] Request: "application/json"
+2016-10-21 11:47:31.821 +07:00 [Information] Received package: "{\"Protocol_Id\":20000,\"Branch_Id\":0,\"Err_Code\":1,\"Err_Message\":\"SUCCESS\",\"Protocol_Status\":true,\"Partner_Name\":\"admin\",\"Partner_Pass\":\"admin\"}"
+2016-10-21 11:47:31.821 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9716ms
+2016-10-21 11:48:32.506 +07:00 [Information] Request body: "{'protocol_id':20000,'branch_id':0,'err_code':1,'err_message':'SUCCESS','protocol_status':true,'partner_name':'admin','partner_pass':'admin'}"
+2016-10-21 11:48:34.766 +07:00 [Information] Request: "application/json"
+2016-10-21 11:48:34.767 +07:00 [Information] Received package: "null"
+2016-10-21 11:48:34.768 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 6812ms
+2016-10-21 11:49:16.382 +07:00 [Information] Request body: "{\"protocol_id\":20000,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\"}"
+2016-10-21 11:49:19.245 +07:00 [Information] Request: "application/json"
+2016-10-21 11:49:19.245 +07:00 [Information] Received package: "null"
+2016-10-21 11:49:19.262 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7214ms
