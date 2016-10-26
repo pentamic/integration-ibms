@@ -1,0 +1,76 @@
+2016-10-26 10:16:26.818 +07:00 [Information] Request body: {"card_maker": {"id": 10,"card_maker_name": "TƯ NHÂN"},"protocol_id":20021,"branch_id":11,"err_code":0,"err_message":"SUCCESS","protocol_status":true,"partner_name":"administrator","partner_pass":"administrator"}
+2016-10-26 10:17:06.066 +07:00 [Information] Request: "application/json"
+2016-10-26 10:17:06.115 +07:00 [Information] Received package: "{\"protocol_id\":20021,\"branch_id\":11,\"err_code\":0,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"administrator\",\"partner_pass\":\"administrator\",\"carmaker\":null}"
+2016-10-26 10:17:06.253 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 39696ms
+2016-10-26 10:17:22.876 +07:00 [Information] Request body: {"CardMaker": {"id": 10,"card_maker_name": "TƯ NHÂN"},"protocol_id":20021,"branch_id":11,"err_code":0,"err_message":"SUCCESS","protocol_status":true,"partner_name":"administrator","partner_pass":"administrator"}
+2016-10-26 10:18:03.016 +07:00 [Information] Request: "application/json"
+2016-10-26 10:18:03.018 +07:00 [Information] Received package: "{\"protocol_id\":20021,\"branch_id\":11,\"err_code\":0,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"administrator\",\"partner_pass\":\"administrator\",\"carmaker\":null}"
+2016-10-26 10:18:03.020 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 40145ms
+2016-10-26 10:18:14.223 +07:00 [Information] Request body: {"carmaker": {"id": 10,"card_maker_name": "TƯ NHÂN"},"protocol_id":20021,"branch_id":11,"err_code":0,"err_message":"SUCCESS","protocol_status":true,"partner_name":"administrator","partner_pass":"administrator"}
+2016-10-26 10:20:04.012 +07:00 [Information] Request: "application/json"
+2016-10-26 10:20:04.013 +07:00 [Information] Received package: "{\"protocol_id\":20021,\"branch_id\":11,\"err_code\":0,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"administrator\",\"partner_pass\":\"administrator\",\"carmaker\":{\"id\":10,\"card_maker_name\":\"TƯ NHÂN\"}}"
+2016-10-26 10:20:04.014 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 109793ms
+2016-10-26 10:35:23.084 +07:00 [Information] HTTP "POST" "/api/test/json" responded 415 in 372ms
+2016-10-26 10:36:10.665 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 39006ms
+2016-10-26 10:36:59.579 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 17023ms
+2016-10-26 10:38:20.293 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 21366ms
+2016-10-26 10:38:35.420 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7896ms
+2016-10-26 10:48:11.903 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 42380ms
+2016-10-26 10:53:21.790 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9344ms
+2016-10-26 11:02:42.584 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 264702ms
+2016-10-26 11:15:09.377 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 16715ms
+2016-10-26 11:20:44.271 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 35546ms
+2016-10-26 16:00:52.733 +07:00 [Error] HTTP "POST" "/api/test/json" responded 500 in 143186ms
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Invalid object name 'dbo.CarNumber'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<NonQuery>b__0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at Pentamic.Integration.Ibms.Controllers.TestController.Json(Protocol protocol) in E:\BIStandard\PentamicBI8\IBMS\integration-ibms\Pentamic.Integration.Ibms\Controllers\TestController.cs:line 241
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2016-10-26 16:25:14.337 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 26111ms
+2016-10-26 16:28:29.245 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 51700ms
+2016-10-26 17:41:32.820 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 196007ms

@@ -49,6 +49,14 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -186,6 +194,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\TextMediaTypeFormatter.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Bill.cs" />
+    <Compile Include="Models\Nationality.cs" />
+    <Compile Include="Models\CheckIn_Payee.cs" />
+    <Compile Include="Models\CheckIn_Car.cs" />
+    <Compile Include="Models\CheckIn_Info.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Payee.cs" />
+    <Compile Include="Models\CarNumber.cs" />
+    <Compile Include="Models\VisitorType.cs" />
+    <Compile Include="Models\TourGuide.cs" />
+    <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\PartnerGroup.cs" />
+    <Compile Include="Models\Partner.cs" />
+    <Compile Include="Models\CardMaker.cs" />
+    <Compile Include="Models\CardType.cs" />
+    <Compile Include="Models\CheckIn.cs" />
     <Compile Include="Models\Protocol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
