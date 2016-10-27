@@ -99,189 +99,189 @@ namespace Pentamic.Integration.Ibms.Controllers
             //var checkin_id_list = from x in _context.CheckIns
             //                      select new { x.id };
             string err = "";
-            if (protocol.checkin_list != null)
-            {
+            //if (protocol.checkin_list != null)
+            //{
 
-                foreach (var item in protocol.checkin_list)
-                {
-                    try
-                    {
-                        var checkin = new CheckIn();
-                        checkin.id = item.id;
-                        checkin.checkin_code = item.checkin_code;
-                        checkin.fee_port = item.fee_port;
-                        checkin.status = item.status;
+            //    foreach (var item in protocol.checkin_list)
+            //    {
+            //        try
+            //        {
+            //            var checkin = new CheckIn();
+            //            checkin.id = item.id;
+            //            checkin.checkin_code = item.checkin_code;
+            //            checkin.fee_port = item.fee_port;
+            //            checkin.status = item.status;
 
-                        if (item.card_type != null)
-                        {
-                            if (item.card_type.id != 0)
-                            {
-                                var cardtype = new CardType();
-                                cardtype.id = item.card_type.id;
-                                cardtype.card_name = item.card_type.card_name;
-                                //checkin.card_type_id = item.card_type.id;
-                                _context.CardTypes.Add(cardtype);
-                            }
-                        }
-                        if (item.card_maker != null)
-                        {
-                            if (item.card_maker.id != 0)
-                            {
-                                var cardmaker = new CardMaker();
-                                cardmaker.id = item.card_maker.id;
-                                cardmaker.card_maker_name = item.card_maker.card_maker_name;
-                                //checkin.card_maker_id = item.card_maker.id;
+            //            if (item.card_type != null)
+            //            {
+            //                if (item.card_type.id != 0)
+            //                {
+            //                    var cardtype = new CardType();
+            //                    cardtype.id = item.card_type.id;
+            //                    cardtype.card_name = item.card_type.card_name;
+            //                    //checkin.card_type_id = item.card_type.id;
+            //                    _context.CardTypes.Add(cardtype);
+            //                }
+            //            }
+            //            if (item.card_maker != null)
+            //            {
+            //                if (item.card_maker.id != 0)
+            //                {
+            //                    var cardmaker = new CardMaker();
+            //                    cardmaker.id = item.card_maker.id;
+            //                    cardmaker.card_maker_name = item.card_maker.card_maker_name;
+            //                    //checkin.card_maker_id = item.card_maker.id;
 
-                                _context.CardMakers.Add(cardmaker);
-                            }
-                        }
-                        if (item.partner_group != null)
-                        {
-                            if (item.partner_group.id != 0)
-                            {
-                                var partnerGroup = new PartnerGroup();
-                                partnerGroup.id = item.partner_group.id;
-                                partnerGroup.fullName = item.partner_group.fullName;
+            //                    _context.CardMakers.Add(cardmaker);
+            //                }
+            //            }
+            //            if (item.partner_group != null)
+            //            {
+            //                if (item.partner_group.id != 0)
+            //                {
+            //                    var partnerGroup = new PartnerGroup();
+            //                    partnerGroup.id = item.partner_group.id;
+            //                    partnerGroup.fullName = item.partner_group.fullName;
 
-                                _context.PartnerGroups.Add(partnerGroup);
-                            }
-                            if (item.partner_group.partner != null)
-                            {
-                                if (item.partner_group.partner.id != 0)
-                                {
-                                    var partner = new Partner();
-                                    partner.id = item.partner_group.partner.id;
-                                    partner.fullName = item.partner_group.partner.fullName;
-                                    if (item.partner_group.id != 0)
-                                        partner.partner_group_id = item.partner_group.id;
+            //                    _context.PartnerGroups.Add(partnerGroup);
+            //                }
+            //                if (item.partner_group.partner != null)
+            //                {
+            //                    if (item.partner_group.partner.id != 0)
+            //                    {
+            //                        var partner = new Partner();
+            //                        partner.id = item.partner_group.partner.id;
+            //                        partner.fullName = item.partner_group.partner.fullName;
+            //                        if (item.partner_group.id != 0)
+            //                            partner.partner_group_id = item.partner_group.id;
 
-                                    _context.Partners.Add(partner);
-                                }
-                            }
+            //                        _context.Partners.Add(partner);
+            //                    }
+            //                }
 
-                        }
-                        if (item.driver != null)
-                        {
-                            if (item.driver.id != 0)
-                            {
-                                var driver = new Driver();
-                                driver.id = item.driver.id;
-                                driver.fullName = item.driver.fullName;
-                                //checkin.driver_id = item.driver.id;
+            //            }
+            //            if (item.driver != null)
+            //            {
+            //                if (item.driver.id != 0)
+            //                {
+            //                    var driver = new Driver();
+            //                    driver.id = item.driver.id;
+            //                    driver.fullName = item.driver.fullName;
+            //                    //checkin.driver_id = item.driver.id;
 
-                                _context.Drivers.Add(driver);
-                            }
-                        }
-                        if (item.tour_guide != null)
-                        {
-                            if (item.tour_guide.id != 0)
-                            {
-                                var tour = new TourGuide();
-                                tour.id = item.tour_guide.id;
-                                tour.fullName = item.tour_guide.fullName;
-                                //checkin.tour_guide_id = item.tour_guide.id;
+            //                    _context.Drivers.Add(driver);
+            //                }
+            //            }
+            //            if (item.tour_guide != null)
+            //            {
+            //                if (item.tour_guide.id != 0)
+            //                {
+            //                    var tour = new TourGuide();
+            //                    tour.id = item.tour_guide.id;
+            //                    tour.fullName = item.tour_guide.fullName;
+            //                    //checkin.tour_guide_id = item.tour_guide.id;
 
-                                _context.TourGuides.Add(tour);
-                            }
-                        }
-                        if (item.visitor_type != null)
-                        {
-                            if (item.visitor_type.id != 0)
-                            {
-                                var visit = new VisitorType();
-                                visit.id = item.visitor_type.id;
-                                visit.visitor_type_name = item.visitor_type.visitor_type_name;
-                                //checkin.visitor_type_id = item.visitor_type.id;
+            //                    _context.TourGuides.Add(tour);
+            //                }
+            //            }
+            //            if (item.visitor_type != null)
+            //            {
+            //                if (item.visitor_type.id != 0)
+            //                {
+            //                    var visit = new VisitorType();
+            //                    visit.id = item.visitor_type.id;
+            //                    visit.visitor_type_name = item.visitor_type.visitor_type_name;
+            //                    //checkin.visitor_type_id = item.visitor_type.id;
 
-                                _context.VisitorTypes.Add(visit);
-                            }
-                        }
-                        //if (item.car_number_list != null)
-                        //{
-                        //    foreach (var c in item.car_number_list)
-                        //    {
-                        //        var car = new CarNumber();
-                        //        car.car_number = c.car_number;
+            //                    _context.VisitorTypes.Add(visit);
+            //                }
+            //            }
+            //            //if (item.car_number_list != null)
+            //            //{
+            //            //    foreach (var c in item.car_number_list)
+            //            //    {
+            //            //        var car = new CarNumber();
+            //            //        car.car_number = c.car_number;
 
-                        //        _context.CarNumbers.Add(car);
+            //            //        _context.CarNumbers.Add(car);
 
-                        //        var checkin_car = new CheckIn_Car();
-                        //        checkin_car.CheckInId  = item.id;
-                        //        checkin_car.CarNumber = c.car_number;
+            //            //        var checkin_car = new CheckIn_Car();
+            //            //        checkin_car.CheckInId  = item.id;
+            //            //        checkin_car.CarNumber = c.car_number;
 
-                        //        _context.CheckIn_Cars.Add(checkin_car);
-                        //    }
-                        //}
-                        if (item.payee_list != null)
-                        {
-                            foreach (var c in item.payee_list)
-                            {
-                                if (c.id != 0)
-                                {
-                                    var payee = new Payee();
-                                    payee.id = c.id;
-                                    payee.payee_name = c.payee_name;
-                                    payee.payee_commission = c.payee_commission;
-                                    payee.payee_phone = c.payee_phone;
+            //            //        _context.CheckIn_Cars.Add(checkin_car);
+            //            //    }
+            //            //}
+            //            if (item.payee_list != null)
+            //            {
+            //                foreach (var c in item.payee_list)
+            //                {
+            //                    if (c.id != 0)
+            //                    {
+            //                        var payee = new Payee();
+            //                        payee.id = c.id;
+            //                        payee.payee_name = c.payee_name;
+            //                        payee.payee_commission = c.payee_commission;
+            //                        payee.payee_phone = c.payee_phone;
 
-                                    _context.Payes.Add(payee);
-                                }
+            //                        _context.Payes.Add(payee);
+            //                    }
 
-                                var checkin_payee = new CheckIn_Payee();
-                                checkin_payee.CheckInId = item.id;
-                                checkin_payee.PayeeId = c.id;
+            //                    var checkin_payee = new CheckIn_Payee();
+            //                    checkin_payee.CheckInId = item.id;
+            //                    checkin_payee.PayeeId = c.id;
 
-                                _context.CheckIn_Payes.Add(checkin_payee);
-                            }
-                        }
-                        if (item.checkin_info_list != null)
-                        {
-                            foreach (var i in item.checkin_info_list)
-                            {
-                                if (i.nationality_id != 0)
-                                {
-                                    var national = new Nationality();
-                                    national.id = i.nationality_id;
-                                    national.nationality_name = i.nationality;
+            //                    _context.CheckIn_Payes.Add(checkin_payee);
+            //                }
+            //            }
+            //            if (item.checkin_info_list != null)
+            //            {
+            //                foreach (var i in item.checkin_info_list)
+            //                {
+            //                    if (i.nationality_id != 0)
+            //                    {
+            //                        var national = new Nationality();
+            //                        national.id = i.nationality_id;
+            //                        national.nationality_name = i.nationality;
 
-                                    _context.Nationalities.Add(national);
-                                }
+            //                        _context.Nationalities.Add(national);
+            //                    }
 
-                                var checkin_info = new CheckIn_Info();
-                                checkin_info.number_adult = i.number_adult;
-                                checkin_info.number_baby = i.number_baby;
-                                checkin_info.number_child = i.number_child;
-                                checkin_info.nationality_id = i.nationality_id;
-                                checkin_info.checkin_id = item.id;
+            //                    var checkin_info = new CheckIn_Info();
+            //                    checkin_info.number_adult = i.number_adult;
+            //                    checkin_info.number_baby = i.number_baby;
+            //                    checkin_info.number_child = i.number_child;
+            //                    checkin_info.nationality_id = i.nationality_id;
+            //                    checkin_info.checkin_id = item.id;
 
-                                _context.CheckIn_Infos.Add(checkin_info);
-                            }
-                        }
-                        if (item.location != null)
-                        {
-                            if (item.location.id != 0)
-                            {
-                                var local = new Location();
-                                local.id = item.location.id;
-                                local.branchName = item.location.branchName;
-                                local.address = item.location.address;
-                                //checkin.location_id = item.location.id;
+            //                    _context.CheckIn_Infos.Add(checkin_info);
+            //                }
+            //            }
+            //            if (item.location != null)
+            //            {
+            //                if (item.location.id != 0)
+            //                {
+            //                    var local = new Location();
+            //                    local.id = item.location.id;
+            //                    local.branchName = item.location.branchName;
+            //                    local.address = item.location.address;
+            //                    //checkin.location_id = item.location.id;
 
-                                _context.Locations.Add(local);
-                            }
-                        }
-                        _context.CheckIns.Add(checkin);
-                        _context.SaveChanges();
-                    }
-                    catch (Exception ax)
-                    {
+            //                    _context.Locations.Add(local);
+            //                }
+            //            }
+            //            _context.CheckIns.Add(checkin);
+            //            _context.SaveChanges();
+            //        }
+            //        catch (Exception ax)
+            //        {
 
-                        err += item.id + " ; ";
-                        break;
-                    }
-                }
+            //            err += item.id + " ; ";
+            //            break;
+            //        }
+            //    }
 
-            }
+            //}
             if (err != "")
             {
                 var result = new Protocol { protocol_status = false, err_message = err };
