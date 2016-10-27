@@ -1,20 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
+    [DataContract(Name = "checkin_info_list")]
     public class CheckIn_Info
     {
         [Key]
-        public int id { get; set; }
-        public int number_baby { get; set; }
-        public int number_child { get; set; }
-        public int number_adult { get; set; }
-        public string nationality { get; set; }
-        public int nationality_id { get; set; }
-        public int checkin_id { get; set; }
+        public int Id { get; set; }
+        [DataMember(Name = "number_baby")]
+        public int NumberBaby { get; set; }
+
+        [DataMember(Name = "number_child")]
+        public int NumberChild { get; set; }
+
+        [DataMember(Name = "number_adult")]
+        public int NumberAdult { get; set; }
+
+        [DataMember(Name = "nationality")]
+        public string Nationality { get; set; }
+
+        [DataMember(Name = "nationality_id")]
+        public int NationalityId { get; set; }
+
+        public int CheckinId { get; set; }
+        public string LastSync { get; set; }
     }
 }

@@ -96,203 +96,346 @@ namespace Pentamic.Integration.Ibms.Controllers
             //Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
             //Log.Information("Received package: {Package}", JsonConvert.SerializeObject(protocol));
 
-            //var checkin_id_list = from x in _context.CheckIns
-            //                      select new { x.id };
-            string err = "";
-            //if (protocol.checkin_list != null)
-            //{
+            //Get exists data from Database
+            var list_card_maker_exists = _context.CardMakers.Select(x => x.IDs);
+            var list_card_type_exists = _context.CardTypes.Select(x => x.IDs);
+            var list_partner_group_exists = _context.tblPartnerGroups.Select(x => x.IDs);
+            var list_partner_exists = _context.tblPartners.Select(x => x.IDs);
+            var list_driver_exists = _context.Drivers.Select(x => x.IDs);
+            var list_tour_exists = _context.TourGuides.Select(x => x.IDs);
+            var list_visit_exists = _context.VisitorTypes.Select(x => x.IDs);
+            var list_location_exists = _context.Locations.Select(x => x.IDs);
+            var list_payee_exists = _context.Payes.Select(x => x.IDs);
+            var list_nationality_exists = _context.Nationalities.Select(x => x.IDs);
 
-            //    foreach (var item in protocol.checkin_list)
-            //    {
-            //        try
-            //        {
-            //            var checkin = new CheckIn();
-            //            checkin.id = item.id;
-            //            checkin.checkin_code = item.checkin_code;
-            //            checkin.fee_port = item.fee_port;
-            //            checkin.status = item.status;
+            List<int> list_card_maker = new List<int>();
+            List<int> list_card_type = new List<int>();
+            List<int> list_partner_group = new List<int>();
+            List<int> list_partner = new List<int>();
+            List<int> list_driver = new List<int>();
+            List<int> list_tour = new List<int>();
+            List<int> list_visit = new List<int>();
+            List<int> list_location = new List<int>();
+            List<int> list_payee = new List<int>();
+            List<int> list_nationality = new List<int>();
 
-            //            if (item.card_type != null)
-            //            {
-            //                if (item.card_type.id != 0)
-            //                {
-            //                    var cardtype = new CardType();
-            //                    cardtype.id = item.card_type.id;
-            //                    cardtype.card_name = item.card_type.card_name;
-            //                    //checkin.card_type_id = item.card_type.id;
-            //                    _context.CardTypes.Add(cardtype);
-            //                }
-            //            }
-            //            if (item.card_maker != null)
-            //            {
-            //                if (item.card_maker.id != 0)
-            //                {
-            //                    var cardmaker = new CardMaker();
-            //                    cardmaker.id = item.card_maker.id;
-            //                    cardmaker.card_maker_name = item.card_maker.card_maker_name;
-            //                    //checkin.card_maker_id = item.card_maker.id;
-
-            //                    _context.CardMakers.Add(cardmaker);
-            //                }
-            //            }
-            //            if (item.partner_group != null)
-            //            {
-            //                if (item.partner_group.id != 0)
-            //                {
-            //                    var partnerGroup = new PartnerGroup();
-            //                    partnerGroup.id = item.partner_group.id;
-            //                    partnerGroup.fullName = item.partner_group.fullName;
-
-            //                    _context.PartnerGroups.Add(partnerGroup);
-            //                }
-            //                if (item.partner_group.partner != null)
-            //                {
-            //                    if (item.partner_group.partner.id != 0)
-            //                    {
-            //                        var partner = new Partner();
-            //                        partner.id = item.partner_group.partner.id;
-            //                        partner.fullName = item.partner_group.partner.fullName;
-            //                        if (item.partner_group.id != 0)
-            //                            partner.partner_group_id = item.partner_group.id;
-
-            //                        _context.Partners.Add(partner);
-            //                    }
-            //                }
-
-            //            }
-            //            if (item.driver != null)
-            //            {
-            //                if (item.driver.id != 0)
-            //                {
-            //                    var driver = new Driver();
-            //                    driver.id = item.driver.id;
-            //                    driver.fullName = item.driver.fullName;
-            //                    //checkin.driver_id = item.driver.id;
-
-            //                    _context.Drivers.Add(driver);
-            //                }
-            //            }
-            //            if (item.tour_guide != null)
-            //            {
-            //                if (item.tour_guide.id != 0)
-            //                {
-            //                    var tour = new TourGuide();
-            //                    tour.id = item.tour_guide.id;
-            //                    tour.fullName = item.tour_guide.fullName;
-            //                    //checkin.tour_guide_id = item.tour_guide.id;
-
-            //                    _context.TourGuides.Add(tour);
-            //                }
-            //            }
-            //            if (item.visitor_type != null)
-            //            {
-            //                if (item.visitor_type.id != 0)
-            //                {
-            //                    var visit = new VisitorType();
-            //                    visit.id = item.visitor_type.id;
-            //                    visit.visitor_type_name = item.visitor_type.visitor_type_name;
-            //                    //checkin.visitor_type_id = item.visitor_type.id;
-
-            //                    _context.VisitorTypes.Add(visit);
-            //                }
-            //            }
-            //            //if (item.car_number_list != null)
-            //            //{
-            //            //    foreach (var c in item.car_number_list)
-            //            //    {
-            //            //        var car = new CarNumber();
-            //            //        car.car_number = c.car_number;
-
-            //            //        _context.CarNumbers.Add(car);
-
-            //            //        var checkin_car = new CheckIn_Car();
-            //            //        checkin_car.CheckInId  = item.id;
-            //            //        checkin_car.CarNumber = c.car_number;
-
-            //            //        _context.CheckIn_Cars.Add(checkin_car);
-            //            //    }
-            //            //}
-            //            if (item.payee_list != null)
-            //            {
-            //                foreach (var c in item.payee_list)
-            //                {
-            //                    if (c.id != 0)
-            //                    {
-            //                        var payee = new Payee();
-            //                        payee.id = c.id;
-            //                        payee.payee_name = c.payee_name;
-            //                        payee.payee_commission = c.payee_commission;
-            //                        payee.payee_phone = c.payee_phone;
-
-            //                        _context.Payes.Add(payee);
-            //                    }
-
-            //                    var checkin_payee = new CheckIn_Payee();
-            //                    checkin_payee.CheckInId = item.id;
-            //                    checkin_payee.PayeeId = c.id;
-
-            //                    _context.CheckIn_Payes.Add(checkin_payee);
-            //                }
-            //            }
-            //            if (item.checkin_info_list != null)
-            //            {
-            //                foreach (var i in item.checkin_info_list)
-            //                {
-            //                    if (i.nationality_id != 0)
-            //                    {
-            //                        var national = new Nationality();
-            //                        national.id = i.nationality_id;
-            //                        national.nationality_name = i.nationality;
-
-            //                        _context.Nationalities.Add(national);
-            //                    }
-
-            //                    var checkin_info = new CheckIn_Info();
-            //                    checkin_info.number_adult = i.number_adult;
-            //                    checkin_info.number_baby = i.number_baby;
-            //                    checkin_info.number_child = i.number_child;
-            //                    checkin_info.nationality_id = i.nationality_id;
-            //                    checkin_info.checkin_id = item.id;
-
-            //                    _context.CheckIn_Infos.Add(checkin_info);
-            //                }
-            //            }
-            //            if (item.location != null)
-            //            {
-            //                if (item.location.id != 0)
-            //                {
-            //                    var local = new Location();
-            //                    local.id = item.location.id;
-            //                    local.branchName = item.location.branchName;
-            //                    local.address = item.location.address;
-            //                    //checkin.location_id = item.location.id;
-
-            //                    _context.Locations.Add(local);
-            //                }
-            //            }
-            //            _context.CheckIns.Add(checkin);
-            //            _context.SaveChanges();
-            //        }
-            //        catch (Exception ax)
-            //        {
-
-            //            err += item.id + " ; ";
-            //            break;
-            //        }
-            //    }
-
-            //}
-            if (err != "")
+            //Get data from API
+            foreach (var item in protocol.checkin_list)
             {
-                var result = new Protocol { protocol_status = false, err_message = err };
+                if(!list_card_maker.Contains(item.card_maker.IDs))
+                    list_card_maker.Add(item.card_maker.IDs);
+
+                if (!list_card_type.Contains(item.card_type.IDs))
+                    list_card_type.Add(item.card_type.IDs);
+
+                if (!list_partner_group.Contains(item.partner_group.IDs))
+                    list_partner_group.Add(item.partner_group.IDs);
+
+                if (!list_partner.Contains(item.partner_group.partner.IDs))
+                    list_partner.Add(item.partner_group.partner.IDs);
+
+                if (!list_driver.Contains(item.driver.IDs))
+                    list_driver.Add(item.driver.IDs);
+
+                if (!list_tour.Contains(item.tour_guide.IDs))
+                    list_tour.Add(item.tour_guide.IDs);
+
+                if (!list_visit.Contains(item.visitor_type.IDs))
+                    list_visit.Add(item.visitor_type.IDs);
+
+                if (!list_location.Contains(item.location.IDs))
+                    list_location.Add(item.location.IDs);
+
+                foreach (var pay in item.payee_list)
+                {
+                    if (!list_payee.Contains(pay.IDs))
+                        list_payee.Add(pay.IDs);
+                }
+
+                foreach (var nati in item.checkin_info_list)
+                {
+                    if (!list_nationality.Contains(nati.NationalityId))
+                        list_nationality.Add(nati.NationalityId);
+                }
+            }
+
+            //Except Data
+            List<int> except_card_type = list_card_type.Except(list_card_type_exists).ToList();
+            List<int> except_card_maker = list_card_maker.Except(list_card_maker_exists).ToList();
+
+            List<int> except_partner_group = list_partner_group.Except(list_partner_group_exists).ToList();
+            List<int> except_partner = list_partner.Except(list_partner_exists).ToList();
+
+            List<int> except_driver = list_driver.Except(list_driver_exists).ToList();
+            List<int> except_tour = list_tour.Except(list_tour_exists).ToList();
+
+            List<int> except_visit = list_visit.Except(list_visit_exists).ToList();
+            List<int> except_location = list_location.Except(list_location_exists).ToList();
+
+            List<int> except_payee = list_payee.Except(list_payee_exists).ToList();
+            List<int> except_nationality = list_nationality.Except(list_nationality_exists).ToList();
+
+
+            string mess_err = "", id_err = "", lastSync = DateTime.Now.ToString("ddMMyyyyHHmmss");
+            if (protocol.checkin_list != null)
+            {
+                foreach (var item in protocol.checkin_list)
+                {
+                    try
+                    {
+                        if (!_context.tblCheckIns.Local.Any(x => x.IDs == item.IDs))
+                        {
+                            var checkin = new tblCheckIn();
+                            checkin.IDs = item.IDs;
+                            checkin.CheckInCode = item.CheckInCode;
+                            checkin.FeePort = item.FeePort;
+                            checkin.Status = item.Status;
+                            checkin.LastSync = lastSync;
+                            if (item.card_type != null)
+                            {
+                                if (item.card_type.IDs != 0)
+                                {
+                                    if (except_card_type.Contains(item.card_type.IDs))
+                                    {
+                                        var cardtype = new CardType();
+                                        cardtype.IDs = item.card_type.IDs;
+                                        cardtype.Name = item.card_type.Name;
+                                        cardtype.LastSync = lastSync;
+
+                                        _context.CardTypes.Add(cardtype);
+                                        except_card_type.Remove(item.card_type.IDs);
+                                    }
+                                    checkin.CardTypeId = item.card_type.IDs;
+                                }
+                            }
+                            if (item.card_maker != null)
+                            {
+                                if (item.card_maker.IDs != 0)
+                                {
+                                    if (except_card_maker.Contains(item.card_maker.IDs))
+                                    {
+                                        var cardmaker = new CardMaker();
+                                        cardmaker.IDs = item.card_maker.IDs;
+                                        cardmaker.Name = item.card_maker.Name;
+                                        cardmaker.LastSync = lastSync;
+
+                                        _context.CardMakers.Add(cardmaker);
+                                        except_card_maker.Remove(item.card_maker.IDs);
+                                    }
+                                    checkin.CardMakerId = item.card_maker.IDs;
+                                }
+                            }
+                            if (item.partner_group != null)
+                            {
+                                if (item.partner_group.IDs != 0)
+                                {
+                                    if (except_partner_group.Contains(item.partner_group.IDs))
+                                    {
+                                        var partnerGroup = new tblPartnerGroup();
+                                        partnerGroup.IDs = item.partner_group.IDs;
+                                        partnerGroup.Name = item.partner_group.Name;
+                                        partnerGroup.LastSync = lastSync;
+                                        _context.tblPartnerGroups.Add(partnerGroup);
+                                        except_partner_group.Remove(item.partner_group.IDs);
+                                    }
+                                }
+                                if (item.partner_group.partner != null)
+                                {
+                                    if (item.partner_group.partner.IDs != 0)
+                                    {
+                                        if (except_partner.Contains(item.partner_group.partner.IDs))
+                                        {
+                                            var partner = new tblPartner();
+                                            partner.IDs = item.partner_group.partner.IDs;
+                                            partner.Name = item.partner_group.partner.Name;
+                                            partner.LastSync = lastSync;
+
+                                            if (item.partner_group.IDs != 0)
+                                                partner.PartnerGroupId = item.partner_group.IDs;
+
+                                            _context.tblPartners.Add(partner);
+                                            except_partner.Remove(item.partner_group.partner.IDs);
+                                        }
+                                        checkin.PartnerId = item.partner_group.partner.IDs;
+                                    }
+                                }
+
+                            }
+                            if (item.driver != null)
+                            {
+                                if (item.driver.IDs != 0)
+                                {
+                                    if (except_driver.Contains(item.driver.IDs))
+                                    {
+                                        var driver = new Driver();
+                                        driver.IDs = item.driver.IDs;
+                                        driver.Name = item.driver.Name;
+                                        driver.LastSync = lastSync;
+
+                                        _context.Drivers.Add(driver);
+                                        except_driver.Remove(item.driver.IDs);
+                                    }
+                                    checkin.DriverId = item.driver.IDs;
+                                }
+                            }
+                            if (item.tour_guide != null)
+                            {
+                                if (item.tour_guide.IDs != 0)
+                                {
+                                    if (except_tour.Contains(item.tour_guide.IDs))
+                                    {
+                                        var tour = new TourGuide();
+                                        tour.IDs = item.tour_guide.IDs;
+                                        tour.Name = item.tour_guide.Name;
+                                        tour.LastSync = lastSync;
+
+                                        _context.TourGuides.Add(tour);
+                                        except_tour.Remove(item.tour_guide.IDs);
+                                    }
+                                    checkin.TourGuideId = item.tour_guide.IDs;
+                                }
+                            }
+                            if (item.visitor_type != null)
+                            {
+                                if (item.visitor_type.IDs != 0)
+                                {
+                                    if (except_visit.Contains(item.visitor_type.IDs))
+                                    {
+                                        var visit = new VisitorType();
+                                        visit.IDs = item.visitor_type.IDs;
+                                        visit.Name = item.visitor_type.Name;
+                                        visit.LastSync = lastSync;
+
+                                        _context.VisitorTypes.Add(visit);
+                                        except_visit.Remove(item.visitor_type.IDs);
+                                    }
+                                    checkin.VisitorTypeId = item.visitor_type.IDs;
+                                }
+                            }
+                            if (item.car_number_list != null)
+                            {
+                                foreach (var c in item.car_number_list)
+                                {
+                                    var checkin_car = new CheckIn_Car();
+                                    checkin_car.CheckInId = item.IDs;
+                                    checkin_car.CarNumber = c.Car_Number;
+                                    checkin_car.LastSync = lastSync;
+
+                                    _context.CheckIn_Cars.Add(checkin_car);
+                                }
+                            }
+                            if (item.payee_list != null)
+                            {
+                                foreach (var c in item.payee_list)
+                                {
+                                    if (c.IDs != 0)
+                                    {
+                                        if (except_payee.Contains(c.IDs))
+                                        {
+                                            var payee = new Payee();
+                                            payee.IDs = c.IDs;
+                                            payee.Name = c.Name;
+                                            payee.Commission = c.Commission;
+                                            payee.Phone = c.Phone;
+                                            payee.LastSync = lastSync;
+
+                                            _context.Payes.Add(payee);
+                                            except_payee.Remove(c.IDs);
+                                        }
+                                    }
+
+                                    var checkin_payee = new CheckIn_Payee();
+                                    checkin_payee.CheckInId = item.IDs;
+                                    checkin_payee.PayeeId = c.IDs;
+                                    checkin_payee.LastSync = lastSync;
+
+                                    _context.CheckIn_Payes.Add(checkin_payee);
+                                }
+                            }
+                            if (item.checkin_info_list != null)
+                            {
+                                foreach (var i in item.checkin_info_list)
+                                {
+                                    if (i.NationalityId != 0)
+                                    {
+                                        if (except_nationality.Contains(i.NationalityId))
+                                        {
+                                            var national = new Nationality();
+                                            national.IDs = i.NationalityId;
+                                            national.Name = i.Nationality;
+                                            national.LastSync = lastSync;
+
+                                            _context.Nationalities.Add(national);
+                                            except_nationality.Remove(i.NationalityId);
+                                        }
+                                    }
+
+                                    var checkin_info = new CheckIn_Info();
+                                    checkin_info.NumberAdult = i.NumberAdult;
+                                    checkin_info.NumberBaby = i.NumberBaby;
+                                    checkin_info.NumberChild = i.NumberChild;
+                                    if (i.NationalityId != 0)
+                                        checkin_info.NationalityId = i.NationalityId;
+                                    checkin_info.CheckinId = item.IDs;
+                                    checkin_info.LastSync = lastSync;
+
+                                    _context.CheckIn_Infos.Add(checkin_info);
+                                }
+                            }
+                            if (item.location != null)
+                            {
+                                if (item.location.IDs != 0)
+                                {
+                                    if (except_location.Contains(item.location.IDs))
+                                    {
+                                        var local = new Location();
+                                        local.IDs = item.location.IDs;
+                                        local.BranchName = item.location.BranchName;
+                                        local.Address = item.location.Address;
+                                        local.LastSync = lastSync;
+
+                                        _context.Locations.Add(local);
+                                        except_location.Remove(item.location.IDs);
+                                    }
+                                    checkin.LocationId = item.location.IDs;
+                                }
+                            }
+                            _context.tblCheckIns.Add(checkin);
+                        }
+                    }
+                    catch (Exception ax)
+                    {
+
+                        mess_err += ax.Message + " ; \n";
+                        id_err += item.IDs.ToString() + " ; \n";
+                        continue;
+                    }
+                }
+                _context.SaveChanges();
+            }
+            if (id_err != "")
+            {
+                var sync = new DataSync();
+                sync.LastSync = lastSync;
+                sync.Status = false;
+                sync.Message = id_err;
+                _context.DataSyncs.Add(sync);
+                _context.SaveChanges();
+
+                var result = new Protocol { protocol_status = false, err_message = mess_err };
                 return Ok(result);
             }
             else
             {
+                var sync = new DataSync();
+                sync.LastSync = lastSync;
+                sync.Status = true;
+                _context.DataSyncs.Add(sync);
+                _context.SaveChanges();
+
                 var result = protocol ?? new Protocol
                 {
-                    protocol_status = false,
-                    err_message = err
+                    protocol_status = true
                 };
                 return Ok(result);
             }
