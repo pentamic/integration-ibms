@@ -18,7 +18,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "checkin_code")]
         public string CheckInCode { get; set; }
         [DataMember(Name = "fee_port")]
-        public double FeePort { get; set; }
+        public decimal FeePort { get; set; }
         [DataMember(Name = "status")]
         public bool Status { get; set; }
 
@@ -51,5 +51,7 @@ namespace Pentamic.Integration.Ibms.Models
 
         [DataMember(Name = "location")]
         public Location location { get; set; }
+        
+
     }
 }

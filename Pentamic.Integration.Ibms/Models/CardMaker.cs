@@ -17,5 +17,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "card_maker_name")]
         public string Name { get; set; }
         public string LastSync { get; set; }
+        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; set; }
     }
 }

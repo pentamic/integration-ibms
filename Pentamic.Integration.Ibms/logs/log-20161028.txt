@@ -1,0 +1,50 @@
+2016-10-28 09:19:02.206 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 69280ms
+2016-10-28 10:36:06.015 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 29099ms
+2016-10-28 10:38:49.864 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 31736ms
+2016-10-28 10:48:29.230 +07:00 [Error] HTTP "POST" "/api/test/json" responded 500 in 15509ms
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Pentamic.Integration.Ibms.Controllers.TestController.Json(Protocol protocol) in E:\BIStandard\PentamicBI8\IBMS\integration-ibms\Pentamic.Integration.Ibms\Controllers\TestController.cs:line 163
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2016-10-28 10:53:18.938 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 26353ms
+2016-10-28 10:54:48.475 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7462ms
+2016-10-28 11:05:43.677 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 61750ms
+2016-10-28 11:09:23.075 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 64923ms
+2016-10-28 11:33:03.798 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 89954ms
+2016-10-28 11:38:04.160 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 56934ms
+2016-10-28 11:43:56.372 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 84960ms
+2016-10-28 11:45:14.332 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 17165ms
+2016-10-28 14:14:00.466 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 29108ms
+2016-10-28 14:17:57.207 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 139159ms
+2016-10-28 14:18:44.500 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 42632ms
+2016-10-28 14:22:20.272 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9885ms
+2016-10-28 14:28:33.915 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7566ms
+2016-10-28 14:30:54.367 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7150ms
+2016-10-28 14:34:35.854 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 6931ms
+2016-10-28 14:36:09.706 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 43266ms
+2016-10-28 14:45:58.095 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9398ms
+2016-10-28 14:46:54.591 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 5746ms
+2016-10-28 14:48:19.827 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9891ms
+2016-10-28 14:54:58.228 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 5353ms
+2016-10-28 14:58:47.356 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 194ms
+2016-10-28 14:59:32.535 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 19995ms
+2016-10-28 15:00:33.866 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 5059ms
+2016-10-28 15:10:24.229 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9986ms
+2016-10-28 15:11:20.974 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 3992ms
+2016-10-28 15:16:33.386 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 6045ms
+2016-10-28 15:17:15.865 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 23033ms
+2016-10-28 15:31:14.951 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7613ms

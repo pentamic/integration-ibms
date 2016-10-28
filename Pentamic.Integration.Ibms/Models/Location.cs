@@ -20,5 +20,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "address")]
         public string Address { get; set; }
         public string LastSync { get; set; }
+        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; set; }
     }
 }

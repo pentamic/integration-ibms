@@ -20,6 +20,7 @@ namespace Pentamic.Integration.Ibms.Models
         public string partner_name { get; set; }
         public string partner_pass { get; set; }
 
+        //public dynamic protocol_data { get; set; }
         public List<CheckIn> checkin_list { get; set; }
 
     }

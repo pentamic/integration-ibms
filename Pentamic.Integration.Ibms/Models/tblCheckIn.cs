@@ -14,7 +14,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int Id { get; set; }
         public int IDs { get; set; }
         public string CheckInCode { get; set; }
-        public double FeePort { get; set; }
+        public decimal FeePort { get; set; }
         public bool Status { get; set; }
 
         public int? CardTypeId { get; set; }
@@ -26,6 +26,8 @@ namespace Pentamic.Integration.Ibms.Models
         public int? LocationId { get; set; }
         public string LastSync { get; set; }
         public int? PartnerId { get; set; }
+        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; set; }
 
     }
 }
