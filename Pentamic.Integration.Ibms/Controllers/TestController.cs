@@ -94,347 +94,165 @@ namespace Pentamic.Integration.Ibms.Controllers
         [Route("json")]
         public IHttpActionResult Json(Protocol protocol)
         {
-            //20000 
-            //30001
+            //Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
+            //Log.Information("Received package: {Package}", JsonConvert.SerializeObject(protocol));
+
+
             //return Ok(new Protocol
             //{
             //    protocol_data = new List<CheckIn>()
             //});
-            //var xdata = ((JArray)protocol.protocol_data.checkin_list).ToObject<List<CheckIn>>();
-            //foreach (var itemaaa in xdata.ToList())
-            //{
-                
-            //}
-            //Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
-            //Log.Information("Received package: {Package}", JsonConvert.SerializeObject(protocol));
             string mess_err = "", lastSync = DateTime.Now.ToString("ddMMyyyyHHmmss");
-            try
+
+            if (protocol.protocol_id == 20000)
             {
-                List<int> list_checkin_add = new List<int>();
-                List<int> list_checkin_update = new List<int>();
-                List<int> list_checkin_remove = new List<int>();
-                List<int> list_card_maker = new List<int>();
-                List<int> list_card_type = new List<int>();
-                List<int> list_partner_group = new List<int>();
-                List<int> list_partner = new List<int>();
-                List<int> list_driver = new List<int>();
-                List<int> list_tour = new List<int>();
-                List<int> list_visit = new List<int>();
-                List<int> list_location = new List<int>();
-                List<int> list_payee = new List<int>();
-                List<int> list_nationality = new List<int>();
+                var xdata = ((JArray)protocol.protocol_data.checkin_list).ToObject<List<CheckIn>>();
                 
-                //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
-                List<int> list_card_maker_updated = new List<int>();
-                List<int> list_card_type_updated = new List<int>();
-                List<int> list_partner_group_updated = new List<int>();
-                List<int> list_partner_updated = new List<int>();
-                List<int> list_driver_updated = new List<int>();
-                List<int> list_tour_updated = new List<int>();
-                List<int> list_visit_updated = new List<int>();
-                List<int> list_location_updated = new List<int>();
-                List<int> list_payee_updated = new List<int>();
-                List<int> list_nationality_updated = new List<int>();
-
-                #region GetDataAPI
-                //Get Id data from API
-                foreach (var item in protocol.checkin_list)
+                try
                 {
-                    if (item.Status)//Neu status = 1
-                    {
-                        //Neu ko co trong DB cho vao danh sach Insert
-                        if (!list_checkin_add.Contains(item.IDs))
-                            if (_context.tblCheckIns.Where(x => x.IDs == item.IDs).Count() == 0)
-                                list_checkin_add.Add(item.IDs);
+                    List<int> list_checkin_add = new List<int>();
+                    List<int> list_checkin_update = new List<int>();
+                    List<int> list_checkin_remove = new List<int>();
+                    List<int> list_card_maker = new List<int>();
+                    List<int> list_card_type = new List<int>();
+                    List<int> list_partner_group = new List<int>();
+                    List<int> list_partner = new List<int>();
+                    List<int> list_driver = new List<int>();
+                    List<int> list_tour = new List<int>();
+                    List<int> list_visit = new List<int>();
+                    List<int> list_location = new List<int>();
+                    List<int> list_payee = new List<int>();
+                    List<int> list_nationality = new List<int>();
 
-                        //Neu da ton tai trong DB thi cho vao danh sach Update
-                        if (!list_checkin_update.Contains(item.IDs))
-                            if (_context.tblCheckIns.Where(x => x.IDs == item.IDs).Count() > 0)
-                                list_checkin_update.Add(item.IDs);
-                    }
-                    else //Status = 0, Update Checkin_Id co Status = 0
-                    {
-                        if (!list_checkin_remove.Contains(item.IDs))
-                            if (_context.tblCheckIns.Where(x => x.IDs == item.IDs).Count() > 0)
-                                list_checkin_remove.Add(item.IDs);
-                    }
+                    //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
+                    List<int> list_card_maker_updated = new List<int>();
+                    List<int> list_card_type_updated = new List<int>();
+                    List<int> list_partner_group_updated = new List<int>();
+                    List<int> list_partner_updated = new List<int>();
+                    List<int> list_driver_updated = new List<int>();
+                    List<int> list_tour_updated = new List<int>();
+                    List<int> list_visit_updated = new List<int>();
+                    List<int> list_location_updated = new List<int>();
+                    List<int> list_payee_updated = new List<int>();
+                    List<int> list_nationality_updated = new List<int>();
 
-                    if (item.card_maker != null)
+                    #region GetDataAPI
+                    //Get Id data from API
+                    foreach (var item in xdata)
                     {
-                        if (!list_card_maker.Contains(item.card_maker.IDs))
-                            if (_context.CardMakers.Where(x => x.IDs == item.card_maker.IDs).Count() == 0)
-                                list_card_maker.Add(item.card_maker.IDs);
-                    }
-
-                    if (item.card_type != null)
-                    {
-                        if (!list_card_type.Contains(item.card_type.IDs))
-                            if (_context.CardTypes.Where(x => x.IDs == item.card_type.IDs).Count() == 0)
-                                list_card_type.Add(item.card_type.IDs);
-                    }
-
-                    if (item.partner_group != null)
-                    {
-                        if (!list_partner_group.Contains(item.partner_group.IDs))
-                            if (_context.tblPartnerGroups.Where(x => x.IDs == item.partner_group.IDs).Count() == 0)
-                                list_partner_group.Add(item.partner_group.IDs);
-                    }
-
-                    if (item.partner_group.partner != null)
-                    {
-                        if (!list_partner.Contains(item.partner_group.partner.IDs))
-                            if (_context.tblPartners.Where(x => x.IDs == item.partner_group.partner.IDs).Count() == 0)
-                                list_partner.Add(item.partner_group.partner.IDs);
-                    }
-
-                    if (item.driver != null)
-                    {
-                        if (!list_driver.Contains(item.driver.IDs))
-                            if (_context.Drivers.Where(x => x.IDs == item.driver.IDs).Count() == 0)
-                                list_driver.Add(item.driver.IDs);
-                    }
-
-                    if (item.tour_guide != null)
-                    {
-                        if (!list_tour.Contains(item.tour_guide.IDs))
-                            if (_context.TourGuides.Where(x => x.IDs == item.tour_guide.IDs).Count() == 0)
-                                list_tour.Add(item.tour_guide.IDs);
-                    }
-
-                    if (item.visitor_type != null)
-                    {
-                        if (!list_visit.Contains(item.visitor_type.IDs))
-                            if (_context.VisitorTypes.Where(x => x.IDs == item.visitor_type.IDs).Count() == 0)
-                                list_visit.Add(item.visitor_type.IDs);
-                    }
-
-                    if (item.location != null)
-                    {
-                        if (!list_location.Contains(item.location.IDs))
-                            if (_context.Locations.Where(x => x.IDs == item.location.IDs).Count() == 0)
-                                list_location.Add(item.location.IDs);
-                    }
-
-                    if (item.payee_list != null)
-                    {
-                        foreach (var pay in item.payee_list)
+                        if (item.Status)//Neu status = 1
                         {
-                            if (!list_payee.Contains(pay.IDs))
-                                if (_context.Payes.Where(x => x.IDs == pay.IDs).Count() == 0)
-                                    list_payee.Add(pay.IDs);
+                            //Neu ko co trong DB cho vao danh sach Insert
+                            if (!list_checkin_add.Contains(item.IDs))
+                                if (_context.tblCheckIns.Where(x => x.IDs == item.IDs).Count() == 0)
+                                    list_checkin_add.Add(item.IDs);
+
+                            //Neu da ton tai trong DB thi cho vao danh sach Update
+                            if (!list_checkin_update.Contains(item.IDs))
+                                if (_context.tblCheckIns.Where(x => x.IDs == item.IDs).Count() > 0)
+                                    list_checkin_update.Add(item.IDs);
                         }
-                    }
-
-                    if (item.checkin_info_list != null)
-                    {
-                        foreach (var nati in item.checkin_info_list)
+                        else //Status = 0, Update Checkin_Id co Status = 0
                         {
-                            if (!list_nationality.Contains(nati.NationalityId))
-                                if (_context.Nationalities.Where(x => x.IDs == nati.NationalityId).Count() == 0)
-                                    list_nationality.Add(nati.NationalityId);
+                            if (!list_checkin_remove.Contains(item.IDs))
+                                if (_context.tblCheckIns.Where(x => x.IDs == item.IDs).Count() > 0)
+                                    list_checkin_remove.Add(item.IDs);
                         }
-                    }
-                }
-                #endregion
 
-                if (protocol.checkin_list != null)
-                {
-                    foreach (var item in protocol.checkin_list)
-                    {
-                        if (list_checkin_add.Contains(item.IDs))//Neu nam trong danh sach Insert
+                        if (item.card_maker != null)
                         {
+                            if (!list_card_maker.Contains(item.card_maker.IDs))
+                                if (_context.CardMakers.Where(x => x.IDs == item.card_maker.IDs).Count() == 0)
+                                    list_card_maker.Add(item.card_maker.IDs);
+                        }
 
-                            if (!_context.tblCheckIns.Local.Any(x => x.IDs == item.IDs))
+                        if (item.card_type != null)
+                        {
+                            if (!list_card_type.Contains(item.card_type.IDs))
+                                if (_context.CardTypes.Where(x => x.IDs == item.card_type.IDs).Count() == 0)
+                                    list_card_type.Add(item.card_type.IDs);
+                        }
+
+                        if (item.partner_group != null)
+                        {
+                            if (!list_partner_group.Contains(item.partner_group.IDs))
+                                if (_context.tblPartnerGroups.Where(x => x.IDs == item.partner_group.IDs).Count() == 0)
+                                    list_partner_group.Add(item.partner_group.IDs);
+                        }
+
+                        if (item.partner_group.partner != null)
+                        {
+                            if (!list_partner.Contains(item.partner_group.partner.IDs))
+                                if (_context.tblPartners.Where(x => x.IDs == item.partner_group.partner.IDs).Count() == 0)
+                                    list_partner.Add(item.partner_group.partner.IDs);
+                        }
+
+                        if (item.driver != null)
+                        {
+                            if (!list_driver.Contains(item.driver.IDs))
+                                if (_context.Drivers.Where(x => x.IDs == item.driver.IDs).Count() == 0)
+                                    list_driver.Add(item.driver.IDs);
+                        }
+
+                        if (item.tour_guide != null)
+                        {
+                            if (!list_tour.Contains(item.tour_guide.IDs))
+                                if (_context.TourGuides.Where(x => x.IDs == item.tour_guide.IDs).Count() == 0)
+                                    list_tour.Add(item.tour_guide.IDs);
+                        }
+
+                        if (item.visitor_type != null)
+                        {
+                            if (!list_visit.Contains(item.visitor_type.IDs))
+                                if (_context.VisitorTypes.Where(x => x.IDs == item.visitor_type.IDs).Count() == 0)
+                                    list_visit.Add(item.visitor_type.IDs);
+                        }
+
+                        if (item.location != null)
+                        {
+                            if (!list_location.Contains(item.location.IDs))
+                                if (_context.Locations.Where(x => x.IDs == item.location.IDs).Count() == 0)
+                                    list_location.Add(item.location.IDs);
+                        }
+
+                        if (item.payee_list != null)
+                        {
+                            foreach (var pay in item.payee_list)
                             {
-                                var checkin = new tblCheckIn();
-                                checkin.IDs = item.IDs;
-                                checkin.CheckInCode = item.CheckInCode;
-                                checkin.FeePort = item.FeePort;
-                                checkin.Status = item.Status;
-                                checkin.LastSync = lastSync;
-                                checkin.CreatedAt = DateTimeOffset.Now;
-
-                                #region CardType
-                                if (item.card_type != null)
-                                {
-                                    if (item.card_type.IDs != 0)
-                                    {
-                                        CardType(item, list_card_type, lastSync);
-                                        checkin.CardTypeId = item.card_type.IDs;
-                                    }
-                                }
-                                #endregion
-
-                                #region CardMaker
-                                if (item.card_maker != null)
-                                {
-                                    if (item.card_maker.IDs != 0)
-                                    {
-                                        CardMaker(item, list_card_maker, list_card_maker_updated, lastSync);
-                                        checkin.CardMakerId = item.card_maker.IDs;
-                                    }
-                                }
-                                #endregion
-
-                                #region partner_group
-                                if (item.partner_group != null)
-                                {
-                                    if (item.partner_group.IDs != 0)
-                                    {
-                                        PartnerGroup(item, list_partner_group, lastSync);
-                                    }
-                                    if (item.partner_group.partner != null)
-                                    {
-                                        if (item.partner_group.partner.IDs != 0)
-                                        {
-                                            Partner(item, list_partner, lastSync);
-                                            checkin.PartnerId = item.partner_group.partner.IDs;
-                                        }
-                                    }
-
-                                }
-                                #endregion
-
-                                #region Driver
-                                if (item.driver != null)
-                                {
-                                    if (item.driver.IDs != 0)
-                                    {
-                                        Driver(item, list_driver, lastSync);
-                                        checkin.DriverId = item.driver.IDs;
-                                    }
-                                }
-                                #endregion
-
-                                #region Tour_guide
-                                if (item.tour_guide != null)
-                                {
-                                    if (item.tour_guide.IDs != 0)
-                                    {
-                                        TourGuide(item, list_tour, lastSync);
-                                        checkin.TourGuideId = item.tour_guide.IDs;
-                                    }
-                                }
-                                #endregion
-
-                                #region Visitor_type
-                                if (item.visitor_type != null)
-                                {
-                                    if (item.visitor_type.IDs != 0)
-                                    {
-                                        Visitor(item, list_visit, lastSync);
-                                        checkin.VisitorTypeId = item.visitor_type.IDs;
-                                    }
-                                }
-                                #endregion
-
-                                #region car_number_list
-                                if (item.car_number_list != null)
-                                {
-                                    var del_checkin_car = _context.CheckIn_Cars.Where(x => x.CheckInId == item.IDs);
-                                    if (del_checkin_car != null)
-                                        _context.CheckIn_Cars.RemoveRange(del_checkin_car);
-
-                                    foreach (var c in item.car_number_list)
-                                    {
-                                        var checkin_car = new CheckIn_Car();
-                                        checkin_car.CheckInId = item.IDs;
-                                        checkin_car.CarNumber = c.Car_Number;
-                                        checkin_car.LastSync = lastSync;
-                                        checkin_car.CreatedAt = DateTimeOffset.Now;
-
-                                        _context.CheckIn_Cars.Add(checkin_car);
-                                    }
-                                }
-                                #endregion
-
-                                #region payee_list
-                                if (item.payee_list != null)
-                                {
-                                    foreach (var c in item.payee_list)
-                                    {
-                                        if (c.IDs != 0)
-                                        {
-                                            Payee(c, list_payee, lastSync);
-                                        }
-
-                                        var del_checkin_payee = _context.CheckIn_Payes.Where(x => x.CheckInId == item.IDs);
-                                        if (del_checkin_payee != null)
-                                            _context.CheckIn_Payes.RemoveRange(del_checkin_payee);
-
-                                        var checkin_payee = new CheckIn_Payee();
-                                        checkin_payee.CheckInId = item.IDs;
-                                        checkin_payee.PayeeId = c.IDs;
-                                        checkin_payee.LastSync = lastSync;
-                                        checkin_payee.CreatedAt = DateTimeOffset.Now;
-
-                                        _context.CheckIn_Payes.Add(checkin_payee);
-                                    }
-                                }
-                                #endregion
-
-                                #region checkin_info_list
-                                if (item.checkin_info_list != null)
-                                {
-                                    foreach (var i in item.checkin_info_list)
-                                    {
-                                        if (i.NationalityId != 0)
-                                        {
-                                            Nationality(i, list_nationality, lastSync);
-                                        }
-
-                                        var del_checkin_info = _context.CheckIn_Infos.Where(x => x.CheckinId == item.IDs);
-                                        if (del_checkin_info != null)
-                                            _context.CheckIn_Infos.RemoveRange(del_checkin_info);
-
-                                        var checkin_info = new CheckIn_Info();
-                                        checkin_info.NumberAdult = i.NumberAdult;
-                                        checkin_info.NumberBaby = i.NumberBaby;
-                                        checkin_info.NumberChild = i.NumberChild;
-                                        if (i.NationalityId != 0)
-                                            checkin_info.NationalityId = i.NationalityId;
-                                        checkin_info.CheckinId = item.IDs;
-                                        checkin_info.LastSync = lastSync;
-                                        checkin_info.CreatedAt = DateTimeOffset.Now;
-
-                                        _context.CheckIn_Infos.Add(checkin_info);
-                                    }
-                                }
-                                #endregion
-
-                                #region location
-                                if (item.location != null)
-                                {
-                                    if (item.location.IDs != 0)
-                                    {
-                                        Location(item, list_location, lastSync);
-                                        checkin.LocationId = item.location.IDs;
-                                    }
-                                }
-                                #endregion
-
-                                _context.tblCheckIns.Add(checkin);
+                                if (!list_payee.Contains(pay.IDs))
+                                    if (_context.Payes.Where(x => x.IDs == pay.IDs).Count() == 0)
+                                        list_payee.Add(pay.IDs);
                             }
                         }
-                        else
+
+                        if (item.checkin_info_list != null)
                         {
-                            if (list_checkin_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
+                            foreach (var nati in item.checkin_info_list)
                             {
-                                var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs).FirstOrDefault();
-                                checkin_remove.Status = item.Status;
-                                checkin_remove.LastSync = lastSync;
-                                checkin_remove.ModifiedAt = DateTimeOffset.Now;
+                                if (!list_nationality.Contains(nati.NationalityId))
+                                    if (_context.Nationalities.Where(x => x.IDs == nati.NationalityId).Count() == 0)
+                                        list_nationality.Add(nati.NationalityId);
                             }
-                            else
+                        }
+                    }
+                    #endregion
+
+                    if (xdata != null)
+                    {
+                        foreach (var item in xdata)
+                        {
+                            if (list_checkin_add.Contains(item.IDs))//Neu nam trong danh sach Insert
                             {
-                                if (list_checkin_update.Contains(item.IDs))//Neu nam trong danh sach Update
+
+                                if (!_context.tblCheckIns.Local.Any(x => x.IDs == item.IDs))
                                 {
-                                    var checkin_update = _context.tblCheckIns.Where(x => x.IDs == item.IDs).FirstOrDefault();
-                                    checkin_update.Status = item.Status;
-                                    checkin_update.CheckInCode = item.CheckInCode;
-                                    checkin_update.FeePort = item.FeePort;
-                                    checkin_update.LastSync = lastSync;
-                                    checkin_update.ModifiedAt = DateTimeOffset.Now;
+                                    var checkin = new tblCheckIn();
+                                    checkin.IDs = item.IDs;
+                                    checkin.CheckInCode = item.CheckInCode;
+                                    checkin.FeePort = item.FeePort;
+                                    checkin.Status = item.Status;
+                                    checkin.LastSync = lastSync;
+                                    checkin.CreatedAt = DateTimeOffset.Now;
 
                                     #region CardType
                                     if (item.card_type != null)
@@ -442,7 +260,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         if (item.card_type.IDs != 0)
                                         {
                                             CardType(item, list_card_type, lastSync);
-                                            checkin_update.CardTypeId = item.card_type.IDs;
+                                            checkin.CardTypeId = item.card_type.IDs;
                                         }
                                     }
                                     #endregion
@@ -453,7 +271,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         if (item.card_maker.IDs != 0)
                                         {
                                             CardMaker(item, list_card_maker, list_card_maker_updated, lastSync);
-                                            checkin_update.CardMakerId = item.card_maker.IDs;
+                                            checkin.CardMakerId = item.card_maker.IDs;
                                         }
                                     }
                                     #endregion
@@ -470,42 +288,42 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             if (item.partner_group.partner.IDs != 0)
                                             {
                                                 Partner(item, list_partner, lastSync);
-                                                checkin_update.PartnerId = item.partner_group.partner.IDs;
+                                                checkin.PartnerId = item.partner_group.partner.IDs;
                                             }
                                         }
 
                                     }
                                     #endregion
 
-                                    #region driver
+                                    #region Driver
                                     if (item.driver != null)
                                     {
                                         if (item.driver.IDs != 0)
                                         {
                                             Driver(item, list_driver, lastSync);
-                                            checkin_update.DriverId = item.driver.IDs;
+                                            checkin.DriverId = item.driver.IDs;
                                         }
                                     }
                                     #endregion
 
-                                    #region tour_guide
+                                    #region Tour_guide
                                     if (item.tour_guide != null)
                                     {
                                         if (item.tour_guide.IDs != 0)
                                         {
                                             TourGuide(item, list_tour, lastSync);
-                                            checkin_update.TourGuideId = item.tour_guide.IDs;
+                                            checkin.TourGuideId = item.tour_guide.IDs;
                                         }
                                     }
                                     #endregion
 
-                                    #region visitor_type
+                                    #region Visitor_type
                                     if (item.visitor_type != null)
                                     {
                                         if (item.visitor_type.IDs != 0)
                                         {
                                             Visitor(item, list_visit, lastSync);
-                                            checkin_update.VisitorTypeId = item.visitor_type.IDs;
+                                            checkin.VisitorTypeId = item.visitor_type.IDs;
                                         }
                                     }
                                     #endregion
@@ -590,24 +408,214 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         if (item.location.IDs != 0)
                                         {
                                             Location(item, list_location, lastSync);
-                                            checkin_update.LocationId = item.location.IDs;
+                                            checkin.LocationId = item.location.IDs;
                                         }
                                     }
                                     #endregion
+
+                                    _context.tblCheckIns.Add(checkin);
+                                }
+                            }
+                            else
+                            {
+                                if (list_checkin_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
+                                {
+                                    var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                                    checkin_remove.Status = item.Status;
+                                    checkin_remove.LastSync = lastSync;
+                                    checkin_remove.ModifiedAt = DateTimeOffset.Now;
+                                }
+                                else
+                                {
+                                    if (list_checkin_update.Contains(item.IDs))//Neu nam trong danh sach Update
+                                    {
+                                        var checkin_update = _context.tblCheckIns.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                                        checkin_update.Status = item.Status;
+                                        checkin_update.CheckInCode = item.CheckInCode;
+                                        checkin_update.FeePort = item.FeePort;
+                                        checkin_update.LastSync = lastSync;
+                                        checkin_update.ModifiedAt = DateTimeOffset.Now;
+
+                                        #region CardType
+                                        if (item.card_type != null)
+                                        {
+                                            if (item.card_type.IDs != 0)
+                                            {
+                                                CardType(item, list_card_type, lastSync);
+                                                checkin_update.CardTypeId = item.card_type.IDs;
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region CardMaker
+                                        if (item.card_maker != null)
+                                        {
+                                            if (item.card_maker.IDs != 0)
+                                            {
+                                                CardMaker(item, list_card_maker, list_card_maker_updated, lastSync);
+                                                checkin_update.CardMakerId = item.card_maker.IDs;
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region partner_group
+                                        if (item.partner_group != null)
+                                        {
+                                            if (item.partner_group.IDs != 0)
+                                            {
+                                                PartnerGroup(item, list_partner_group, lastSync);
+                                            }
+                                            if (item.partner_group.partner != null)
+                                            {
+                                                if (item.partner_group.partner.IDs != 0)
+                                                {
+                                                    Partner(item, list_partner, lastSync);
+                                                    checkin_update.PartnerId = item.partner_group.partner.IDs;
+                                                }
+                                            }
+
+                                        }
+                                        #endregion
+
+                                        #region driver
+                                        if (item.driver != null)
+                                        {
+                                            if (item.driver.IDs != 0)
+                                            {
+                                                Driver(item, list_driver, lastSync);
+                                                checkin_update.DriverId = item.driver.IDs;
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region tour_guide
+                                        if (item.tour_guide != null)
+                                        {
+                                            if (item.tour_guide.IDs != 0)
+                                            {
+                                                TourGuide(item, list_tour, lastSync);
+                                                checkin_update.TourGuideId = item.tour_guide.IDs;
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region visitor_type
+                                        if (item.visitor_type != null)
+                                        {
+                                            if (item.visitor_type.IDs != 0)
+                                            {
+                                                Visitor(item, list_visit, lastSync);
+                                                checkin_update.VisitorTypeId = item.visitor_type.IDs;
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region car_number_list
+                                        if (item.car_number_list != null)
+                                        {
+                                            var del_checkin_car = _context.CheckIn_Cars.Where(x => x.CheckInId == item.IDs);
+                                            if (del_checkin_car != null)
+                                                _context.CheckIn_Cars.RemoveRange(del_checkin_car);
+
+                                            foreach (var c in item.car_number_list)
+                                            {
+                                                var checkin_car = new CheckIn_Car();
+                                                checkin_car.CheckInId = item.IDs;
+                                                checkin_car.CarNumber = c.Car_Number;
+                                                checkin_car.LastSync = lastSync;
+                                                checkin_car.CreatedAt = DateTimeOffset.Now;
+
+                                                _context.CheckIn_Cars.Add(checkin_car);
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region payee_list
+                                        if (item.payee_list != null)
+                                        {
+                                            foreach (var c in item.payee_list)
+                                            {
+                                                if (c.IDs != 0)
+                                                {
+                                                    Payee(c, list_payee, lastSync);
+                                                }
+
+                                                var del_checkin_payee = _context.CheckIn_Payes.Where(x => x.CheckInId == item.IDs);
+                                                if (del_checkin_payee != null)
+                                                    _context.CheckIn_Payes.RemoveRange(del_checkin_payee);
+
+                                                var checkin_payee = new CheckIn_Payee();
+                                                checkin_payee.CheckInId = item.IDs;
+                                                checkin_payee.PayeeId = c.IDs;
+                                                checkin_payee.LastSync = lastSync;
+                                                checkin_payee.CreatedAt = DateTimeOffset.Now;
+
+                                                _context.CheckIn_Payes.Add(checkin_payee);
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region checkin_info_list
+                                        if (item.checkin_info_list != null)
+                                        {
+                                            foreach (var i in item.checkin_info_list)
+                                            {
+                                                if (i.NationalityId != 0)
+                                                {
+                                                    Nationality(i, list_nationality, lastSync);
+                                                }
+
+                                                var del_checkin_info = _context.CheckIn_Infos.Where(x => x.CheckinId == item.IDs);
+                                                if (del_checkin_info != null)
+                                                    _context.CheckIn_Infos.RemoveRange(del_checkin_info);
+
+                                                var checkin_info = new CheckIn_Info();
+                                                checkin_info.NumberAdult = i.NumberAdult;
+                                                checkin_info.NumberBaby = i.NumberBaby;
+                                                checkin_info.NumberChild = i.NumberChild;
+                                                if (i.NationalityId != 0)
+                                                    checkin_info.NationalityId = i.NationalityId;
+                                                checkin_info.CheckinId = item.IDs;
+                                                checkin_info.LastSync = lastSync;
+                                                checkin_info.CreatedAt = DateTimeOffset.Now;
+
+                                                _context.CheckIn_Infos.Add(checkin_info);
+                                            }
+                                        }
+                                        #endregion
+
+                                        #region location
+                                        if (item.location != null)
+                                        {
+                                            if (item.location.IDs != 0)
+                                            {
+                                                Location(item, list_location, lastSync);
+                                                checkin_update.LocationId = item.location.IDs;
+                                            }
+                                        }
+                                        #endregion
+                                    }
                                 }
                             }
                         }
+                        //End Foreach
+                        _context.SaveChanges();
                     }
-                    //End Foreach
-                    _context.SaveChanges();
+                    //end protocol.checkin_list 
                 }
-                //end protocol.checkin_list 
-            }
-            catch (Exception axx)
-            {
-                mess_err += axx.Message;
-            }
 
+                catch (Exception axx)
+                {
+                    mess_err += axx.Message;
+                }
+            }
+            else
+            {
+                if (protocol.protocol_id == 30001)
+                {
+                    //var xdata = ((JArray)protocol.protocol_data.checkin_list).ToObject<List<Bill>>();
+                }
+            }
             if (mess_err != "")
             {
                 using (var context = new ApplicationDbContext())

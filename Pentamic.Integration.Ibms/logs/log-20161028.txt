@@ -48,3 +48,25 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2016-10-28 15:16:33.386 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 6045ms
 2016-10-28 15:17:15.865 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 23033ms
 2016-10-28 15:31:14.951 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7613ms
+2016-10-28 18:07:48.690 +07:00 [Error] HTTP "POST" "/api/test/json" responded 500 in 84810ms
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Pentamic.Integration.Ibms.Controllers.TestController.Json(Protocol protocol) in E:\BIStandard\PentamicBI8\IBMS\integration-ibms\Pentamic.Integration.Ibms\Controllers\TestController.cs:line 109
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2016-10-28 18:08:30.456 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 8735ms
