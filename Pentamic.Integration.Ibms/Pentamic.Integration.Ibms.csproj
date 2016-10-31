@@ -195,6 +195,10 @@
     </Compile>
     <Compile Include="Helpers\TextMediaTypeFormatter.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ReceiptDiscount.cs" />
+    <Compile Include="Models\ReceiptDetail.cs" />
+    <Compile Include="Models\Bill_Product.cs" />
+    <Compile Include="Models\Receipt.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Bill_Sale.cs" />
     <Compile Include="Models\Bank.cs" />
@@ -221,7 +225,7 @@
     <Compile Include="Models\CheckIn_Payee.cs" />
     <Compile Include="Models\CheckIn_Car.cs" />
     <Compile Include="Models\CheckIn_Info.cs" />
-    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Payee.cs" />
     <Compile Include="Models\VisitorType.cs" />
     <Compile Include="Models\TourGuide.cs" />

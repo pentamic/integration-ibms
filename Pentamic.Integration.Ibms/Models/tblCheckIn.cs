@@ -23,7 +23,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int? DriverId { get; set; }
         public int? TourGuideId { get; set; }
         public int? VisitorTypeId { get; set; }
-        public int? LocationId { get; set; }
+        public int? BranchId { get; set; }
         public string LastSync { get; set; }
         public int? PartnerId { get; set; }
         public DateTimeOffset? CreatedAt { get; set; }

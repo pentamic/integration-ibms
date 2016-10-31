@@ -17,7 +17,7 @@ namespace Pentamic.Integration.Ibms.Helpers
             var logger = new LoggerConfiguration().MinimumLevel.Verbose().WriteTo.RollingFile(path + "/log-{Date}.txt", shared: true).CreateLogger();
             // log request body
             string requestBody = await request.Content.ReadAsStringAsync();
-            //logger.Information("Request body: " +requestBody);
+            logger.Information("Request body: " +requestBody);
 
             var result = await base.SendAsync(request, cancellationToken);
             return result;

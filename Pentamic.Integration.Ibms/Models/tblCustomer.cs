@@ -16,7 +16,7 @@ namespace Pentamic.Integration.Ibms.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         public int? CountryId { get; set; }
 
         public string LastSync { get; set; }

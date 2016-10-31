@@ -23,7 +23,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "phoneNumber")]
         public string Phone { get; set; }
         [DataMember(Name = "birthday")]
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         [DataMember(Name = "country")]
         public Country country { get; set; }
     }

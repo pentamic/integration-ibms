@@ -8,17 +8,16 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    [DataContract(Name = "location")]
-    public class Location
+    public class ReceiptDiscount
     {
         [Key]
         public int Id { get; set; }
-        [DataMember(Name = "branchId")]
-        public int IDs { get; set; }
-        [DataMember(Name = "branchName")]
-        public string BranchName { get; set; }
-        [DataMember(Name = "address")]
-        public string Address { get; set; }
+        public int ReceiptId { get; set; }
+        public double Percent { get; set; }
+        public int DiscountType { get; set; }
+        public decimal MoneyDiscount { get; set; }
+        public bool Status { get; set; }
+
         public string LastSync { get; set; }
         public DateTimeOffset? CreatedAt { get; set; }
         public DateTimeOffset? ModifiedAt { get; set; }

@@ -8,6 +8,7 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
+    [DataContract(Name = "lst_sale_staff")]
     public class Bill_Sale
     {
         [Key]
@@ -16,7 +17,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int SalemanId { get; set; }
         [DataMember(Name = "full_name")]
         public string SalemanName { get; set; }
-        [DataMember(Name = "percent")]
+        [DataMember(Name = "pecent")]
         public double Percent { get; set; }
         [DataMember(Name = "money")]
         public decimal Money { get; set; }

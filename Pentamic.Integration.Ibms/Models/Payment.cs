@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    [DataContract(Name = "payment")]
+    //[DataContract(Name = "payment")]
     public class Payment
     {
         [Key]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -9,6 +10,7 @@ namespace Pentamic.Integration.Ibms.Models
     [DataContract(Name = "lsreceipt")]
     public class Bill
     {
+        [Key]
         public int id { get; set; }
         [DataMember(Name = "idReceipt")]
         public int IDs { get; set; }
@@ -28,16 +30,16 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "customer")]
         public Customer customer { get; set; }
         [DataMember(Name = "lstprd")]
-        public List<Product> lstprd { get; set; }
+        public List<Bill_Product> lstprd { get; set; }
         [DataMember(Name = "lstDiscount")]
         public List<Discount> lstDiscount { get; set; }
         [DataMember(Name = "lst_sale_staff")]
         public List<Bill_Sale> lst_sale_staff { get; set; }
         [DataMember(Name = "payment")]
-        public List<Payment> payment { get; set; }
+        public Payment payment { get; set; }
         [DataMember(Name = "branch")]
-        public Location branch { get; set; }
+        public Branch branch { get; set; }
         [DataMember(Name = "paymentDeposit")]
-        public List<Payment> paymentDeposit { get; set; }
+        public Payment paymentDeposit { get; set; }
     }
 }

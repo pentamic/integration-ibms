@@ -50,7 +50,7 @@ namespace Pentamic.Integration.Ibms.Models
         public List<CheckIn_Info> checkin_info_list { get; set; }
 
         [DataMember(Name = "location")]
-        public Location location { get; set; }
+        public Branch location { get; set; }
         
 
     }

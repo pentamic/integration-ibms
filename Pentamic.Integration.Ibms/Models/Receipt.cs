@@ -7,19 +7,19 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    [DataContract(Name = "coffer")]
-    public class Coffer
+    public class Receipt
     {
         [Key]
-        public int Id { get; set; }
-        [DataMember(Name = "id")]
+        public int id { get; set; }
         public int IDs { get; set; }
-        [DataMember(Name = "coffer_name")]
-        public string Name { get; set; }
-        [DataMember(Name = "branch_id")]
+        public string Code { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public int? CheckinId { get; set; }
+        public int? CustomerId { get; set; }
         public int? BranchId { get; set; }
-        [DataMember(Name = "type")]
-        public int Type { get; set; }
+        public decimal TotalPay { get; set; }
+        public int BillType { get; set; }
+        public bool Status { get; set; }
         public string LastSync { get; set; }
         public DateTimeOffset? CreatedAt { get; set; }
         public DateTimeOffset? ModifiedAt { get; set; }

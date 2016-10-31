@@ -1,0 +1,853 @@
+2016-10-31 11:22:53.089 +07:00 [Error] HTTP "POST" "/api/test/json" responded 500 in 56891ms
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Pentamic.Integration.Ibms.Controllers.TestController.Json(Protocol protocol) in E:\BIStandard\PentamicBI8\IBMS\integration-ibms\Pentamic.Integration.Ibms\Controllers\TestController.cs:line 620
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2016-10-31 11:26:52.663 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 28253ms
+2016-10-31 11:59:50.274 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 60227ms
+2016-10-31 12:04:05.008 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 17458ms
+2016-10-31 12:07:09.241 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 126304ms
+2016-10-31 13:42:25.516 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 113492ms
+2016-10-31 13:45:12.175 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 139503ms
+2016-10-31 13:51:39.888 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 96927ms
+2016-10-31 13:54:04.345 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 84192ms
+2016-10-31 14:10:25.648 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 46262ms
+2016-10-31 14:11:55.905 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 19320ms
+2016-10-31 15:38:16.559 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 36564ms
+2016-10-31 15:46:23.292 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 102188ms
+2016-10-31 16:05:49.377 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 85483ms
+2016-10-31 16:09:27.748 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9323ms
+2016-10-31 16:13:15.057 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 30643ms
+2016-10-31 16:16:00.051 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 16826ms
+2016-10-31 16:21:04.671 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 21602ms
+2016-10-31 17:02:30.001 +07:00 [Error] HTTP "POST" "/api/test/json" responded 500 in 35368ms
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at Pentamic.Integration.Ibms.Controllers.TestController.Json(Protocol protocol) in E:\BIStandard\PentamicBI8\IBMS\integration-ibms\Pentamic.Integration.Ibms\Controllers\TestController.cs:line 111
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+2016-10-31 17:02:43.180 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 12976ms
+2016-10-31 17:04:25.652 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 15993ms
+2016-10-31 17:08:57.829 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9942ms
+2016-10-31 17:10:21.270 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 18113ms
+2016-10-31 17:10:51.635 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 19600ms
+2016-10-31 17:15:35.539 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 65618ms
+2016-10-31 17:23:44.285 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 18185ms
+2016-10-31 17:24:14.309 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 18046ms
+2016-10-31 17:26:07.900 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 86377ms
+2016-10-31 17:26:20.761 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 8655ms
+2016-10-31 17:26:34.573 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 6622ms
+2016-10-31 17:27:03.340 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 10188ms
+2016-10-31 17:27:31.817 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 20760ms
+2016-10-31 17:27:55.823 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 5934ms
+2016-10-31 17:28:07.854 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 7356ms
+2016-10-31 17:28:35.985 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 9565ms
+2016-10-31 17:34:08.819 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lsreceipt": [
+      {
+        "idReceipt": 24813,
+        "receiptCode": "HD161027-01-112442",
+        "createdDate": "2016-10-27 11:24:42",
+        "checkin": {
+          "id": 38967,
+          "card_type": {
+            "id": 187,
+            "card_name": "LBP010"
+          },
+          "partner_group": {
+            "partner": {
+              "id": 26247,
+              "fullName": "PEGAS",
+              "sex": 0,
+              "relationship": 0,
+              "shoppingPurpose": 0,
+              "shoppingType": 0,
+              "salary": 0,
+              "partner_group": 1
+            },
+            "id": 0,
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 0
+          },
+          "visitor_type": {
+            "id": 3,
+            "visitor_type_name": "Khách travel (transfer)"
+          },
+          "payee_list": [
+            {
+              "id": 26247,
+              "payee_name": "PEGAS",
+              "payee_commission": 25,
+              "payee_phone": "",
+              "payee_money": 9223750,
+              "payee_type": 1
+            },
+            {
+              "id": 2762,
+              "payee_name": "Tài Xế Pegas ",
+              "payee_commission": 20,
+              "payee_money": 7379000,
+              "payee_type": 2
+            }
+          ],
+          "fee_port": 0,
+          "status": 0
+        },
+        "customer": {
+          "id": 41945,
+          "contactId": "CUS161027112442",
+          "fullName": "QUYEN",
+          "emailAddress": "ducquyen259@gmail.com",
+          "phoneNumber": "0976386360",
+          "sex": 0,
+          "birthday": "1975-03-07",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 3,
+                "name": "Đà Nẵng"
+              }
+            ]
+          },
+          "partner_group": 0
+        },
+        "lstprd": [
+          {
+            "id": 10906,
+            "productCode": "EAG01A0100041",
+            "productName": "BÔNG TAI VÀNG AKOYA",
+            "price": 44400000,
+            "quantity": 1,
+            "unit": "ĐÔI",
+            "amount": 44400000,
+            "percentDiscount": 5,
+            "moneyDiscount": 2220000,
+            "total": 42180000,
+            "totalPay": 38895000,
+            "coffer": {
+              "id": 1363,
+              "coffer_name": "TU 51",
+              "branch_id": 6,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 438,
+            "productCode": "AL0200018",
+            "productName": "HẠT NGỌC TRAI",
+            "price": 13150000,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 13150000,
+            "percentDiscount": 10,
+            "moneyDiscount": 1315000,
+            "total": 11835000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1367,
+              "coffer_name": "TU 53",
+              "branch_id": 6,
+              "type": 1
+            },
+            "type": 1,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 2638,
+            "productCode": "AL0200068",
+            "productName": "HẠT NGỌC AKOYA",
+            "price": 21600000,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 21600000,
+            "percentDiscount": 30,
+            "moneyDiscount": 6480000,
+            "total": 15120000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1251,
+              "coffer_name": "TU 01",
+              "branch_id": 6,
+              "type": 1
+            },
+            "type": 1,
+            "saleStatus": -1,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [
+          {
+            "id": 66,
+            "code": "VD1524",
+            "percent": 5,
+            "type": 0,
+            "discount_type": 2,
+            "money_discount": 2000000,
+            "status": 1,
+            "quantity": 0,
+            "flag": 0,
+            "isReused": 0
+          }
+        ],
+        "lst_sale_staff": [
+          {
+            "id": 182,
+            "full_name": "Lục Thị Kim Nga",
+            "pecent": 100,
+            "money": 20292250,
+            "status": 1
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [
+            {
+              "amount": 20000000,
+              "total": 20000000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "status": 1
+            },
+            {
+              "amount": 100,
+              "total": 2224000,
+              "currency_code": "USD",
+              "exchange_rate": 22240,
+              "status": 1
+            }
+          ],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "VISA",
+              "amount": 300,
+              "total": 6672000,
+              "currency_code": "USD",
+              "exchange_rate": 22240,
+              "bank_account": {
+                "id": 29,
+                "name": "BIDV 1381000123663"
+              },
+              "status": 1
+            },
+            {
+              "id": 0,
+              "bank_card_type": "VISA",
+              "amount": 7999000,
+              "total": 7999000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 29,
+                "name": "BIDV 1381000123663"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 6,
+          "branchName": "96 NGUYỄN ĐÌNH CHIỂU - MŨI NÉ",
+          "address": "96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 1,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30001,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-10-31 17:34:09.407 +07:00 [Information] Request: "application/json"
+2016-10-31 17:34:09.467 +07:00 [Information] Received package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":24813,\"receiptCode\":\"HD161027-01-112442\",\"createdDate\":\"2016-10-27 11:24:42\",\"checkin\":{\"id\":38967,\"card_type\":{\"id\":187,\"card_name\":\"LBP010\"},\"partner_group\":{\"partner\":{\"id\":26247,\"fullName\":\"PEGAS\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":1},\"id\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"visitor_type\":{\"id\":3,\"visitor_type_name\":\"Khách travel (transfer)\"},\"payee_list\":[{\"id\":26247,\"payee_name\":\"PEGAS\",\"payee_commission\":25,\"payee_phone\":\"\",\"payee_money\":9223750,\"payee_type\":1},{\"id\":2762,\"payee_name\":\"Tài Xế Pegas \",\"payee_commission\":20,\"payee_money\":7379000,\"payee_type\":2}],\"fee_port\":0,\"status\":0},\"customer\":{\"id\":41945,\"contactId\":\"CUS161027112442\",\"fullName\":\"QUYEN\",\"emailAddress\":\"ducquyen259@gmail.com\",\"phoneNumber\":\"0976386360\",\"sex\":0,\"birthday\":\"1975-03-07\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":3,\"name\":\"Đà Nẵng\"}]},\"partner_group\":0},\"lstprd\":[{\"id\":10906,\"productCode\":\"EAG01A0100041\",\"productName\":\"BÔNG TAI VÀNG AKOYA\",\"price\":44400000,\"quantity\":1,\"unit\":\"ĐÔI\",\"amount\":44400000,\"percentDiscount\":5,\"moneyDiscount\":2220000,\"total\":42180000,\"totalPay\":38895000,\"coffer\":{\"id\":1363,\"coffer_name\":\"TU 51\",\"branch_id\":6,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1},{\"id\":438,\"productCode\":\"AL0200018\",\"productName\":\"HẠT NGỌC TRAI\",\"price\":13150000,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":13150000,\"percentDiscount\":10,\"moneyDiscount\":1315000,\"total\":11835000,\"totalPay\":0,\"coffer\":{\"id\":1367,\"coffer_name\":\"TU 53\",\"branch_id\":6,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":1},{\"id\":2638,\"productCode\":\"AL0200068\",\"productName\":\"HẠT NGỌC AKOYA\",\"price\":21600000,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":21600000,\"percentDiscount\":30,\"moneyDiscount\":6480000,\"total\":15120000,\"totalPay\":0,\"coffer\":{\"id\":1251,\"coffer_name\":\"TU 01\",\"branch_id\":6,\"type\":1},\"type\":1,\"saleStatus\":-1,\"ibms_code\":1}],\"lstDiscount\":[{\"id\":66,\"code\":\"VD1524\",\"percent\":5,\"type\":0,\"discount_type\":2,\"money_discount\":2000000,\"status\":1,\"quantity\":0,\"flag\":0,\"isReused\":0}],\"lst_sale_staff\":[{\"id\":182,\"full_name\":\"Lục Thị Kim Nga\",\"pecent\":100,\"money\":20292250,\"status\":1}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[{\"amount\":20000000,\"total\":20000000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"status\":1},{\"amount\":100,\"total\":2224000,\"currency_code\":\"USD\",\"exchange_rate\":22240,\"status\":1}],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"VISA\",\"amount\":300,\"total\":6672000,\"currency_code\":\"USD\",\"exchange_rate\":22240,\"bank_account\":{\"id\":29,\"name\":\"BIDV 1381000123663\"},\"status\":1},{\"id\":0,\"bank_card_type\":\"VISA\",\"amount\":7999000,\"total\":7999000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":29,\"name\":\"BIDV 1381000123663\"},\"status\":1}]},\"branch\":{\"branchId\":6,\"branchName\":\"96 NGUYỄN ĐÌNH CHIỂU - MŨI NÉ\",\"address\":\"96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":1,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0}],\"status\":0}}"
+2016-10-31 17:34:11.003 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 2251ms
+2016-10-31 17:37:52.722 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lsreceipt": [
+      {
+        "idReceipt": 24813,
+        "receiptCode": "HD161027-01-112442",
+        "createdDate": "2016-10-27 11:24:42",
+        "checkin": {
+          "id": 38967,
+          "card_type": {
+            "id": 187,
+            "card_name": "LBP010"
+          },
+          "partner_group": {
+            "partner": {
+              "id": 26247,
+              "fullName": "PEGAS",
+              "sex": 0,
+              "relationship": 0,
+              "shoppingPurpose": 0,
+              "shoppingType": 0,
+              "salary": 0,
+              "partner_group": 1
+            },
+            "id": 0,
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 0
+          },
+          "visitor_type": {
+            "id": 3,
+            "visitor_type_name": "Khách travel (transfer)"
+          },
+          "payee_list": [
+            {
+              "id": 26247,
+              "payee_name": "PEGAS",
+              "payee_commission": 25,
+              "payee_phone": "",
+              "payee_money": 9223750,
+              "payee_type": 1
+            },
+            {
+              "id": 2762,
+              "payee_name": "Tài Xế Pegas ",
+              "payee_commission": 20,
+              "payee_money": 7379000,
+              "payee_type": 2
+            }
+          ],
+          "fee_port": 0,
+          "status": 0
+        },
+        "customer": {
+          "id": 41945,
+          "contactId": "CUS161027112442",
+          "fullName": "QUYEN",
+          "emailAddress": "ducquyen259@gmail.com",
+          "phoneNumber": "0976386360",
+          "sex": 0,
+          "birthday": "1975-03-07",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 3,
+                "name": "Đà Nẵng"
+              }
+            ]
+          },
+          "partner_group": 0
+        },
+        "lstprd": [
+          {
+            "id": 10906,
+            "productCode": "EAG01A0100041",
+            "productName": "BÔNG TAI VÀNG AKOYA",
+            "price": 44400000,
+            "quantity": 1,
+            "unit": "ĐÔI",
+            "amount": 44400000,
+            "percentDiscount": 5,
+            "moneyDiscount": 2220000,
+            "total": 42180000,
+            "totalPay": 38895000,
+            "coffer": {
+              "id": 1363,
+              "coffer_name": "TU 51",
+              "branch_id": 6,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 438,
+            "productCode": "AL0200018",
+            "productName": "HẠT NGỌC TRAI",
+            "price": 13150000,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 13150000,
+            "percentDiscount": 10,
+            "moneyDiscount": 1315000,
+            "total": 11835000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1367,
+              "coffer_name": "TU 53",
+              "branch_id": 6,
+              "type": 1
+            },
+            "type": 1,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 2638,
+            "productCode": "AL0200068",
+            "productName": "HẠT NGỌC AKOYA",
+            "price": 21600000,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 21600000,
+            "percentDiscount": 30,
+            "moneyDiscount": 6480000,
+            "total": 15120000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1251,
+              "coffer_name": "TU 01",
+              "branch_id": 6,
+              "type": 1
+            },
+            "type": 1,
+            "saleStatus": -1,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [
+          {
+            "id": 66,
+            "code": "VD1524",
+            "percent": 5,
+            "type": 0,
+            "discount_type": 2,
+            "money_discount": 2000000,
+            "status": 1,
+            "quantity": 0,
+            "flag": 0,
+            "isReused": 0
+          }
+        ],
+        "lst_sale_staff": [
+          {
+            "id": 182,
+            "full_name": "Lục Thị Kim Nga",
+            "pecent": 100,
+            "money": 20292250,
+            "status": 1
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [
+            {
+              "amount": 20000000,
+              "total": 20000000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "status": 1
+            },
+            {
+              "amount": 100,
+              "total": 2224000,
+              "currency_code": "USD",
+              "exchange_rate": 22240,
+              "status": 1
+            }
+          ],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "VISA",
+              "amount": 300,
+              "total": 6672000,
+              "currency_code": "USD",
+              "exchange_rate": 22240,
+              "bank_account": {
+                "id": 29,
+                "name": "BIDV 1381000123663"
+              },
+              "status": 1
+            },
+            {
+              "id": 0,
+              "bank_card_type": "VISA",
+              "amount": 7999000,
+              "total": 7999000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 29,
+                "name": "BIDV 1381000123663"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 6,
+          "branchName": "96 NGUYỄN ĐÌNH CHIỂU - MŨI NÉ",
+          "address": "96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 1,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30001,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-10-31 17:37:53.231 +07:00 [Information] Request: "application/json"
+2016-10-31 17:37:53.271 +07:00 [Information] Received package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":24813,\"receiptCode\":\"HD161027-01-112442\",\"createdDate\":\"2016-10-27 11:24:42\",\"checkin\":{\"id\":38967,\"card_type\":{\"id\":187,\"card_name\":\"LBP010\"},\"partner_group\":{\"partner\":{\"id\":26247,\"fullName\":\"PEGAS\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":1},\"id\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"visitor_type\":{\"id\":3,\"visitor_type_name\":\"Khách travel (transfer)\"},\"payee_list\":[{\"id\":26247,\"payee_name\":\"PEGAS\",\"payee_commission\":25,\"payee_phone\":\"\",\"payee_money\":9223750,\"payee_type\":1},{\"id\":2762,\"payee_name\":\"Tài Xế Pegas \",\"payee_commission\":20,\"payee_money\":7379000,\"payee_type\":2}],\"fee_port\":0,\"status\":0},\"customer\":{\"id\":41945,\"contactId\":\"CUS161027112442\",\"fullName\":\"QUYEN\",\"emailAddress\":\"ducquyen259@gmail.com\",\"phoneNumber\":\"0976386360\",\"sex\":0,\"birthday\":\"1975-03-07\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":3,\"name\":\"Đà Nẵng\"}]},\"partner_group\":0},\"lstprd\":[{\"id\":10906,\"productCode\":\"EAG01A0100041\",\"productName\":\"BÔNG TAI VÀNG AKOYA\",\"price\":44400000,\"quantity\":1,\"unit\":\"ĐÔI\",\"amount\":44400000,\"percentDiscount\":5,\"moneyDiscount\":2220000,\"total\":42180000,\"totalPay\":38895000,\"coffer\":{\"id\":1363,\"coffer_name\":\"TU 51\",\"branch_id\":6,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1},{\"id\":438,\"productCode\":\"AL0200018\",\"productName\":\"HẠT NGỌC TRAI\",\"price\":13150000,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":13150000,\"percentDiscount\":10,\"moneyDiscount\":1315000,\"total\":11835000,\"totalPay\":0,\"coffer\":{\"id\":1367,\"coffer_name\":\"TU 53\",\"branch_id\":6,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":1},{\"id\":2638,\"productCode\":\"AL0200068\",\"productName\":\"HẠT NGỌC AKOYA\",\"price\":21600000,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":21600000,\"percentDiscount\":30,\"moneyDiscount\":6480000,\"total\":15120000,\"totalPay\":0,\"coffer\":{\"id\":1251,\"coffer_name\":\"TU 01\",\"branch_id\":6,\"type\":1},\"type\":1,\"saleStatus\":-1,\"ibms_code\":1}],\"lstDiscount\":[{\"id\":66,\"code\":\"VD1524\",\"percent\":5,\"type\":0,\"discount_type\":2,\"money_discount\":2000000,\"status\":1,\"quantity\":0,\"flag\":0,\"isReused\":0}],\"lst_sale_staff\":[{\"id\":182,\"full_name\":\"Lục Thị Kim Nga\",\"pecent\":100,\"money\":20292250,\"status\":1}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[{\"amount\":20000000,\"total\":20000000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"status\":1},{\"amount\":100,\"total\":2224000,\"currency_code\":\"USD\",\"exchange_rate\":22240,\"status\":1}],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"VISA\",\"amount\":300,\"total\":6672000,\"currency_code\":\"USD\",\"exchange_rate\":22240,\"bank_account\":{\"id\":29,\"name\":\"BIDV 1381000123663\"},\"status\":1},{\"id\":0,\"bank_card_type\":\"VISA\",\"amount\":7999000,\"total\":7999000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":29,\"name\":\"BIDV 1381000123663\"},\"status\":1}]},\"branch\":{\"branchId\":6,\"branchName\":\"96 NGUYỄN ĐÌNH CHIỂU - MŨI NÉ\",\"address\":\"96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":1,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0}],\"status\":0}}"
+2016-10-31 17:37:54.797 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 2138ms
+2016-10-31 17:39:20.592 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "checkin_list": [
+      {
+        "id": 38965,
+        "checkin_code": "PVC161018-25-091002",
+        "card_type": {
+          "id": 557,
+          "card_name": "01TN068"
+        },
+        "card_maker": {
+          "id": 10,
+          "card_maker_name": "TƯ NHÂN"
+        },
+        "partner_group": {
+          "partner": {
+            "id": 3761,
+            "fullName": "TƯ NHÂN",
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 0
+          },
+          "id": 0,
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "driver": {
+          "id": 6669,
+          "fullName": "NGUYỄN KIM KHOA",
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "tour_guide": {
+          "id": 7160,
+          "fullName": "NGUYỄN KIM KHOA",
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "visitor_type": {
+          "id": 10,
+          "visitor_type_name": "Khách non-travel (tư nhân)"
+        },
+        "car_number_list": [
+          {
+            "car_number": "51A96699 "
+          }
+        ],
+        "payee_list": [
+          {
+            "id": 7160,
+            "payee_name": "NGUYỄN KIM KHOA",
+            "payee_commission": 20,
+            "payee_phone": "0908454523",
+            "payee_money": 0,
+            "payee_type": 0
+          }
+        ],
+        "fee_port": 100000,
+        "checkin_info_list": [
+          {
+            "number_baby": 0,
+            "number_child": 0,
+            "number_adult": 4,
+            "nationality": "Việt Nam",
+            "nationality_id": 1
+          }
+        ],
+        "location": {
+          "branchId": 3,
+          "branchName": "SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc"
+        },
+        "status": 1
+      },
+      {
+        "id": 38966,
+        "checkin_code": "PVC161018-26-091112",
+        "card_type": {
+          "id": 141,
+          "card_name": "01TN029"
+        },
+        "card_maker": {
+          "id": 10,
+          "card_maker_name": "TƯ NHÂN"
+        },
+        "partner_group": {
+          "partner": {
+            "id": 3761,
+            "fullName": "TƯ NHÂN",
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 0
+          },
+          "id": 0,
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "driver": {
+          "id": 41658,
+          "fullName": "TRẦN THANH HÙNG 409",
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "tour_guide": {
+          "id": 3782,
+          "fullName": "TĂNG VĂN CHẤT",
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "visitor_type": {
+          "id": 10,
+          "visitor_type_name": "Khách non-travel (tư nhân)"
+        },
+        "car_number_list": [
+          {
+            "car_number": "68B00774 "
+          }
+        ],
+        "payee_list": [
+          {
+            "id": 41659,
+            "payee_name": "TRẦN THANH HÙNG 409",
+            "payee_commission": 20,
+            "payee_phone": "0917707409",
+            "payee_money": 0,
+            "payee_type": 0
+          }
+        ],
+        "fee_port": 200000,
+        "checkin_info_list": [
+          {
+            "number_baby": 0,
+            "number_child": 0,
+            "number_adult": 7,
+            "nationality": "Việt Nam",
+            "nationality_id": 1
+          }
+        ],
+        "location": {
+          "branchId": 3,
+          "branchName": "SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc"
+        },
+        "status": 1
+      },
+      {
+        "id": 38967,
+        "checkin_code": "PVC161027-01-111704",
+        "card_type": {
+          "id": 187,
+          "card_name": "LBP010"
+        },
+        "card_maker": {
+          "id": 3,
+          "card_maker_name": "Phương Trang"
+        },
+        "partner_group": {
+          "partner": {
+            "id": 26247,
+            "fullName": "PEGAS",
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 1
+          },
+          "id": 1,
+          "fullName": "PEGAS",
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "driver": {
+          "id": 2762,
+          "fullName": "Tài Xế Pegas ",
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "tour_guide": {
+          "id": 1360,
+          "fullName": "PEREHUDOVA ROKSOLANA ",
+          "sex": 0,
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "partner_group": 0
+        },
+        "visitor_type": {
+          "id": 3,
+          "visitor_type_name": "Khách travel (transfer)"
+        },
+        "car_number_list": [
+          {
+            "car_number": "93N1-08969 "
+          }
+        ],
+        "payee_list": [
+          {
+            "id": 26247,
+            "payee_name": "PEGAS",
+            "payee_commission": 25,
+            "payee_phone": "062.3741.386",
+            "payee_money": 0,
+            "payee_type": 0
+          },
+          {
+            "id": 2762,
+            "payee_name": "Tài Xế Pegas ",
+            "payee_commission": 20,
+            "payee_phone": "001685035393",
+            "payee_money": 0,
+            "payee_type": 0
+          }
+        ],
+        "fee_port": 0,
+        "checkin_info_list": [
+          {
+            "number_baby": 0,
+            "number_child": 0,
+            "number_adult": 6,
+            "nationality": "Việt Nam",
+            "nationality_id": 1
+          }
+        ],
+        "location": {
+          "branchId": 6,
+          "branchName": "96 NGUYỄN ĐÌNH CHIỂU - MŨI NÉ",
+          "address": "96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận"
+        },
+        "status": 1
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30000,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-10-31 17:39:20.645 +07:00 [Information] Request: "application/json"
+2016-10-31 17:39:20.646 +07:00 [Information] Received package: "{\"protocol_id\":30000,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"checkin_list\":[{\"id\":38965,\"checkin_code\":\"PVC161018-25-091002\",\"card_type\":{\"id\":557,\"card_name\":\"01TN068\"},\"card_maker\":{\"id\":10,\"card_maker_name\":\"TƯ NHÂN\"},\"partner_group\":{\"partner\":{\"id\":3761,\"fullName\":\"TƯ NHÂN\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"id\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"driver\":{\"id\":6669,\"fullName\":\"NGUYỄN KIM KHOA\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"tour_guide\":{\"id\":7160,\"fullName\":\"NGUYỄN KIM KHOA\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"visitor_type\":{\"id\":10,\"visitor_type_name\":\"Khách non-travel (tư nhân)\"},\"car_number_list\":[{\"car_number\":\"51A96699 \"}],\"payee_list\":[{\"id\":7160,\"payee_name\":\"NGUYỄN KIM KHOA\",\"payee_commission\":20,\"payee_phone\":\"0908454523\",\"payee_money\":0,\"payee_type\":0}],\"fee_port\":100000,\"checkin_info_list\":[{\"number_baby\":0,\"number_child\":0,\"number_adult\":4,\"nationality\":\"Việt Nam\",\"nationality_id\":1}],\"location\":{\"branchId\":3,\"branchName\":\"SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\"},\"status\":1},{\"id\":38966,\"checkin_code\":\"PVC161018-26-091112\",\"card_type\":{\"id\":141,\"card_name\":\"01TN029\"},\"card_maker\":{\"id\":10,\"card_maker_name\":\"TƯ NHÂN\"},\"partner_group\":{\"partner\":{\"id\":3761,\"fullName\":\"TƯ NHÂN\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"id\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"driver\":{\"id\":41658,\"fullName\":\"TRẦN THANH HÙNG 409\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"tour_guide\":{\"id\":3782,\"fullName\":\"TĂNG VĂN CHẤT\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"visitor_type\":{\"id\":10,\"visitor_type_name\":\"Khách non-travel (tư nhân)\"},\"car_number_list\":[{\"car_number\":\"68B00774 \"}],\"payee_list\":[{\"id\":41659,\"payee_name\":\"TRẦN THANH HÙNG 409\",\"payee_commission\":20,\"payee_phone\":\"0917707409\",\"payee_money\":0,\"payee_type\":0}],\"fee_port\":200000,\"checkin_info_list\":[{\"number_baby\":0,\"number_child\":0,\"number_adult\":7,\"nationality\":\"Việt Nam\",\"nationality_id\":1}],\"location\":{\"branchId\":3,\"branchName\":\"SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\"},\"status\":1},{\"id\":38967,\"checkin_code\":\"PVC161027-01-111704\",\"card_type\":{\"id\":187,\"card_name\":\"LBP010\"},\"card_maker\":{\"id\":3,\"card_maker_name\":\"Phương Trang\"},\"partner_group\":{\"partner\":{\"id\":26247,\"fullName\":\"PEGAS\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":1},\"id\":1,\"fullName\":\"PEGAS\",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"driver\":{\"id\":2762,\"fullName\":\"Tài Xế Pegas \",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"tour_guide\":{\"id\":1360,\"fullName\":\"PEREHUDOVA ROKSOLANA \",\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0},\"visitor_type\":{\"id\":3,\"visitor_type_name\":\"Khách travel (transfer)\"},\"car_number_list\":[{\"car_number\":\"93N1-08969 \"}],\"payee_list\":[{\"id\":26247,\"payee_name\":\"PEGAS\",\"payee_commission\":25,\"payee_phone\":\"062.3741.386\",\"payee_money\":0,\"payee_type\":0},{\"id\":2762,\"payee_name\":\"Tài Xế Pegas \",\"payee_commission\":20,\"payee_phone\":\"001685035393\",\"payee_money\":0,\"payee_type\":0}],\"fee_port\":0,\"checkin_info_list\":[{\"number_baby\":0,\"number_child\":0,\"number_adult\":6,\"nationality\":\"Việt Nam\",\"nationality_id\":1}],\"location\":{\"branchId\":6,\"branchName\":\"96 NGUYỄN ĐÌNH CHIỂU - MŨI NÉ\",\"address\":\"96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận\"},\"status\":1}],\"status\":0}}"
+2016-10-31 17:39:20.674 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 88ms
