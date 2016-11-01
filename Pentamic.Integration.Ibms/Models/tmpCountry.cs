@@ -7,17 +7,18 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    [DataContract(Name = "bank_account")]
-    public class Bank
+    [DataContract(Name = "country")]
+    public class tmpCountry
     {
         [Key]
         public int Id { get; set; }
         [DataMember(Name = "id")]
         public int IDs { get; set; }
-        [DataMember(Name = "name")]
+        [DataMember(Name = "countryCode")]
+        public string Code { get; set; }
+        [DataMember(Name = "countryName")]
         public string Name { get; set; }
-        public string LastSync { get; set; }
-        public DateTimeOffset? CreatedAt { get; set; }
-        public DateTimeOffset? ModifiedAt { get; set; }
+        [DataMember(Name = "cityList")]
+        public List<tmpCity> cityList { get; set; }
     }
 }

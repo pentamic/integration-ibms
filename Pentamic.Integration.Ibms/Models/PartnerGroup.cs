@@ -8,17 +8,14 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    [DataContract(Name = "partner_group")]
     public class PartnerGroup
     {
         [Key]
         public int Id { get; set; }
-        [DataMember(Name = "id")]
         public int IDs { get; set; }
-        [DataMember(Name = "fullName")]
         public string Name { get; set; }
-
-        [DataMember(Name = "partner")]
-        public Partner partner { get; set; }
+        public string LastSync { get; set; }
+        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; set; }
     }
 }

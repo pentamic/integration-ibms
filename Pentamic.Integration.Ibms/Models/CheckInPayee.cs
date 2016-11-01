@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    public class CheckIn_Payee
+    public class CheckInPayee
     {
         [Key]
         public int Id { get; set; }

@@ -9,7 +9,7 @@ using System.Web;
 namespace Pentamic.Integration.Ibms.Models
 {
     [DataContract(Name = "lstprd")]
-    public class Bill_Product
+    public class tmpReceiptDetail
     {
         [DataMember(Name = "id")]
         public int Id { get; set; }

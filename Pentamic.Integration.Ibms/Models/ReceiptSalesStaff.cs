@@ -8,26 +8,25 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    public class tblCheckIn
+    [DataContract(Name = "lst_sale_staff")]
+    public class ReceiptSalesStaff
     {
         [Key]
         public int Id { get; set; }
-        public int IDs { get; set; }
-        public string CheckInCode { get; set; }
-        public decimal FeePort { get; set; }
+        [DataMember(Name = "id")]
+        public int SalemanId { get; set; }
+        [DataMember(Name = "full_name")]
+        public string SalemanName { get; set; }
+        [DataMember(Name = "pecent")]
+        public double Percent { get; set; }
+        [DataMember(Name = "money")]
+        public decimal Money { get; set; }
+        [DataMember(Name = "status")]
         public bool Status { get; set; }
 
-        public int? CardTypeId { get; set; }
-        public int? CardMakerId { get; set; }
-
-        public int? DriverId { get; set; }
-        public int? TourGuideId { get; set; }
-        public int? VisitorTypeId { get; set; }
-        public int? BranchId { get; set; }
+        public int ReceiptId { get; set; }
         public string LastSync { get; set; }
-        public int? PartnerId { get; set; }
         public DateTimeOffset? CreatedAt { get; set; }
         public DateTimeOffset? ModifiedAt { get; set; }
-
     }
 }

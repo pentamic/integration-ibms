@@ -8,50 +8,26 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    [DataContract(Name = "checkin_list")]
     public class CheckIn
     {
         [Key]
         public int Id { get; set; }
-        [DataMember(Name = "id")]
         public int IDs { get; set; }
-        [DataMember(Name = "checkin_code")]
         public string CheckInCode { get; set; }
-        [DataMember(Name = "fee_port")]
         public decimal FeePort { get; set; }
-        [DataMember(Name = "status")]
         public bool Status { get; set; }
 
-        [DataMember(Name = "card_type")]
-        public CardType card_type { get; set; }
+        public int? CardTypeId { get; set; }
+        public int? CardMakerId { get; set; }
 
-        [DataMember(Name = "card_maker")]
-        public CardMaker card_maker { get; set; }
-
-        [DataMember(Name = "partner_group")]
-        public PartnerGroup partner_group { get; set; }
-
-        [DataMember(Name = "driver")]
-        public Driver driver { get; set; }
-
-        [DataMember(Name = "tour_guide")]
-        public TourGuide tour_guide { get; set; }
-
-        [DataMember(Name = "visitor_type")]
-        public VisitorType visitor_type { get; set; }
-
-        [DataMember(Name = "car_number_list")]
-        public List<CarNumber> car_number_list { get; set; }
-
-        [DataMember(Name = "payee_list")]
-        public List<Payee> payee_list { get; set; }
-
-        [DataMember(Name = "checkin_info_list")]
-        public List<CheckIn_Info> checkin_info_list { get; set; }
-
-        [DataMember(Name = "location")]
-        public Branch location { get; set; }
-        
+        public int? DriverId { get; set; }
+        public int? TourGuideId { get; set; }
+        public int? VisitorTypeId { get; set; }
+        public int? BranchId { get; set; }
+        public string LastSync { get; set; }
+        public int? PartnerId { get; set; }
+        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; set; }
 
     }
 }

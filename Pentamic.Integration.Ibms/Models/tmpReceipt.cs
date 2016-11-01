@@ -8,7 +8,7 @@ using System.Web;
 namespace Pentamic.Integration.Ibms.Models
 {
     [DataContract(Name = "lsreceipt")]
-    public class Bill
+    public class tmpReceipt
     {
         [Key]
         public int id { get; set; }
@@ -26,15 +26,15 @@ namespace Pentamic.Integration.Ibms.Models
         public bool Status { get; set; }
 
         [DataMember(Name = "checkin")]
-        public CheckIn checkin { get; set; }
+        public tmpCheckIn checkin { get; set; }
         [DataMember(Name = "customer")]
-        public Customer customer { get; set; }
+        public tmpCustomer customer { get; set; }
         [DataMember(Name = "lstprd")]
-        public List<Bill_Product> lstprd { get; set; }
+        public List<tmpReceiptDetail> lstprd { get; set; }
         [DataMember(Name = "lstDiscount")]
         public List<Discount> lstDiscount { get; set; }
         [DataMember(Name = "lst_sale_staff")]
-        public List<Bill_Sale> lst_sale_staff { get; set; }
+        public List<ReceiptSalesStaff> lst_sale_staff { get; set; }
         [DataMember(Name = "payment")]
         public Payment payment { get; set; }
         [DataMember(Name = "branch")]

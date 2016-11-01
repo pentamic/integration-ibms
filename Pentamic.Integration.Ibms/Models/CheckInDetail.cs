@@ -9,7 +9,7 @@ using System.Web;
 namespace Pentamic.Integration.Ibms.Models
 {
     [DataContract(Name = "checkin_info_list")]
-    public class CheckIn_Info
+    public class CheckInDetail
     {
         [Key]
         public int Id { get; set; }
