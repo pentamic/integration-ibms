@@ -1,0 +1,403 @@
+2016-11-02 11:21:28.875 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lstprd": [
+      {
+        "id": 1,
+        "productCode": "NEG06AP0200005",
+        "productName": "CHU?I VÒNG C? MÓC VÀNG AKOYA",
+        "price": 63850000,
+        "quantity": 0,
+        "unit": "CHI?C",
+        "shape": "RD",
+        "size": "8.5-9MM",
+        "color": "WH",
+        "pearl": "P46",
+        "metaType": "W9K",
+        "metalWeight": "0.85G",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 5,
+        "productCode": "LRIG01A0100023",
+        "productName": "NH?N VÀNG AKOYA",
+        "price": 29300000,
+        "quantity": 0,
+        "unit": "CHI?C",
+        "shape": "RD",
+        "size": "7.25MM",
+        "color": "WH",
+        "pearl": "P1",
+        "metaType": "W18K",
+        "metalWeight": "2.36G",
+        "diamond": "D18",
+        "diamondWeight": "0.08CT",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 3,
+        "productCode": "CHS2800012",
+        "productName": "DÂY CHUY?N B?C",
+        "price": 700000,
+        "quantity": 0,
+        "unit": "CHI?C",
+        "shape": "",
+        "size": "",
+        "color": "",
+        "pearl": "",
+        "metaType": "S",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      },
+      {
+        "id": 10,
+        "productCode": "AP0200008",
+        "productName": "CHU?I VÒNG C? KHÔNG MÓC AKOYA",
+        "price": 2028301.89,
+        "quantity": 0,
+        "unit": "VIÊN",
+        "shape": "RD",
+        "size": "7.5-8MM",
+        "color": "YE",
+        "pearl": "P53",
+        "metaType": "W18K",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      }
+    ]
+  },
+  "protocol_id": 20000,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-02 11:21:30.774 +07:00 [Information] Request: "application/json"
+2016-11-02 11:21:30.829 +07:00 [Information] Received package: "{\"protocol_id\":20000,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lstprd\":[{\"id\":1,\"productCode\":\"NEG06AP0200005\",\"productName\":\"CHU?I VÒNG C? MÓC VÀNG AKOYA\",\"price\":63850000,\"quantity\":0,\"unit\":\"CHI?C\",\"shape\":\"RD\",\"size\":\"8.5-9MM\",\"color\":\"WH\",\"pearl\":\"P46\",\"metaType\":\"W9K\",\"metalWeight\":\"0.85G\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":5,\"productCode\":\"LRIG01A0100023\",\"productName\":\"NH?N VÀNG AKOYA\",\"price\":29300000,\"quantity\":0,\"unit\":\"CHI?C\",\"shape\":\"RD\",\"size\":\"7.25MM\",\"color\":\"WH\",\"pearl\":\"P1\",\"metaType\":\"W18K\",\"metalWeight\":\"2.36G\",\"diamond\":\"D18\",\"diamondWeight\":\"0.08CT\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":3,\"productCode\":\"CHS2800012\",\"productName\":\"DÂY CHUY?N B?C\",\"price\":700000,\"quantity\":0,\"unit\":\"CHI?C\",\"shape\":\"\",\"size\":\"\",\"color\":\"\",\"pearl\":\"\",\"metaType\":\"S\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1},{\"id\":10,\"productCode\":\"AP0200008\",\"productName\":\"CHU?I VÒNG C? KHÔNG MÓC AKOYA\",\"price\":2028301.89,\"quantity\":0,\"unit\":\"VIÊN\",\"shape\":\"RD\",\"size\":\"7.5-8MM\",\"color\":\"YE\",\"pearl\":\"P53\",\"metaType\":\"W18K\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1}]}}"
+2016-11-02 11:24:59.493 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 210878ms
+2016-11-02 11:31:25.967 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lstprd": [
+      {
+        "id": 1,
+        "productCode": "NEG06AP0200005",
+        "productName": "CHU?I VÒNG C? MÓC VÀNG AKOYA",
+        "price": 63850000,
+        "quantity": 0,
+        "unit": "",
+        "shape": "RD",
+        "size": "8.5-9MM",
+        "color": "WH",
+        "pearl": "P46",
+        "metaType": "W9K",
+        "metalWeight": "0.85G",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 5,
+        "productCode": "",
+        "productName": "NHẪN VÀNG AKOYA",
+        "price": 29300000,
+        "quantity": 0,
+        "unit": "CHIẾC",
+        "shape": "RD",
+        "size": "7.25MM",
+        "color": "WH",
+        "pearl": "P1",
+        "metaType": "W18K",
+        "metalWeight": "2.36G",
+        "diamond": "D18",
+        "diamondWeight": "0.08CT",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 3,
+        "productCode": "CHS2800012",
+        "productName": "DÂY CHUYỀN BẠC",
+        "price": 700000,
+        "quantity": 0,
+        "unit": "CHIẾC",
+        "shape": "",
+        "size": "",
+        "color": "",
+        "pearl": "",
+        "metaType": "S",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      },
+      {
+        "id": 10,
+        "productCode": "AP0200008",
+        "productName": "CHUỖI VÒNG CỔ KHÔNG MÓC AKOYA",
+        "price": 2028301.89,
+        "quantity": 0,
+        "unit": "VIÊN",
+        "shape": "RD",
+        "size": "7.5-8MM",
+        "color": "YE",
+        "pearl": "P53",
+        "metaType": "W18K",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      }
+    ]
+  },
+  "protocol_id": 20000,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-02 11:31:25.970 +07:00 [Information] Request: "application/json"
+2016-11-02 11:31:25.971 +07:00 [Information] Received package: "{\"protocol_id\":20000,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lstprd\":[{\"id\":1,\"productCode\":\"NEG06AP0200005\",\"productName\":\"CHU?I VÒNG C? MÓC VÀNG AKOYA\",\"price\":63850000,\"quantity\":0,\"unit\":\"\",\"shape\":\"RD\",\"size\":\"8.5-9MM\",\"color\":\"WH\",\"pearl\":\"P46\",\"metaType\":\"W9K\",\"metalWeight\":\"0.85G\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":5,\"productCode\":\"\",\"productName\":\"NHẪN VÀNG AKOYA\",\"price\":29300000,\"quantity\":0,\"unit\":\"CHIẾC\",\"shape\":\"RD\",\"size\":\"7.25MM\",\"color\":\"WH\",\"pearl\":\"P1\",\"metaType\":\"W18K\",\"metalWeight\":\"2.36G\",\"diamond\":\"D18\",\"diamondWeight\":\"0.08CT\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":3,\"productCode\":\"CHS2800012\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":700000,\"quantity\":0,\"unit\":\"CHIẾC\",\"shape\":\"\",\"size\":\"\",\"color\":\"\",\"pearl\":\"\",\"metaType\":\"S\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1},{\"id\":10,\"productCode\":\"AP0200008\",\"productName\":\"CHUỖI VÒNG CỔ KHÔNG MÓC AKOYA\",\"price\":2028301.89,\"quantity\":0,\"unit\":\"VIÊN\",\"shape\":\"RD\",\"size\":\"7.5-8MM\",\"color\":\"YE\",\"pearl\":\"P53\",\"metaType\":\"W18K\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1}]}}"
+2016-11-02 11:32:22.747 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 56786ms
+2016-11-02 11:35:48.942 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lstprd": [
+      {
+        "id": 1,
+        "productCode": "NEG06AP0200005",
+        "productName": "CHUỖI VÒNG CỔ MÓC VÀNG AKOYA",
+        "price": 63850000,
+        "quantity": 0,
+        "unit": "",
+        "shape": "RD",
+        "size": "8.5-9MM",
+        "color": "WH",
+        "pearl": "P46",
+        "metaType": "W9K",
+        "metalWeight": "0.85G",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 5,
+        "productCode": "",
+        "productName": "NHẪN VÀNG AKOYA",
+        "price": 29300000,
+        "quantity": 0,
+        "unit": "CHIẾC",
+        "shape": "RD",
+        "size": "7.25MM",
+        "color": "WH",
+        "pearl": "P1",
+        "metaType": "W18K",
+        "metalWeight": "2.36G",
+        "diamond": "D18",
+        "diamondWeight": "0.08CT",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 3,
+        "productCode": "CHS2800012",
+        "productName": "DÂY CHUYỀN BẠC",
+        "price": 700000,
+        "quantity": 0,
+        "unit": "CHIẾC",
+        "shape": "",
+        "size": "",
+        "color": "",
+        "pearl": "",
+        "metaType": "S",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      },
+      {
+        "id": 10,
+        "productCode": "AP0200008",
+        "productName": "CHUỖI VÒNG CỔ KHÔNG MÓC AKOYA",
+        "price": 2028301.89,
+        "quantity": 0,
+        "unit": "VIÊN",
+        "shape": "RD",
+        "size": "7.5-8MM",
+        "color": "YE",
+        "pearl": "P53",
+        "metaType": "W18K",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      }
+    ]
+  },
+  "protocol_id": 20000,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-02 11:35:50.079 +07:00 [Information] Request: "application/json"
+2016-11-02 11:35:50.142 +07:00 [Information] Received package: "{\"protocol_id\":20000,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lstprd\":[{\"id\":1,\"productCode\":\"NEG06AP0200005\",\"productName\":\"CHUỖI VÒNG CỔ MÓC VÀNG AKOYA\",\"price\":63850000,\"quantity\":0,\"unit\":\"\",\"shape\":\"RD\",\"size\":\"8.5-9MM\",\"color\":\"WH\",\"pearl\":\"P46\",\"metaType\":\"W9K\",\"metalWeight\":\"0.85G\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":5,\"productCode\":\"\",\"productName\":\"NHẪN VÀNG AKOYA\",\"price\":29300000,\"quantity\":0,\"unit\":\"CHIẾC\",\"shape\":\"RD\",\"size\":\"7.25MM\",\"color\":\"WH\",\"pearl\":\"P1\",\"metaType\":\"W18K\",\"metalWeight\":\"2.36G\",\"diamond\":\"D18\",\"diamondWeight\":\"0.08CT\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":3,\"productCode\":\"CHS2800012\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":700000,\"quantity\":0,\"unit\":\"CHIẾC\",\"shape\":\"\",\"size\":\"\",\"color\":\"\",\"pearl\":\"\",\"metaType\":\"S\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1},{\"id\":10,\"productCode\":\"AP0200008\",\"productName\":\"CHUỖI VÒNG CỔ KHÔNG MÓC AKOYA\",\"price\":2028301.89,\"quantity\":0,\"unit\":\"VIÊN\",\"shape\":\"RD\",\"size\":\"7.5-8MM\",\"color\":\"YE\",\"pearl\":\"P53\",\"metaType\":\"W18K\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1}]}}"
+2016-11-02 11:36:03.390 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 14723ms
+2016-11-02 11:37:43.316 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lstprd": [
+      {
+        "id": 1,
+        "productCode": "NEG06AP0200005",
+        "productName": "CHUỖI VÒNG CỔ MÓC VÀNG AKOYA",
+        "price": 63850000,
+        "quantity": 0,
+        "unit": "",
+        "shape": "RD",
+        "size": "8.5-9MM",
+        "color": "WH",
+        "pearl": "P46",
+        "metaType": "W9K",
+        "metalWeight": "0.85G",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 5,
+        "productCode": "",
+        "productName": "NHẪN VÀNG AKOYA",
+        "price": 29300000,
+        "quantity": 0,
+        "unit": "CHIẾC",
+        "shape": "RD",
+        "size": "7.25MM",
+        "color": "WH",
+        "pearl": "P1",
+        "metaType": "W18K",
+        "metalWeight": "2.36G",
+        "diamond": "D18",
+        "diamondWeight": "0.08CT",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 2
+      },
+      {
+        "id": 0,
+        "productCode": "CHS2800012",
+        "productName": "DÂY CHUYỀN BẠC",
+        "price": 700000,
+        "quantity": 0,
+        "unit": "CHIẾC",
+        "shape": "",
+        "size": "",
+        "color": "",
+        "pearl": "",
+        "metaType": "S",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      },
+      {
+        "id": 10,
+        "productCode": "AP0200008",
+        "productName": "CHUỖI VÒNG CỔ KHÔNG MÓC AKOYA",
+        "price": 2028301.89,
+        "quantity": 0,
+        "unit": "VIÊN",
+        "shape": "RD",
+        "size": "7.5-8MM",
+        "color": "YE",
+        "pearl": "P53",
+        "metaType": "W18K",
+        "metalWeight": "",
+        "diamond": "",
+        "diamondWeight": "",
+        "gemstoneType": "",
+        "gemstoneWeight": "",
+        "pearlWeight": "",
+        "totalWeight": "",
+        "type": 1
+      }
+    ]
+  },
+  "protocol_id": 20000,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-02 11:37:44.244 +07:00 [Information] Request: "application/json"
+2016-11-02 11:37:44.289 +07:00 [Information] Received package: "{\"protocol_id\":20000,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lstprd\":[{\"id\":1,\"productCode\":\"NEG06AP0200005\",\"productName\":\"CHUỖI VÒNG CỔ MÓC VÀNG AKOYA\",\"price\":63850000,\"quantity\":0,\"unit\":\"\",\"shape\":\"RD\",\"size\":\"8.5-9MM\",\"color\":\"WH\",\"pearl\":\"P46\",\"metaType\":\"W9K\",\"metalWeight\":\"0.85G\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":5,\"productCode\":\"\",\"productName\":\"NHẪN VÀNG AKOYA\",\"price\":29300000,\"quantity\":0,\"unit\":\"CHIẾC\",\"shape\":\"RD\",\"size\":\"7.25MM\",\"color\":\"WH\",\"pearl\":\"P1\",\"metaType\":\"W18K\",\"metalWeight\":\"2.36G\",\"diamond\":\"D18\",\"diamondWeight\":\"0.08CT\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":2},{\"id\":0,\"productCode\":\"CHS2800012\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":700000,\"quantity\":0,\"unit\":\"CHIẾC\",\"shape\":\"\",\"size\":\"\",\"color\":\"\",\"pearl\":\"\",\"metaType\":\"S\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1},{\"id\":10,\"productCode\":\"AP0200008\",\"productName\":\"CHUỖI VÒNG CỔ KHÔNG MÓC AKOYA\",\"price\":2028301.89,\"quantity\":0,\"unit\":\"VIÊN\",\"shape\":\"RD\",\"size\":\"7.5-8MM\",\"color\":\"YE\",\"pearl\":\"P53\",\"metaType\":\"W18K\",\"metalWeight\":\"\",\"diamond\":\"\",\"diamondWeight\":\"\",\"gemstoneType\":\"\",\"gemstoneWeight\":\"\",\"pearlWeight\":\"\",\"totalWeight\":\"\",\"type\":1}]}}"
+2016-11-02 11:38:14.030 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 30854ms
+2016-11-02 14:15:59.147 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 42157ms
+2016-11-02 15:03:18.084 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 68551ms
+2016-11-02 15:07:19.792 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 41158ms
+2016-11-02 15:08:14.718 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 28497ms
+2016-11-02 15:09:22.142 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 17957ms
+2016-11-02 15:10:29.897 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 15341ms
+2016-11-02 15:11:05.513 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 8953ms

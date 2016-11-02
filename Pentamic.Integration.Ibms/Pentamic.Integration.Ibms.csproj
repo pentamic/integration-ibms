@@ -195,6 +195,9 @@
     </Compile>
     <Compile Include="Helpers\TextMediaTypeFormatter.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\tmpStock.cs" />
+    <Compile Include="Models\tmpProduct.cs" />
     <Compile Include="Models\SettingAPI.cs" />
     <Compile Include="Models\ReceiptDiscount.cs" />
     <Compile Include="Models\ReceiptDetail.cs" />
