@@ -13,6 +13,9 @@ namespace Pentamic.Integration.Ibms.Models
         public int Id { get; set; }
         public int IDs { get; set; }
         public string Code { get; set; }
+        public double Percent { get; set; }
+        public int DiscountType { get; set; }
+        public decimal MoneyDiscount { get; set; }
         public string LastSync { get; set; }
         public DateTimeOffset? CreatedAt { get; set; }
         public DateTimeOffset? ModifiedAt { get; set; }

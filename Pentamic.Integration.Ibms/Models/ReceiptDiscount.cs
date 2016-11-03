@@ -13,9 +13,10 @@ namespace Pentamic.Integration.Ibms.Models
         [Key]
         public int Id { get; set; }
         public int ReceiptId { get; set; }
-        public double Percent { get; set; }
-        public int DiscountType { get; set; }
-        public decimal MoneyDiscount { get; set; }
+        public int? VoucherId { get; set; }
+        public double? Percent { get; set; }
+        public int? DiscountType { get; set; }
+        public decimal? MoneyDiscount { get; set; }
         public bool Status { get; set; }
 
         public string LastSync { get; set; }

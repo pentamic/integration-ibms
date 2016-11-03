@@ -330,7 +330,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var update = _context.Products.Where(x => x.IDs == item.Id).FirstOrDefault();
                 if (update != null && !list_product_update.Contains(item.Id))
                 {
-                    if (update.Name != item.ProductName)
+                    if (update.Name != item.ProductName || update.Code != item.ProductCode)
                     {
                         update.Name = item.ProductName;
                         update.Code = item.ProductCode;
@@ -443,6 +443,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var voucher = new Voucher();
                 voucher.IDs = c.VoucherId;
                 voucher.Code = c.VoucherName;
+                voucher.Percent = c.Percent;
+                voucher.DiscountType = c.DiscountType;
+                voucher.MoneyDiscount = c.MoneyDiscount;
                 voucher.LastSync = lastSync;
                 voucher.CreatedAt = DateTimeOffset.Now;
 
@@ -457,6 +460,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                     if (update.Code != c.VoucherName)
                     {
                         update.Code = c.VoucherName;
+                        update.Percent = c.Percent;
+                        update.DiscountType = c.DiscountType;
+                        update.MoneyDiscount = c.MoneyDiscount;
                         update.LastSync = lastSync;
                         update.ModifiedAt = DateTimeOffset.Now;
                         list_voucher_updated.Add(c.VoucherId);
@@ -1020,7 +1026,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_customer = new List<int>();
                 List<int> list_location = new List<int>();
                 List<int> list_sales = new List<int>();
-                //List<int> list_product = new List<int>();
+                List<int> list_product = new List<int>();
                 List<int> list_coffer = new List<int>();
                 List<int> list_country = new List<int>();
                 List<int> list_city = new List<int>();
@@ -1030,7 +1036,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_customer_update = new List<int>();
                 List<int> list_location_updated = new List<int>();
                 List<int> list_sales_updated = new List<int>();
-                //List<int> list_product_updated = new List<int>();
+                List<int> list_product_updated = new List<int>();
                 List<int> list_coffer_updated = new List<int>();
                 List<int> list_country_updated = new List<int>();
                 List<int> list_city_updated = new List<int>();
@@ -1100,22 +1106,22 @@ namespace Pentamic.Integration.Ibms.Controllers
                         }
                     }
 
-                    //if (item.lstprd != null)
-                    //{
-                    //    foreach (var s in item.lstprd)
-                    //    {
-                    //        if (!list_product.Contains(s.Id))
-                    //            if (_context.Products.Where(x => x.IDs == s.Id).Count() == 0)
-                    //                list_product.Add(s.Id);
+                    if (item.lstprd != null)
+                    {
+                        foreach (var s in item.lstprd)
+                        {
+                            if (!list_product.Contains(s.Id))
+                                if (_context.Products.Where(x => x.IDs == s.Id).Count() == 0)
+                                    list_product.Add(s.Id);
 
-                    //        if (s.coffer != null)
-                    //        {
-                    //            if (!list_coffer.Contains(s.coffer.IDs))
-                    //                if (_context.Coffers.Where(x => x.IDs == s.coffer.IDs).Count() == 0)
-                    //                    list_coffer.Add(s.coffer.IDs);
-                    //        }
-                    //    }
-                    //}
+                            if (s.coffer != null)
+                            {
+                                if (!list_coffer.Contains(s.coffer.IDs))
+                                    if (_context.Coffers.Where(x => x.IDs == s.coffer.IDs).Count() == 0)
+                                        list_coffer.Add(s.coffer.IDs);
+                            }
+                        }
+                    }
 
                     if (item.lstDiscount != null)
                     {
@@ -1240,14 +1246,18 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 receipt_detail.IBMSCode = s.IBMSCode;
                                                 receipt_detail.LastSync = lastSync;
                                                 receipt_detail.CreatedAt = DateTimeOffset.Now;
-                                                _context.ReceiptDetails.Add(receipt_detail);
+                                                
 
                                                 if (s.coffer != null)
                                                 {
                                                     if (s.coffer.IDs != 0)
+                                                    {
+                                                        receipt_detail.CofferId = s.coffer.IDs;
                                                         Coffer(s.coffer, list_coffer, list_coffer_updated, lastSync);
+                                                    }
                                                     else throw new Exception("ProductId " + s.Id.ToString() + "contain Coffer Id is NULL");
                                                 }
+                                                _context.ReceiptDetails.Add(receipt_detail);
                                             }
                                             else throw new Exception("Product Id is NULL");
                                         }
@@ -1270,6 +1280,7 @@ namespace Pentamic.Integration.Ibms.Controllers
 
                                                 var receipt_discount = new ReceiptDiscount();
                                                 receipt_discount.ReceiptId = item.IDs;
+                                                receipt_discount.VoucherId = s.VoucherId;
                                                 receipt_discount.Percent = s.Percent;
                                                 receipt_discount.DiscountType = s.DiscountType;
                                                 receipt_discount.MoneyDiscount = s.MoneyDiscount;
@@ -1498,6 +1509,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     var receipt_detail = new ReceiptDetail();
                                                     receipt_detail.ReceiptId = item.IDs;
                                                     receipt_detail.ProductId = s.Id;
+                                                    
                                                     receipt_detail.Price = s.Price;
                                                     receipt_detail.Quantity = s.Quantity;
                                                     receipt_detail.Unit = s.Unit;
@@ -1511,14 +1523,18 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     receipt_detail.IBMSCode = s.IBMSCode;
                                                     receipt_detail.LastSync = lastSync;
                                                     receipt_detail.CreatedAt = DateTimeOffset.Now;
-                                                    _context.ReceiptDetails.Add(receipt_detail);
+                                                    
 
                                                     if (s.coffer != null)
                                                     {
                                                         if (s.coffer.IDs != 0)
+                                                        {
+                                                            receipt_detail.CofferId = s.coffer.IDs;
                                                             Coffer(s.coffer, list_coffer, list_coffer_updated, lastSync);
+                                                        }
                                                         else throw new Exception("ProductId " + s.Id.ToString() + " contains Coffer Id is NULL");
                                                     }
+                                                    _context.ReceiptDetails.Add(receipt_detail);
                                                 }
                                                 else throw new Exception("Product Id is NULL");
                                             }
@@ -1541,6 +1557,7 @@ namespace Pentamic.Integration.Ibms.Controllers
 
                                                     var receipt_discount = new ReceiptDiscount();
                                                     receipt_discount.ReceiptId = item.IDs;
+                                                    receipt_discount.VoucherId = s.VoucherId;
                                                     receipt_discount.Percent = s.Percent;
                                                     receipt_discount.DiscountType = s.DiscountType;
                                                     receipt_discount.MoneyDiscount = s.MoneyDiscount;
