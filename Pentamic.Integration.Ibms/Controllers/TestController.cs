@@ -24,6 +24,13 @@ namespace Pentamic.Integration.Ibms.Controllers
         private const int protocol_stock = 30002;
         private const int protocol_product = 20000;
 
+        enum ProtocolName
+        {
+            CheckIn=30000,
+            Receipt=30001,
+            Stock=30002,
+            Product=20000
+        };
         private ApplicationDbContext _context;
         public TestController()
         {
@@ -99,91 +106,117 @@ namespace Pentamic.Integration.Ibms.Controllers
         [Route("json")]
         public IHttpActionResult Json(Protocol protocol)
         {
-            Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
-            Log.Information("Received package: {Package}", JsonConvert.SerializeObject(protocol));
+            string mess_err = "", mess_id = "", lastSync = DateTime.Now.ToString("ddMMyyyyHHmmss");
+            int totalRecord = 0, recordSuccess = 0;//Dung de dem tong so ban ghi nhan duoc, va so ban ghi thanh cong
 
-            var enableAPI = _context.SettingAPIs.FirstOrDefault();
-            if (!enableAPI.Enable)
+            try
             {
-                var result = protocol ?? new Protocol
-                {
-                    protocol_status = false,
-                    err_code = -1
-                };
-                return Ok(result);
-            }
-            else
-            {
-                string mess_err = "", mess_id = "", lastSync = DateTime.Now.ToString("ddMMyyyyHHmmss");
-                int totalRecord = 0, recordSuccess = 0;//Dung de dem tong so ban ghi nhan duoc, va so ban ghi thanh cong
+                Log.Information("Request: {MediaType}", Request.Content.Headers.ContentType.MediaType);
+                Log.Information("Received package: {Package}", JsonConvert.SerializeObject(protocol));
 
-                List<tmpReceipt> returnReceipt = new List<tmpReceipt>();//Luu tru nhung ban ghi bi loi
-                List<tmpCheckIn> returnCheckin = new List<tmpCheckIn>();//Luu tru nhung ban ghi bi loi
-                List<tmpProduct> returnProduct = new List<tmpProduct>();//Luu tru nhung ban ghi bi loi
-                List<tmpStock> returnStock = new List<tmpStock>();//Luu tru nhung ban ghi bi loi
-
-                if (protocol.protocol_id == protocol_checkin)//CheckIn
+                var enableAPI = _context.SettingAPIs.FirstOrDefault();
+                if (!enableAPI.Enable)
                 {
-                    SyncCheckIn(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnCheckin, lastSync);
-                }
-                else if (protocol.protocol_id == protocol_receipt)//Receipt
-                {
-                    SyncReceipt(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnReceipt, lastSync);
-                }
-                else if (protocol.protocol_id == protocol_product)//Product
-                {
-                    SyncProduct(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnProduct, lastSync);
-                }
-                else if (protocol.protocol_id == protocol_stock)//Stock
-                {
-                    SyncStock(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnStock, lastSync);
-                }
-
-                if (mess_err != "")
-                {
-                    using (var context = new ApplicationDbContext())
-                    {
-                        AddLogDataSync(_context, false, lastSync, totalRecord, recordSuccess, mess_id, mess_err, protocol);
-                    }
                     var result = protocol;
-                    result.err_code = -1;
-                    result.err_message = mess_err;
                     result.protocol_status = false;
-                    result.protocol_id = protocol.protocol_id;
-                    result.partner_pass = protocol.partner_pass;
-                    result.partner_name = protocol.partner_name;
+                    result.err_code = -1;
+                    result.err_message = "API PENTAMIC is disable";
 
-                    if (protocol.protocol_id == protocol_receipt)
-                    {
-                        result.protocol_data = new { lsreceipt = returnReceipt };
-                    }
-                    else if (protocol.protocol_id == protocol_checkin)
-                    {
-                        result.protocol_data = new { checkin_list = returnCheckin };
-                    }
-                    else if (protocol.protocol_id == protocol_product)
-                    {
-                        result.protocol_data = new { lstprd = returnProduct };
-                    }
-                    else if (protocol.protocol_id == protocol_stock)
-                    {
-                        result.protocol_data = new { lstprd = returnStock };
-                    }
+                    AddLogDataSync(_context, false, lastSync, totalRecord, recordSuccess, mess_id, "API PENTAMIC is disable", protocol);
+
                     return Ok(result);
                 }
                 else
                 {
-                    AddLogDataSync(_context, true, lastSync, totalRecord, recordSuccess, mess_id, mess_err, protocol);
+                    List<tmpReceipt> returnReceipt = new List<tmpReceipt>();//Luu tru nhung ban ghi bi loi
+                    List<tmpCheckIn> returnCheckin = new List<tmpCheckIn>();//Luu tru nhung ban ghi bi loi
+                    List<tmpProduct> returnProduct = new List<tmpProduct>();//Luu tru nhung ban ghi bi loi
+                    List<tmpStock> returnStock = new List<tmpStock>();//Luu tru nhung ban ghi bi loi
 
-                    var result = new Protocol();
-                    result.protocol_id = protocol.protocol_id;
-                    result.partner_pass = protocol.partner_pass;
-                    result.partner_name = protocol.partner_name;
-                    result.protocol_status = true;
-                    result.err_code = 1;
-                    result.err_message = "SUCCESS";
-                    return Ok(result);
+                    if (protocol.protocol_id == protocol_checkin)//CheckIn
+                    {
+                        SyncCheckIn(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnCheckin, lastSync);
+                    }
+                    else if (protocol.protocol_id == protocol_receipt)//Receipt
+                    {
+                        SyncReceipt(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnReceipt, lastSync);
+                    }
+                    else if (protocol.protocol_id == protocol_product)//Product
+                    {
+                        SyncProduct(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnProduct, lastSync);
+                    }
+                    else if (protocol.protocol_id == protocol_stock)//Stock
+                    {
+                        SyncStock(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnStock, lastSync);
+                    }
+
+                    if (mess_err != "")
+                    {
+                        using (var context = new ApplicationDbContext())
+                        {
+                            AddLogDataSync(context, false, lastSync, totalRecord, recordSuccess, mess_id, mess_err, protocol);
+                        }
+                        var result = protocol;
+                        result.err_code = -1;
+                        result.err_message = mess_err;
+                        result.protocol_status = false;
+                        result.protocol_id = protocol.protocol_id;
+                        result.partner_pass = protocol.partner_pass;
+                        result.partner_name = protocol.partner_name;
+
+                        if (protocol.protocol_id == protocol_receipt)
+                        {
+                            result.protocol_data = new { lsreceipt = returnReceipt };
+                        }
+                        else if (protocol.protocol_id == protocol_checkin)
+                        {
+                            result.protocol_data = new { checkin_list = returnCheckin };
+                        }
+                        else if (protocol.protocol_id == protocol_product)
+                        {
+                            result.protocol_data = new { lstprd = returnProduct };
+                        }
+                        else if (protocol.protocol_id == protocol_stock)
+                        {
+                            result.protocol_data = new { lstprd = returnStock };
+                        }
+                        Log.Information("Return package: {Package}", JsonConvert.SerializeObject(result));
+                        return Ok(result);
+                    }
+                    else
+                    {
+                        AddLogDataSync(_context, true, lastSync, totalRecord, recordSuccess, mess_id, mess_err, protocol);
+
+                        var result = new Protocol();
+                        result.protocol_id = protocol.protocol_id;
+                        result.partner_pass = protocol.partner_pass;
+                        result.partner_name = protocol.partner_name;
+                        result.protocol_status = true;
+                        result.err_code = 1;
+                        result.err_message = "SUCCESS";
+
+                        Log.Information("Return package: {Package}", JsonConvert.SerializeObject(result));
+                        return Ok(result);
+                    }
                 }
+            }
+            catch (Exception ax)
+            {
+                using (var context = new ApplicationDbContext())
+                {
+                    AddLogDataSync(context, false, lastSync, totalRecord, recordSuccess, mess_id, GetExceptionDetail(ax), protocol);
+                }
+
+                var result = new Protocol();
+                result.protocol_id = protocol.protocol_id;
+                result.partner_pass = protocol.partner_pass;
+                result.partner_name = protocol.partner_name;
+                result.protocol_status = false;
+                result.err_code = -1;
+                result.err_message = GetExceptionDetail(ax);
+
+                Log.Information("Return package: {Package}", JsonConvert.SerializeObject(result));
+                return Ok(result);
             }
         }
 
@@ -237,14 +270,14 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var update = _context.tblCustomers.Where(x => x.IDs == item.customer.IDs).FirstOrDefault();
                 if (update != null && !list_customer_update.Contains(item.customer.IDs))
                 {
-                    if (update.Code != item.customer.Code)
+                    if (update.Code != item.customer.Code || update.Name!=item.customer.Name)
                     {
                         update.Code = item.customer.Code;
                         update.Name = item.customer.Name;
                         update.Email = item.customer.Email;
                         update.Phone = item.customer.Phone;
-                        if (item.customer.Birthday != null)
-                            update.Birthday = item.customer.Birthday.Value;
+                        //if (item.customer.Birthday != null)
+                        //    update.Birthday = item.customer.Birthday.Value;
                         update.CountryId = item.customer.country.IDs;
                         update.LastSync = lastSync;
                         update.ModifiedAt = DateTimeOffset.Now;
@@ -392,7 +425,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var update = _context.tblCountrys.Where(x => x.IDs == item.IDs).FirstOrDefault();
                 if (update != null && !list_country_updated.Contains(item.IDs))
                 {
-                    if (update.Code != item.Code)
+                    if (update.Code != item.Code || update.Name!=item.Name)
                     {
                         update.Code = item.Code;
                         update.Name = item.Name;
@@ -765,12 +798,12 @@ namespace Pentamic.Integration.Ibms.Controllers
             stock.CreatedAt = DateTimeOffset.Now;
             _context.Stocks.Add(stock);
         }
-
         private void AddLogDataSync(ApplicationDbContext _context, bool status, string lastSync, int totalRecord, int recordSuccess, string mess_id, string mess_err, Protocol protocol)
         {
             var sync = new DataSync();
             sync.LastSync = lastSync;
             sync.Status = status;
+            sync.Message = mess_err;
             sync.Type = protocol.protocol_id == protocol_receipt ? "Receipt" :
                 protocol.protocol_id == protocol_checkin ? "CheckIn" :
                 protocol.protocol_id == protocol_product ? "Product" :
@@ -849,7 +882,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         catch (Exception axx)
                         {
                             mess_id += item.ProductId.ToString() + ",";//Luu Id bi loi
-                            mess_err += "Product Id: " + item.ProductId.ToString() + " - " + axx.Message + " ; ";//Luu thong bao
+                            mess_err += "Balance Stock contains Product Id: " + item.ProductId.ToString() + " - " + GetExceptionDetail(axx) + " ; ";//Luu thong bao
                             returnStock.Add(item);//Add ban ghi loi vao danh sach
                             continue;
                         }
@@ -859,9 +892,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                 //end null 
             }
             //end catch
-            catch (Exception axx)
+            catch (Exception ex)
             {
-                mess_err += axx.Message;
+                mess_err += GetExceptionDetail(ex);
             }
             #endregion
         }
@@ -992,10 +1025,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 RecordSuccess++;//Tang so ban ghi luu thanh cong
                             }
                         }//end try
-                        catch (Exception axx)
+                        catch (Exception ex)
                         {
                             mess_id += item.IDs.ToString() + ",";//Luu Id bi loi
-                            mess_err += "ID: " + item.IDs.ToString() + " - " + axx.Message + " ; ";//Luu thong bao
+                            mess_err += "Product ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
                             returnProduct.Add(item);//Add ban ghi loi vao danh sach
                             continue;
                         }
@@ -1005,9 +1038,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                 //end null 
             }
             //end catch
-            catch (Exception axx)
+            catch (Exception exc)
             {
-                mess_err += axx.Message;
+                mess_err += GetExceptionDetail(exc);
             }
             #endregion
         }
@@ -1691,10 +1724,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                             _context.SaveChanges();
                             RecordSuccess++;//Tang so ban ghi luu thanh cong
                         }//end try
-                        catch (Exception axx)
+                        catch (Exception ex)
                         {
                             mess_id += item.IDs.ToString() + ",";//Luu Id bi loi
-                            mess_err += "ID: " + item.IDs.ToString() + " - " + axx.Message + " ; ";//Luu thong bao
+                            mess_err += "Receipt ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
                             returnReceipt.Add(item);//Add ban ghi loi vao danh sach
                             continue;
                         }
@@ -1706,7 +1739,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             //end catch
             catch (Exception axx)
             {
-                mess_err += axx.Message;
+                mess_err += GetExceptionDetail(axx);
             }
             #endregion
         }
@@ -2232,10 +2265,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                             _context.SaveChanges();
                             RecordSuccess++;//Tang so ban ghi luu thanh cong
                         }
-                        catch (Exception axxx)
+                        catch (Exception ex)
                         {
                             mess_id += item.IDs.ToString() + ",";//Nhung Id bi loi
-                            mess_err += "Checkin ID: " + item.IDs.ToString() + " - " + axxx.Message + " ; ";//Thong bao loi
+                            mess_err += "Checkin ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Thong bao loi
                             returnCheckin.Add(item);//Add nhung ban ghi bi loi vao danh sach
                             continue;
                         }
@@ -2247,9 +2280,20 @@ namespace Pentamic.Integration.Ibms.Controllers
 
             catch (Exception axx)
             {
-                mess_err += axx.Message;
+                mess_err += GetExceptionDetail(axx);
             }
             #endregion
+        }
+        private string GetExceptionDetail(Exception ax)
+        {
+            if (ax.InnerException != null)
+            {
+                if (ax.InnerException.InnerException != null)
+                    return ax.InnerException.InnerException.Message;
+                else
+                    return ax.InnerException.Message;
+            }
+            else return ax.Message;
         }
     }
 }
