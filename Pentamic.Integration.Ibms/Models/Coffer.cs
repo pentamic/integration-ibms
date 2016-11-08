@@ -21,7 +21,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "type")]
         public int Type { get; set; }
         public string LastSync { get; set; }
-        public DateTimeOffset? CreatedAt { get; set; }
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }

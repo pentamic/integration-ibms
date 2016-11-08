@@ -14,7 +14,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int CheckInId { get; set; }
         public int PayeeId { get; set; }
         public string LastSync { get; set; }
-        public DateTimeOffset? CreatedAt { get; set; }
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }

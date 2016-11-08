@@ -8,7 +8,7 @@ using System.Web;
 namespace Pentamic.Integration.Ibms.Models
 {
     [DataContract(Name = "bank_account")]
-    public class Bank
+    public class BankAccount
     {
         [Key]
         public int Id { get; set; }
@@ -17,7 +17,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "name")]
         public string Name { get; set; }
         public string LastSync { get; set; }
-        public DateTimeOffset? CreatedAt { get; set; }
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }

@@ -44,6 +44,7 @@ namespace Pentamic.Integration.Ibms.Models
         public DbSet<Voucher> Vouchers { get; set; }
         public DbSet<ReceiptPayment> CardPayments { get; set; }
         public DbSet<Stock> Stocks { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<SettingAPI> SettingAPIs { get; set; }
 
     }

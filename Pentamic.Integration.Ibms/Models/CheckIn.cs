@@ -26,8 +26,8 @@ namespace Pentamic.Integration.Ibms.Models
         public int? BranchId { get; set; }
         public string LastSync { get; set; }
         public int? PartnerId { get; set; }
-        public DateTimeOffset? CreatedAt { get; set; }
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
 
     }
 }

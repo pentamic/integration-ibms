@@ -260,7 +260,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 //    customer.Birthday = item.customer.Birthday.Value;
                 customer.CountryId = item.customer.country.IDs;
                 customer.LastSync = lastSync;
-                customer.CreatedAt = DateTimeOffset.Now;
+                customer.CreatedAt = DateTime.Now;
 
                 _context.tblCustomers.Add(customer);
                 list_customer.Remove(item.customer.IDs);
@@ -280,7 +280,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         //    update.Birthday = item.customer.Birthday.Value;
                         update.CountryId = item.customer.country.IDs;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                         list_customer_update.Add(item.customer.IDs);
                     }
                 }
@@ -294,7 +294,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 sales.IDs = item.SalemanId;
                 sales.Name = item.SalemanName;
                 sales.LastSync = lastSync;
-                sales.CreatedAt = DateTimeOffset.Now;
+                sales.CreatedAt = DateTime.Now;
 
                 _context.Salemans.Add(sales);
                 list_sales.Remove(item.SalemanId);
@@ -308,7 +308,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.SalemanName;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                         list_sales_update.Add(item.SalemanId);
                     }
                 }
@@ -323,7 +323,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 location.BranchName = item.branch.BranchName;
                 location.Address = item.branch.Address;
                 location.LastSync = lastSync;
-                location.CreatedAt = DateTimeOffset.Now;
+                location.CreatedAt = DateTime.Now;
 
                 _context.Branchs.Add(location);
                 list_location.Remove(item.branch.IDs);
@@ -338,7 +338,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.BranchName = item.branch.BranchName;
                         update.Address = item.branch.Address;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                         list_location_update.Add(item.branch.IDs);
                     }
                 }
@@ -353,7 +353,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 product.Code = item.ProductCode;
                 product.Name = item.ProductName;
                 product.LastSync = lastSync;
-                product.CreatedAt = DateTimeOffset.Now;
+                product.CreatedAt = DateTime.Now;
 
                 _context.Products.Add(product);
                 list_product.Remove(item.Id);
@@ -368,7 +368,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.Name = item.ProductName;
                         update.Code = item.ProductCode;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                         list_product_update.Add(item.Id);
                     }
                 }
@@ -384,7 +384,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 coffer.BranchId = item.BranchId;
                 coffer.Type = item.Type;
                 coffer.LastSync = lastSync;
-                coffer.CreatedAt = DateTimeOffset.Now;
+                coffer.CreatedAt = DateTime.Now;
 
                 _context.Coffers.Add(coffer);
                 list_coffer.Remove(item.IDs);
@@ -400,7 +400,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.Type = item.Type;
                         update.BranchId = item.BranchId;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                         list_coffer_update.Add(item.IDs);
                     }
                 }
@@ -415,7 +415,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 country.Code = item.Code;
                 country.Name = item.Name;
                 country.LastSync = lastSync;
-                country.CreatedAt = DateTimeOffset.Now;
+                country.CreatedAt = DateTime.Now;
 
                 _context.tblCountrys.Add(country);
                 list_country.Remove(item.IDs);
@@ -430,7 +430,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.Code = item.Code;
                         update.Name = item.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                         list_country_updated.Add(item.IDs);
                     }
                 }
@@ -447,7 +447,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     city.CountryId = CountryId;
                     city.Name = c.Name;
                     city.LastSync = lastSync;
-                    city.CreatedAt = DateTimeOffset.Now;
+                    city.CreatedAt = DateTime.Now;
 
                     _context.tblCitys.Add(city);
                     list_city.Remove(c.IDs);
@@ -462,7 +462,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                             update.Name = c.Name;
                             update.CountryId = CountryId;
                             update.LastSync = lastSync;
-                            update.ModifiedAt = DateTimeOffset.Now;
+                            update.ModifiedAt = DateTime.Now;
                             list_city_updated.Add(c.IDs);
                         }
                     }
@@ -480,7 +480,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 voucher.DiscountType = c.DiscountType;
                 voucher.MoneyDiscount = c.MoneyDiscount;
                 voucher.LastSync = lastSync;
-                voucher.CreatedAt = DateTimeOffset.Now;
+                voucher.CreatedAt = DateTime.Now;
 
                 _context.Vouchers.Add(voucher);
                 list_voucher.Remove(c.VoucherId);
@@ -497,8 +497,36 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.DiscountType = c.DiscountType;
                         update.MoneyDiscount = c.MoneyDiscount;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                         list_voucher_updated.Add(c.VoucherId);
+                    }
+                }
+            }
+        }
+        private void BankAccount(ReceiptPayment item, List<int> list_bank_account, List<int> list_bank_account_updated, string lastSync)
+        {
+            if (list_bank_account.Contains(item.bank_account.IDs))//Create
+            {
+                var bank = new BankAccount();
+                bank.IDs = item.bank_account.IDs;
+                bank.Name = item.bank_account.Name;
+                bank.LastSync = lastSync;
+                bank.CreatedAt = DateTime.Now;
+
+                _context.BankAccounts.Add(bank);
+                list_bank_account.Remove(item.bank_account.IDs);
+            }
+            else//Update
+            {
+                var update = _context.BankAccounts.Where(x => x.IDs == item.bank_account.IDs).FirstOrDefault();
+                if (update != null)
+                {
+                    if (update.Name != item.bank_account.Name)
+                    {
+                        update.Name = item.bank_account.Name;
+                        update.LastSync = lastSync;
+                        update.ModifiedAt = DateTime.Now;
+                        list_bank_account_updated.Add(item.bank_account.IDs);
                     }
                 }
             }
@@ -511,7 +539,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 cardtype.IDs = item.card_type.IDs;
                 cardtype.Name = item.card_type.Name;
                 cardtype.LastSync = lastSync;
-                cardtype.CreatedAt = DateTimeOffset.Now;
+                cardtype.CreatedAt = DateTime.Now;
 
                 _context.CardTypes.Add(cardtype);
                 list_card_type.Remove(item.card_type.IDs);
@@ -525,7 +553,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.card_type.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -538,7 +566,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 cardmaker.IDs = item.card_maker.IDs;
                 cardmaker.Name = item.card_maker.Name;
                 cardmaker.LastSync = lastSync;
-                cardmaker.CreatedAt = DateTimeOffset.Now;
+                cardmaker.CreatedAt = DateTime.Now;
 
                 _context.CardMakers.Add(cardmaker);
                 list_card_maker.Remove(item.card_maker.IDs);
@@ -552,7 +580,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.card_maker.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
 
                         list_card_maker_updated.Add(item.card_maker.IDs);
                     }
@@ -567,7 +595,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 partnerGroup.IDs = item.partner_group.IDs;
                 partnerGroup.Name = item.partner_group.Name;
                 partnerGroup.LastSync = lastSync;
-                partnerGroup.CreatedAt = DateTimeOffset.Now;
+                partnerGroup.CreatedAt = DateTime.Now;
 
                 _context.tblPartnerGroups.Add(partnerGroup);
                 list_partner_group.Remove(item.partner_group.IDs);
@@ -581,7 +609,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.partner_group.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -594,7 +622,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 partner.IDs = item.partner_group.partner.IDs;
                 partner.Name = item.partner_group.partner.Name;
                 partner.LastSync = lastSync;
-                partner.CreatedAt = DateTimeOffset.Now;
+                partner.CreatedAt = DateTime.Now;
 
                 if (item.partner_group.IDs != 0)
                     partner.PartnerGroupId = item.partner_group.IDs;
@@ -611,7 +639,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.partner_group.partner.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -624,7 +652,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 driver.IDs = item.driver.IDs;
                 driver.Name = item.driver.Name;
                 driver.LastSync = lastSync;
-                driver.CreatedAt = DateTimeOffset.Now;
+                driver.CreatedAt = DateTime.Now;
 
                 _context.Drivers.Add(driver);
                 list_driver.Remove(item.driver.IDs);
@@ -638,7 +666,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.driver.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -651,7 +679,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 tour.IDs = item.tour_guide.IDs;
                 tour.Name = item.tour_guide.Name;
                 tour.LastSync = lastSync;
-                tour.CreatedAt = DateTimeOffset.Now;
+                tour.CreatedAt = DateTime.Now;
 
                 _context.TourGuides.Add(tour);
                 list_tour.Remove(item.tour_guide.IDs);
@@ -665,7 +693,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.tour_guide.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -678,7 +706,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 visit.IDs = item.visitor_type.IDs;
                 visit.Name = item.visitor_type.Name;
                 visit.LastSync = lastSync;
-                visit.CreatedAt = DateTimeOffset.Now;
+                visit.CreatedAt = DateTime.Now;
 
                 _context.VisitorTypes.Add(visit);
                 list_visit.Remove(item.visitor_type.IDs);
@@ -692,7 +720,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = item.visitor_type.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -707,7 +735,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 payee.Commission = c.Commission;
                 payee.Phone = c.Phone;
                 payee.LastSync = lastSync;
-                payee.CreatedAt = DateTimeOffset.Now;
+                payee.CreatedAt = DateTime.Now;
 
                 _context.Payes.Add(payee);
                 list_payee.Remove(c.IDs);
@@ -721,7 +749,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = c.Name;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -734,7 +762,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 national.IDs = i.NationalityId;
                 national.Name = i.Nationality;
                 national.LastSync = lastSync;
-                national.CreatedAt = DateTimeOffset.Now;
+                national.CreatedAt = DateTime.Now;
 
                 _context.Nationalities.Add(national);
                 list_nationality.Remove(i.NationalityId);
@@ -748,7 +776,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         update.Name = i.Nationality;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -762,7 +790,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 branch.BranchName = item.location.BranchName;
                 branch.Address = item.location.Address;
                 branch.LastSync = lastSync;
-                branch.CreatedAt = DateTimeOffset.Now;
+                branch.CreatedAt = DateTime.Now;
 
                 _context.Branchs.Add(branch);
                 list_location.Remove(item.location.IDs);
@@ -777,7 +805,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.BranchName = item.location.BranchName;
                         update.Address = item.location.Address;
                         update.LastSync = lastSync;
-                        update.ModifiedAt = DateTimeOffset.Now;
+                        update.ModifiedAt = DateTime.Now;
                     }
                 }
             }
@@ -795,7 +823,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             stock.BranchId = item.Branch[0].IDs;
             stock.LastSync = lastSync;
             stock.Status = true;
-            stock.CreatedAt = DateTimeOffset.Now;
+            stock.CreatedAt = DateTime.Now;
             _context.Stocks.Add(stock);
         }
         private void AddLogDataSync(ApplicationDbContext _context, bool status, string lastSync, int totalRecord, int recordSuccess, string mess_id, string mess_err, Protocol protocol)
@@ -869,7 +897,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 {
                                     //Update Phieu cu ve status=0
                                     s.Status = false;
-                                    s.ModifiedAt = DateTimeOffset.Now;
+                                    s.ModifiedAt = DateTime.Now;
                                     s.LastSync = lastSync;
                                 }
                                 //Tao thanh phieu moi
@@ -980,7 +1008,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     prd.Type = item.Type;
 
                                     prd.LastSync = lastSync;
-                                    prd.CreatedAt = DateTimeOffset.Now;
+                                    prd.CreatedAt = DateTime.Now;
                                     _context.Products.Add(prd);
                                     _context.SaveChanges();
 
@@ -1014,7 +1042,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             prd.Type = item.Type;
 
                                             prd.LastSync = lastSync;
-                                            prd.ModifiedAt = DateTimeOffset.Now;
+                                            prd.ModifiedAt = DateTime.Now;
 
                                             _context.SaveChanges();
                                             list_product_updated.Add(item.IDs);
@@ -1064,6 +1092,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_country = new List<int>();
                 List<int> list_city = new List<int>();
                 List<int> list_voucher = new List<int>();
+                List<int> list_bank_account = new List<int>();
 
                 //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
                 List<int> list_customer_update = new List<int>();
@@ -1074,6 +1103,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_country_updated = new List<int>();
                 List<int> list_city_updated = new List<int>();
                 List<int> list_voucher_updated = new List<int>();
+                List<int> list_bank_account_updated = new List<int>();
 
                 #region GetDataAPI
                 //Get Id data from API
@@ -1165,6 +1195,25 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     list_voucher.Add(d.VoucherId);
                         }
                     }
+
+                    if (item.payment != null)
+                    {
+                        if (item.payment.card_payment_list != null)
+                        {
+                            foreach (var card in item.payment.card_payment_list)
+                            {
+                                if (card.bank_account != null)
+                                {
+                                    if (card.bank_account.IDs != 0)
+                                    {
+                                        if (!list_bank_account.Contains(card.bank_account.IDs))
+                                            if (_context.BankAccounts.Where(x => x.IDs == card.bank_account.IDs).Count() == 0)
+                                                list_bank_account.Add(card.bank_account.IDs);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 #endregion
 
@@ -1189,7 +1238,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     bill.BillType = item.BillType;
                                     bill.Status = item.Status;
                                     bill.LastSync = lastSync;
-                                    bill.CreatedAt = DateTimeOffset.Now;
+                                    bill.CreatedAt = DateTime.Now;
 
                                     if (item.checkin != null)
                                     {
@@ -1241,7 +1290,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 bill_sale.Money = s.Money;
                                                 bill_sale.Status = s.Status;
                                                 bill_sale.LastSync = lastSync;
-                                                bill_sale.CreatedAt = DateTimeOffset.Now;
+                                                bill_sale.CreatedAt = DateTime.Now;
                                                 _context.Bill_Sales.Add(bill_sale);
 
                                             }
@@ -1278,7 +1327,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 receipt_detail.SaleStatus = s.SaleStatus;
                                                 receipt_detail.IBMSCode = s.IBMSCode;
                                                 receipt_detail.LastSync = lastSync;
-                                                receipt_detail.CreatedAt = DateTimeOffset.Now;
+                                                receipt_detail.CreatedAt = DateTime.Now;
                                                 
 
                                                 if (s.coffer != null)
@@ -1319,7 +1368,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 receipt_discount.MoneyDiscount = s.MoneyDiscount;
                                                 receipt_discount.Status = s.Status;
                                                 receipt_discount.LastSync = lastSync;
-                                                receipt_discount.CreatedAt = DateTimeOffset.Now;
+                                                receipt_discount.CreatedAt = DateTime.Now;
                                                 _context.ReceiptDiscounts.Add(receipt_discount);
 
                                             }
@@ -1360,12 +1409,15 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 if (card.bank_account != null)
                                                 {
                                                     if (card.bank_account.IDs != 0)
+                                                    {
                                                         card_payment.BankId = card.BankId;
+                                                        BankAccount(card, list_bank_account, list_bank_account_updated, lastSync);
+                                                    }
                                                 }
                                                 card_payment.Status = card.Status;
                                                 card_payment.IsDeposit = false;
                                                 card_payment.LastSync = lastSync;
-                                                card_payment.CreatedAt = DateTimeOffset.Now;
+                                                card_payment.CreatedAt = DateTime.Now;
 
                                                 _context.CardPayments.Add(card_payment);
                                             }
@@ -1384,7 +1436,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 cash_payment.Status = cash.Status;
                                                 cash_payment.IsDeposit = false;
                                                 cash_payment.LastSync = lastSync;
-                                                cash_payment.CreatedAt = DateTimeOffset.Now;
+                                                cash_payment.CreatedAt = DateTime.Now;
 
                                                 _context.CardPayments.Add(cash_payment);
                                             }
@@ -1414,7 +1466,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 card_payment.Status = card.Status;
                                                 card_payment.IsDeposit = true;
                                                 card_payment.LastSync = lastSync;
-                                                card_payment.CreatedAt = DateTimeOffset.Now;
+                                                card_payment.CreatedAt = DateTime.Now;
 
                                                 _context.CardPayments.Add(card_payment);
                                             }
@@ -1433,7 +1485,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 cash_payment.Status = cash.Status;
                                                 cash_payment.IsDeposit = true;
                                                 cash_payment.LastSync = lastSync;
-                                                cash_payment.CreatedAt = DateTimeOffset.Now;
+                                                cash_payment.CreatedAt = DateTime.Now;
 
                                                 _context.CardPayments.Add(cash_payment);
                                             }
@@ -1451,7 +1503,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     var bill_remove = _context.Receipts.Where(x => x.IDs == item.IDs).FirstOrDefault();
                                     bill_remove.Status = item.Status;
                                     bill_remove.LastSync = lastSync;
-                                    bill_remove.ModifiedAt = DateTimeOffset.Now;
+                                    bill_remove.ModifiedAt = DateTime.Now;
                                 }
                                 else
                                 {
@@ -1464,7 +1516,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         receipt_update.BillType = item.BillType;
                                         receipt_update.Status = item.Status;
                                         receipt_update.LastSync = lastSync;
-                                        receipt_update.ModifiedAt = DateTimeOffset.Now;
+                                        receipt_update.ModifiedAt = DateTime.Now;
 
                                         if (item.checkin != null)
                                         {
@@ -1518,7 +1570,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     bill_sale.Money = s.Money;
                                                     bill_sale.Status = s.Status;
                                                     bill_sale.LastSync = lastSync;
-                                                    bill_sale.CreatedAt = DateTimeOffset.Now;
+                                                    bill_sale.CreatedAt = DateTime.Now;
                                                     _context.Bill_Sales.Add(bill_sale);
                                                 }
                                             }
@@ -1555,7 +1607,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     receipt_detail.SaleStatus = s.SaleStatus;
                                                     receipt_detail.IBMSCode = s.IBMSCode;
                                                     receipt_detail.LastSync = lastSync;
-                                                    receipt_detail.CreatedAt = DateTimeOffset.Now;
+                                                    receipt_detail.CreatedAt = DateTime.Now;
                                                     
 
                                                     if (s.coffer != null)
@@ -1596,7 +1648,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     receipt_discount.MoneyDiscount = s.MoneyDiscount;
                                                     receipt_discount.Status = s.Status;
                                                     receipt_discount.LastSync = lastSync;
-                                                    receipt_discount.CreatedAt = DateTimeOffset.Now;
+                                                    receipt_discount.CreatedAt = DateTime.Now;
                                                     _context.ReceiptDiscounts.Add(receipt_discount);
 
                                                 }
@@ -1637,13 +1689,16 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     if (card.bank_account != null)
                                                     {
                                                         if (card.bank_account.IDs != 0)
+                                                        {
                                                             card_payment.BankId = card.BankId;
+                                                            BankAccount(card, list_bank_account, list_bank_account_updated, lastSync);
+                                                        }
                                                     }
 
                                                     card_payment.Status = card.Status;
                                                     card_payment.IsDeposit = false;
                                                     card_payment.LastSync = lastSync;
-                                                    card_payment.CreatedAt = DateTimeOffset.Now;
+                                                    card_payment.CreatedAt = DateTime.Now;
 
                                                     _context.CardPayments.Add(card_payment);
                                                 }
@@ -1662,7 +1717,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     cash_payment.Status = cash.Status;
                                                     cash_payment.IsDeposit = false;
                                                     cash_payment.LastSync = lastSync;
-                                                    cash_payment.CreatedAt = DateTimeOffset.Now;
+                                                    cash_payment.CreatedAt = DateTime.Now;
 
                                                     _context.CardPayments.Add(cash_payment);
                                                 }
@@ -1692,7 +1747,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     card_payment.Status = card.Status;
                                                     card_payment.IsDeposit = true;
                                                     card_payment.LastSync = lastSync;
-                                                    card_payment.CreatedAt = DateTimeOffset.Now;
+                                                    card_payment.CreatedAt = DateTime.Now;
 
                                                     _context.CardPayments.Add(card_payment);
                                                 }
@@ -1711,7 +1766,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     cash_payment.Status = cash.Status;
                                                     cash_payment.IsDeposit = true;
                                                     cash_payment.LastSync = lastSync;
-                                                    cash_payment.CreatedAt = DateTimeOffset.Now;
+                                                    cash_payment.CreatedAt = DateTime.Now;
 
                                                     _context.CardPayments.Add(cash_payment);
                                                 }
@@ -1900,7 +1955,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     checkin.FeePort = item.FeePort;
                                     checkin.Status = item.Status;
                                     checkin.LastSync = lastSync;
-                                    checkin.CreatedAt = DateTimeOffset.Now;
+                                    checkin.CreatedAt = DateTime.Now;
 
                                     #region CardType
                                     if (item.card_type != null)
@@ -1997,7 +2052,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             checkin_car.CheckInId = item.IDs;
                                             checkin_car.CarNumber = c.Car_Number;
                                             checkin_car.LastSync = lastSync;
-                                            checkin_car.CreatedAt = DateTimeOffset.Now;
+                                            checkin_car.CreatedAt = DateTime.Now;
 
                                             _context.CheckIn_Cars.Add(checkin_car);
                                         }
@@ -2023,7 +2078,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             checkin_payee.CheckInId = item.IDs;
                                             checkin_payee.PayeeId = c.IDs;
                                             checkin_payee.LastSync = lastSync;
-                                            checkin_payee.CreatedAt = DateTimeOffset.Now;
+                                            checkin_payee.CreatedAt = DateTime.Now;
 
                                             _context.CheckIn_Payes.Add(checkin_payee);
                                         }
@@ -2052,7 +2107,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 checkin_info.NationalityId = i.NationalityId;
                                             checkin_info.CheckinId = item.IDs;
                                             checkin_info.LastSync = lastSync;
-                                            checkin_info.CreatedAt = DateTimeOffset.Now;
+                                            checkin_info.CreatedAt = DateTime.Now;
 
                                             _context.CheckIn_Infos.Add(checkin_info);
                                         }
@@ -2081,7 +2136,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs).FirstOrDefault();
                                     checkin_remove.Status = item.Status;
                                     checkin_remove.LastSync = lastSync;
-                                    checkin_remove.ModifiedAt = DateTimeOffset.Now;
+                                    checkin_remove.ModifiedAt = DateTime.Now;
                                 }
                                 else
                                 {
@@ -2092,7 +2147,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         checkin_update.CheckInCode = item.CheckInCode;
                                         checkin_update.FeePort = item.FeePort;
                                         checkin_update.LastSync = lastSync;
-                                        checkin_update.ModifiedAt = DateTimeOffset.Now;
+                                        checkin_update.ModifiedAt = DateTime.Now;
 
                                         #region CardType
                                         if (item.card_type != null)
@@ -2186,7 +2241,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 checkin_car.CheckInId = item.IDs;
                                                 checkin_car.CarNumber = c.Car_Number;
                                                 checkin_car.LastSync = lastSync;
-                                                checkin_car.CreatedAt = DateTimeOffset.Now;
+                                                checkin_car.CreatedAt = DateTime.Now;
 
                                                 _context.CheckIn_Cars.Add(checkin_car);
                                             }
@@ -2212,7 +2267,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 checkin_payee.CheckInId = item.IDs;
                                                 checkin_payee.PayeeId = c.IDs;
                                                 checkin_payee.LastSync = lastSync;
-                                                checkin_payee.CreatedAt = DateTimeOffset.Now;
+                                                checkin_payee.CreatedAt = DateTime.Now;
 
                                                 _context.CheckIn_Payes.Add(checkin_payee);
                                             }
@@ -2241,7 +2296,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     checkin_info.NationalityId = i.NationalityId;
                                                 checkin_info.CheckinId = item.IDs;
                                                 checkin_info.LastSync = lastSync;
-                                                checkin_info.CreatedAt = DateTimeOffset.Now;
+                                                checkin_info.CreatedAt = DateTime.Now;
 
                                                 _context.CheckIn_Infos.Add(checkin_info);
                                             }

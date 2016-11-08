@@ -25,13 +25,13 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "status")]
         public bool Status { get; set; }
         [DataMember(Name = "bank_account")]
-        public Bank bank_account { get; set; }
+        public BankAccount bank_account { get; set; }
 
         public int ReceiptId { get; set; }
         public int? BankId { get; set; }
         public bool IsDeposit { get; set; }
         public string LastSync { get; set; }
-        public DateTimeOffset? CreatedAt { get; set; }
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }
