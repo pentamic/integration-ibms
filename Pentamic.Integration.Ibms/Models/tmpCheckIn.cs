@@ -20,7 +20,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "fee_port")]
         public decimal FeePort { get; set; }
         [DataMember(Name = "status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         [DataMember(Name = "card_type")]
         public CardType card_type { get; set; }

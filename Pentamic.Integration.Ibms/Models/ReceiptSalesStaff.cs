@@ -22,7 +22,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "money")]
         public decimal Money { get; set; }
         [DataMember(Name = "status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         public int ReceiptId { get; set; }
         public string LastSync { get; set; }

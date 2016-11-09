@@ -35,6 +35,7 @@ namespace Pentamic.Integration.Ibms.Models
         public DbSet<Saleman> Salemans { get; set; }
         public DbSet<ReceiptSalesStaff> Bill_Sales { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductGroup> ProductGroups { get; set; }
         public DbSet<tmpReceiptDetail> Bill_Products { get; set; }
         public DbSet<ReceiptDetail> ReceiptDetails { get; set; }
         public DbSet<Coffer> Coffers { get; set; }

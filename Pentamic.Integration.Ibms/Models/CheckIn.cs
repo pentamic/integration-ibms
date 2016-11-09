@@ -15,7 +15,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int IDs { get; set; }
         public string CheckInCode { get; set; }
         public decimal FeePort { get; set; }
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         public int? CardTypeId { get; set; }
         public int? CardMakerId { get; set; }

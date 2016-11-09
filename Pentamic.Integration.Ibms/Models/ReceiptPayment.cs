@@ -23,9 +23,9 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "exchange_rate")]
         public double ExchangeRate { get; set; }
         [DataMember(Name = "status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
         [DataMember(Name = "bank_account")]
-        public BankAccount bank_account { get; set; }
+        public BankAccount BankAccount { get; set; }
 
         public int ReceiptId { get; set; }
         public int? BankId { get; set; }

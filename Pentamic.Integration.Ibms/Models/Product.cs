@@ -28,6 +28,7 @@ namespace Pentamic.Integration.Ibms.Models
         public string PearlWeight { get; set; }
         public string TotalWeight { get; set; }
         public int? Type { get; set; }
+        public int? ProductGroupId { get; set; }
         public string LastSync { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }

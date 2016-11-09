@@ -23,7 +23,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "bill_type")]
         public int BillType { get; set; }
         [DataMember(Name = "status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         [DataMember(Name = "checkin")]
         public tmpCheckIn checkin { get; set; }

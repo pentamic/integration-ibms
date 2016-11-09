@@ -505,28 +505,28 @@ namespace Pentamic.Integration.Ibms.Controllers
         }
         private void BankAccount(ReceiptPayment item, List<int> list_bank_account, List<int> list_bank_account_updated, string lastSync)
         {
-            if (list_bank_account.Contains(item.bank_account.IDs))//Create
+            if (list_bank_account.Contains(item.BankAccount.IDs))//Create
             {
                 var bank = new BankAccount();
-                bank.IDs = item.bank_account.IDs;
-                bank.Name = item.bank_account.Name;
+                bank.IDs = item.BankAccount.IDs;
+                bank.Name = item.BankAccount.Name;
                 bank.LastSync = lastSync;
                 bank.CreatedAt = DateTime.Now;
 
                 _context.BankAccounts.Add(bank);
-                list_bank_account.Remove(item.bank_account.IDs);
+                list_bank_account.Remove(item.BankAccount.IDs);
             }
             else//Update
             {
-                var update = _context.BankAccounts.Where(x => x.IDs == item.bank_account.IDs).FirstOrDefault();
+                var update = _context.BankAccounts.Where(x => x.IDs == item.BankAccount.IDs).FirstOrDefault();
                 if (update != null)
                 {
-                    if (update.Name != item.bank_account.Name)
+                    if (update.Name != item.BankAccount.Name)
                     {
-                        update.Name = item.bank_account.Name;
+                        update.Name = item.BankAccount.Name;
                         update.LastSync = lastSync;
                         update.ModifiedAt = DateTime.Now;
-                        list_bank_account_updated.Add(item.bank_account.IDs);
+                        list_bank_account_updated.Add(item.BankAccount.IDs);
                     }
                 }
             }
@@ -826,6 +826,94 @@ namespace Pentamic.Integration.Ibms.Controllers
             stock.CreatedAt = DateTime.Now;
             _context.Stocks.Add(stock);
         }
+        private void ProductGroup(tmpProductGroup small_group, tmpProductGroup middle_group, tmpProductGroup big_group, List<int> list_product_group_add, List<int> list_product_group_update, List<int> list_product_group_updated, string lastSync)
+        {
+            //small_group
+            if (list_product_group_add.Contains(small_group.IDs))//Create
+            {
+                var prdGroup = new ProductGroup();
+                prdGroup.IDs = small_group.IDs;
+                prdGroup.Name = small_group.Name;
+                prdGroup.ParentGroupId = small_group.ParentGroupId;
+                prdGroup.LastSync = lastSync;
+                prdGroup.CreatedAt = DateTime.Now;
+
+                _context.ProductGroups.Add(prdGroup);
+                list_product_group_add.Remove(small_group.IDs);
+            }
+            else//Update
+            {
+                var update = _context.ProductGroups.Where(x => x.IDs == small_group.IDs).FirstOrDefault();
+                if (update != null && list_product_group_update.Contains(small_group.IDs) && !list_product_group_updated.Contains(small_group.IDs))
+                {
+                    if (update.Name != small_group.Name)
+                    {
+                        update.Name = small_group.Name;
+                        update.ParentGroupId = small_group.ParentGroupId;
+                        update.LastSync = lastSync;
+                        update.ModifiedAt = DateTime.Now;
+                        list_product_group_updated.Add(small_group.IDs);
+                    }
+                }
+            }
+
+            //middle_group
+            if (list_product_group_add.Contains(middle_group.IDs))//Create
+            {
+                var prdGroup = new ProductGroup();
+                prdGroup.IDs = middle_group.IDs;
+                prdGroup.Name = middle_group.Name;
+                prdGroup.ParentGroupId = middle_group.ParentGroupId;
+                prdGroup.LastSync = lastSync;
+                prdGroup.CreatedAt = DateTime.Now;
+
+                _context.ProductGroups.Add(prdGroup);
+                list_product_group_add.Remove(middle_group.IDs);
+            }
+            else//Update
+            {
+                var update = _context.ProductGroups.Where(x => x.IDs == middle_group.IDs).FirstOrDefault();
+                if (update != null && list_product_group_update.Contains(middle_group.IDs) && !list_product_group_updated.Contains(middle_group.IDs))
+                {
+                    if (update.Name != middle_group.Name)
+                    {
+                        update.Name = middle_group.Name;
+                        update.ParentGroupId = middle_group.ParentGroupId;
+                        update.LastSync = lastSync;
+                        update.ModifiedAt = DateTime.Now;
+                        list_product_group_updated.Add(middle_group.IDs);
+                    }
+                }
+            }
+            //big_group
+            if (list_product_group_add.Contains(big_group.IDs))//Create
+            {
+                var prdGroup = new ProductGroup();
+                prdGroup.IDs = big_group.IDs;
+                prdGroup.Name = big_group.Name;
+                prdGroup.ParentGroupId = big_group.ParentGroupId;
+                prdGroup.LastSync = lastSync;
+                prdGroup.CreatedAt = DateTime.Now;
+
+                _context.ProductGroups.Add(prdGroup);
+                list_product_group_add.Remove(big_group.IDs);
+            }
+            else//Update
+            {
+                var update = _context.ProductGroups.Where(x => x.IDs == big_group.IDs).FirstOrDefault();
+                if (update != null && list_product_group_update.Contains(big_group.IDs) && !list_product_group_updated.Contains(big_group.IDs))
+                {
+                    if (update.Name != big_group.Name)
+                    {
+                        update.Name = big_group.Name;
+                        update.ParentGroupId = big_group.ParentGroupId;
+                        update.LastSync = lastSync;
+                        update.ModifiedAt = DateTime.Now;
+                        list_product_group_updated.Add(big_group.IDs);
+                    }
+                }
+            }
+        }
         private void AddLogDataSync(ApplicationDbContext _context, bool status, string lastSync, int totalRecord, int recordSuccess, string mess_id, string mess_err, Protocol protocol)
         {
             var sync = new DataSync();
@@ -939,8 +1027,12 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_product_add = new List<int>();
                 List<int> list_product_update = new List<int>();
 
+                List<int> list_product_group_add = new List<int>();
+                List<int> list_product_group_update = new List<int>();
+
                 //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
                 List<int> list_product_updated = new List<int>();
+                List<int> list_product_group_updated = new List<int>();
 
                 #region GetDataAPI
                 //Get Id data from API
@@ -955,6 +1047,40 @@ namespace Pentamic.Integration.Ibms.Controllers
                             else
                             if (!list_product_update.Contains(item.IDs))
                                 list_product_update.Add(item.IDs);
+                        }
+
+                        if (item.small_group != null)
+                        {
+                            if (!list_product_group_add.Contains(item.small_group.IDs))
+                            {
+                                if (_context.ProductGroups.Where(x => x.IDs == item.small_group.IDs).Count() == 0)
+                                    list_product_group_add.Add(item.small_group.IDs);
+                                else
+                                if (!list_product_group_update.Contains(item.small_group.IDs))
+                                    list_product_group_update.Add(item.small_group.IDs);
+                            }
+                        }
+                        if (item.middle_group != null)
+                        {
+                            if (!list_product_group_add.Contains(item.middle_group.IDs))
+                            {
+                                if (_context.ProductGroups.Where(x => x.IDs == item.middle_group.IDs).Count() == 0)
+                                    list_product_group_add.Add(item.middle_group.IDs);
+                                else
+                                if (!list_product_group_update.Contains(item.middle_group.IDs))
+                                    list_product_group_update.Add(item.middle_group.IDs);
+                            }
+                        }
+                        if (item.big_group != null)
+                        {
+                            if (!list_product_group_add.Contains(item.big_group.IDs))
+                            {
+                                if (_context.ProductGroups.Where(x => x.IDs == item.big_group.IDs).Count() == 0)
+                                    list_product_group_add.Add(item.big_group.IDs);
+                                else
+                                if (!list_product_group_update.Contains(item.big_group.IDs))
+                                    list_product_group_update.Add(item.big_group.IDs);
+                            }
                         }
                     }
                 }
@@ -980,6 +1106,12 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 input_err = "Unit Product is null";
                             if (Convert.ToString(item.Type) == "")
                                 input_err = "Type Product is null";
+                            if (Convert.ToString(item.small_group.IDs) == "")
+                                input_err = "small_group is null";
+                            if (Convert.ToString(item.middle_group.IDs) == "")
+                                input_err = "middle_group is null";
+                            if (Convert.ToString(item.big_group.IDs) == "")
+                                input_err = "big_group is null";
 
                             if (input_err != "")
                                 throw new Exception(input_err);
@@ -1006,13 +1138,24 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     prd.GemStoneWeight = item.GemStoneWeight;
                                     prd.TotalWeight = item.TotalWeight;
                                     prd.Type = item.Type;
-
+                                    if (item.small_group != null)
+                                        prd.ProductGroupId = item.small_group.IDs;
+                                    else
+                                    {
+                                        input_err = "ProductGroup is null";
+                                        throw new Exception(input_err);
+                                    }
                                     prd.LastSync = lastSync;
                                     prd.CreatedAt = DateTime.Now;
                                     _context.Products.Add(prd);
+                                    list_product_add.Remove(item.IDs);
+
+                                    //Add Product Group
+                                    ProductGroup(item.small_group, item.middle_group, item.big_group, list_product_group_add, list_product_group_update, list_product_group_updated, lastSync);
+
                                     _context.SaveChanges();
 
-                                    list_product_add.Remove(item.IDs);
+                                    
 
                                     #endregion
                                 }
@@ -1040,12 +1183,22 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             prd.GemStoneWeight = item.GemStoneWeight;
                                             prd.TotalWeight = item.TotalWeight;
                                             prd.Type = item.Type;
-
+                                            if (item.small_group != null)
+                                                prd.ProductGroupId = item.small_group.IDs;
+                                            else
+                                            {
+                                                input_err = "ProductGroup is null";
+                                                throw new Exception(input_err);
+                                            }
                                             prd.LastSync = lastSync;
                                             prd.ModifiedAt = DateTime.Now;
+                                            list_product_updated.Add(item.IDs);
+
+                                            //Add Product Group
+                                            ProductGroup(item.small_group, item.middle_group, item.big_group, list_product_group_add, list_product_group_update, list_product_group_updated, lastSync);
 
                                             _context.SaveChanges();
-                                            list_product_updated.Add(item.IDs);
+                                            
                                         }
                                         #endregion
                                     }
@@ -1109,7 +1262,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 //Get Id data from API
                 foreach (var item in xdata)
                 {
-                    if (item.Status)//Neu status = 1
+                    if (item.Status==1)//Neu status = 1
                     {
                         //Neu ko co trong DB cho vao danh sach Insert
                         if (!list_bill_add.Contains(item.IDs))
@@ -1202,13 +1355,13 @@ namespace Pentamic.Integration.Ibms.Controllers
                         {
                             foreach (var card in item.payment.card_payment_list)
                             {
-                                if (card.bank_account != null)
+                                if (card.BankAccount != null)
                                 {
-                                    if (card.bank_account.IDs != 0)
+                                    if (card.BankAccount.IDs != 0)
                                     {
-                                        if (!list_bank_account.Contains(card.bank_account.IDs))
-                                            if (_context.BankAccounts.Where(x => x.IDs == card.bank_account.IDs).Count() == 0)
-                                                list_bank_account.Add(card.bank_account.IDs);
+                                        if (!list_bank_account.Contains(card.BankAccount.IDs))
+                                            if (_context.BankAccounts.Where(x => x.IDs == card.BankAccount.IDs).Count() == 0)
+                                                list_bank_account.Add(card.BankAccount.IDs);
                                     }
                                 }
                             }
@@ -1406,9 +1559,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 card_payment.Total = card.Total;
                                                 card_payment.CurrencyCode = card.CurrencyCode;
                                                 card_payment.ExchangeRate = card.ExchangeRate;
-                                                if (card.bank_account != null)
+                                                if (card.BankAccount != null)
                                                 {
-                                                    if (card.bank_account.IDs != 0)
+                                                    if (card.BankAccount.IDs != 0)
                                                     {
                                                         card_payment.BankId = card.BankId;
                                                         BankAccount(card, list_bank_account, list_bank_account_updated, lastSync);
@@ -1458,9 +1611,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 card_payment.Total = card.Total;
                                                 card_payment.CurrencyCode = card.CurrencyCode;
                                                 card_payment.ExchangeRate = card.ExchangeRate;
-                                                if (card.bank_account != null)
+                                                if (card.BankAccount != null)
                                                 {
-                                                    if (card.bank_account.IDs != 0)
+                                                    if (card.BankAccount.IDs != 0)
                                                         card_payment.BankId = card.BankId;
                                                 }
                                                 card_payment.Status = card.Status;
@@ -1686,9 +1839,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     card_payment.Total = card.Total;
                                                     card_payment.CurrencyCode = card.CurrencyCode;
                                                     card_payment.ExchangeRate = card.ExchangeRate;
-                                                    if (card.bank_account != null)
+                                                    if (card.BankAccount != null)
                                                     {
-                                                        if (card.bank_account.IDs != 0)
+                                                        if (card.BankAccount.IDs != 0)
                                                         {
                                                             card_payment.BankId = card.BankId;
                                                             BankAccount(card, list_bank_account, list_bank_account_updated, lastSync);
@@ -1739,9 +1892,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     card_payment.Total = card.Total;
                                                     card_payment.CurrencyCode = card.CurrencyCode;
                                                     card_payment.ExchangeRate = card.ExchangeRate;
-                                                    if (card.bank_account != null)
+                                                    if (card.BankAccount != null)
                                                     {
-                                                        if (card.bank_account.IDs != 0)
+                                                        if (card.BankAccount.IDs != 0)
                                                             card_payment.BankId = card.BankId;
                                                     }
                                                     card_payment.Status = card.Status;
@@ -1838,7 +1991,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 //Get Id data from API
                 foreach (var item in xdata)
                 {
-                    if (item.Status)//Neu status = 1
+                    if (item.Status==1)//Neu status = 1
                     {
                         //Neu ko co trong DB cho vao danh sach Insert
                         if (!list_checkin_add.Contains(item.IDs))

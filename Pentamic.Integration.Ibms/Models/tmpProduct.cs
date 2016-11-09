@@ -46,8 +46,11 @@ namespace Pentamic.Integration.Ibms.Models
         public string TotalWeight { get; set; }
         [DataMember(Name = "type")]
         public int? Type { get; set; }
-        public string LastSync { get; set; }
-        public DateTimeOffset? CreatedAt { get; set; }
-        public DateTimeOffset? ModifiedAt { get; set; }
+        [DataMember(Name = "small_group")]
+        public tmpProductGroup small_group { get; set; }
+        [DataMember(Name = "middle_group")]
+        public tmpProductGroup middle_group { get; set; }
+        [DataMember(Name = "big_group")]
+        public tmpProductGroup big_group { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "money_discount")]
         public decimal MoneyDiscount { get; set; }
         [DataMember(Name = "status")]
-        public bool Status { get; set; }
+        public int Status { get; set; }
         
     }
 }
