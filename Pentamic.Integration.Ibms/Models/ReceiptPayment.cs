@@ -26,7 +26,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int Status { get; set; }
         [DataMember(Name = "bank_account")]
         public BankAccount BankAccount { get; set; }
-
+        public int? PaymentType { get; set; }
         public int ReceiptId { get; set; }
         public int? BankId { get; set; }
         public bool IsDeposit { get; set; }

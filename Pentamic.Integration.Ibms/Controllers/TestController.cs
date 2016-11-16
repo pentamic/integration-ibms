@@ -1595,6 +1595,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 card_payment.BankCardType = card.BankCardType;
                                                 card_payment.Amount = card.Amount;
                                                 card_payment.Total = card.Total;
+                                                card_payment.PaymentType = 2;
                                                 card_payment.CurrencyCode = card.CurrencyCode;
                                                 card_payment.ExchangeRate = card.ExchangeRate;
                                                 if (card.BankAccount != null)
@@ -1622,6 +1623,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 cash_payment.ReceiptId = item.IDs;
                                                 cash_payment.Amount = cash.Amount;
                                                 cash_payment.Total = cash.Total;
+                                                cash_payment.PaymentType = 1;
                                                 cash_payment.CurrencyCode = cash.CurrencyCode;
                                                 cash_payment.ExchangeRate = cash.ExchangeRate;
                                                 cash_payment.Status = cash.Status;
@@ -1647,6 +1649,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 card_payment.BankCardType = card.BankCardType;
                                                 card_payment.Amount = card.Amount;
                                                 card_payment.Total = card.Total;
+                                                card_payment.PaymentType = 2;
                                                 card_payment.CurrencyCode = card.CurrencyCode;
                                                 card_payment.ExchangeRate = card.ExchangeRate;
                                                 if (card.BankAccount != null)
@@ -1671,6 +1674,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 cash_payment.ReceiptId = item.IDs;
                                                 cash_payment.Amount = cash.Amount;
                                                 cash_payment.Total = cash.Total;
+                                                cash_payment.PaymentType = 1;
                                                 cash_payment.CurrencyCode = cash.CurrencyCode;
                                                 cash_payment.ExchangeRate = cash.ExchangeRate;
                                                 cash_payment.Status = cash.Status;
@@ -1875,6 +1879,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     card_payment.BankCardType = card.BankCardType;
                                                     card_payment.Amount = card.Amount;
                                                     card_payment.Total = card.Total;
+                                                    card_payment.PaymentType = 2;
                                                     card_payment.CurrencyCode = card.CurrencyCode;
                                                     card_payment.ExchangeRate = card.ExchangeRate;
                                                     if (card.BankAccount != null)
@@ -1903,6 +1908,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     cash_payment.ReceiptId = item.IDs;
                                                     cash_payment.Amount = cash.Amount;
                                                     cash_payment.Total = cash.Total;
+                                                    cash_payment.PaymentType = 1;
                                                     cash_payment.CurrencyCode = cash.CurrencyCode;
                                                     cash_payment.ExchangeRate = cash.ExchangeRate;
                                                     cash_payment.Status = cash.Status;
@@ -1928,6 +1934,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     card_payment.BankCardType = card.BankCardType;
                                                     card_payment.Amount = card.Amount;
                                                     card_payment.Total = card.Total;
+                                                    card_payment.PaymentType = 2;
                                                     card_payment.CurrencyCode = card.CurrencyCode;
                                                     card_payment.ExchangeRate = card.ExchangeRate;
                                                     if (card.BankAccount != null)
@@ -1952,6 +1959,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     cash_payment.ReceiptId = item.IDs;
                                                     cash_payment.Amount = cash.Amount;
                                                     cash_payment.Total = cash.Total;
+                                                    cash_payment.PaymentType = 1;
                                                     cash_payment.CurrencyCode = cash.CurrencyCode;
                                                     cash_payment.ExchangeRate = cash.ExchangeRate;
                                                     cash_payment.Status = cash.Status;
