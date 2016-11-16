@@ -14,6 +14,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int IDs { get; set; }
         public string Name { get; set; }
         public int ParentGroupId { get; set; }
+        public int? Type { get; set; }
         public string LastSync { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }

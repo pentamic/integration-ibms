@@ -17,6 +17,8 @@ namespace Pentamic.Integration.Ibms.Models
         public int IDs { get; set; }
         [DataMember(Name = "branchName")]
         public string BranchName { get; set; }
+        [DataMember(Name = "maChiNhanh")]
+        public string BranchCode { get; set; }
         [DataMember(Name = "address")]
         public string Address { get; set; }
         public string LastSync { get; set; }

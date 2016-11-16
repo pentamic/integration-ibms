@@ -320,6 +320,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             {
                 var location = new Branch();
                 location.IDs = item.branch.IDs;
+                location.BranchCode = item.branch.BranchCode;
                 location.BranchName = item.branch.BranchName;
                 location.Address = item.branch.Address;
                 location.LastSync = lastSync;
@@ -333,8 +334,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var update = _context.Branchs.Where(x => x.IDs == item.branch.IDs).FirstOrDefault();
                 if (update != null && !list_location_update.Contains(item.branch.IDs))
                 {
-                    if (update.BranchName != item.branch.BranchName)
+                    if (update.BranchCode != item.branch.BranchCode)
                     {
+                        update.BranchCode = item.branch.BranchCode;
                         update.BranchName = item.branch.BranchName;
                         update.Address = item.branch.Address;
                         update.LastSync = lastSync;
@@ -787,6 +789,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             {
                 var branch = new Branch();
                 branch.IDs = item.location.IDs;
+                branch.BranchCode = item.location.BranchCode;
                 branch.BranchName = item.location.BranchName;
                 branch.Address = item.location.Address;
                 branch.LastSync = lastSync;
@@ -800,8 +803,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var update = _context.Branchs.Where(x => x.IDs == item.location.IDs).FirstOrDefault();
                 if (update != null)
                 {
-                    if (update.BranchName != item.location.BranchName)
+                    if (update.BranchCode != item.location.BranchCode)
                     {
+                        update.BranchCode = item.location.BranchCode;
                         update.BranchName = item.location.BranchName;
                         update.Address = item.location.Address;
                         update.LastSync = lastSync;
@@ -834,6 +838,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var prdGroup = new ProductGroup();
                 prdGroup.IDs = small_group.IDs;
                 prdGroup.Name = small_group.Name;
+                prdGroup.Type = 3;
                 prdGroup.ParentGroupId = small_group.ParentGroupId;
                 prdGroup.LastSync = lastSync;
                 prdGroup.CreatedAt = DateTime.Now;
@@ -849,6 +854,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     if (update.Name != small_group.Name)
                     {
                         update.Name = small_group.Name;
+                        update.Type = 3;
                         update.ParentGroupId = small_group.ParentGroupId;
                         update.LastSync = lastSync;
                         update.ModifiedAt = DateTime.Now;
@@ -863,6 +869,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var prdGroup = new ProductGroup();
                 prdGroup.IDs = middle_group.IDs;
                 prdGroup.Name = middle_group.Name;
+                prdGroup.Type = 2;
                 prdGroup.ParentGroupId = middle_group.ParentGroupId;
                 prdGroup.LastSync = lastSync;
                 prdGroup.CreatedAt = DateTime.Now;
@@ -877,6 +884,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 {
                     if (update.Name != middle_group.Name)
                     {
+                        update.Type = 2;
                         update.Name = middle_group.Name;
                         update.ParentGroupId = middle_group.ParentGroupId;
                         update.LastSync = lastSync;
@@ -891,6 +899,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var prdGroup = new ProductGroup();
                 prdGroup.IDs = big_group.IDs;
                 prdGroup.Name = big_group.Name;
+                prdGroup.Type = 1;
                 prdGroup.ParentGroupId = big_group.ParentGroupId;
                 prdGroup.LastSync = lastSync;
                 prdGroup.CreatedAt = DateTime.Now;
@@ -905,6 +914,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 {
                     if (update.Name != big_group.Name)
                     {
+                        update.Type = 1;
                         update.Name = big_group.Name;
                         update.ParentGroupId = big_group.ParentGroupId;
                         update.LastSync = lastSync;
@@ -1139,10 +1149,24 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     prd.TotalWeight = item.TotalWeight;
                                     prd.Type = item.Type;
                                     if (item.small_group != null)
-                                        prd.ProductGroupId = item.small_group.IDs;
+                                        prd.ProductGroupId1 = item.small_group.IDs;
                                     else
                                     {
-                                        input_err = "ProductGroup is null";
+                                        input_err = "Product contains small_group is null";
+                                        throw new Exception(input_err);
+                                    }
+                                    if (item.middle_group != null)
+                                        prd.ProductGroupId2 = item.middle_group.IDs;
+                                    else
+                                    {
+                                        input_err = "Product contains middle_group is null";
+                                        throw new Exception(input_err);
+                                    }
+                                    if (item.big_group != null)
+                                        prd.ProductGroupId3 = item.big_group.IDs;
+                                    else
+                                    {
+                                        input_err = "Product contains big_group is null";
                                         throw new Exception(input_err);
                                     }
                                     prd.LastSync = lastSync;
@@ -1184,10 +1208,24 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             prd.TotalWeight = item.TotalWeight;
                                             prd.Type = item.Type;
                                             if (item.small_group != null)
-                                                prd.ProductGroupId = item.small_group.IDs;
+                                                prd.ProductGroupId1 = item.small_group.IDs;
                                             else
                                             {
-                                                input_err = "ProductGroup is null";
+                                                input_err = "Product contains small_group is null";
+                                                throw new Exception(input_err);
+                                            }
+                                            if (item.middle_group != null)
+                                                prd.ProductGroupId2 = item.middle_group.IDs;
+                                            else
+                                            {
+                                                input_err = "Product contains middle_group is null";
+                                                throw new Exception(input_err);
+                                            }
+                                            if (item.big_group != null)
+                                                prd.ProductGroupId3 = item.big_group.IDs;
+                                            else
+                                            {
+                                                input_err = "Product contains big_group is null";
                                                 throw new Exception(input_err);
                                             }
                                             prd.LastSync = lastSync;
