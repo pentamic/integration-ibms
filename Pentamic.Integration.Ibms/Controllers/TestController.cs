@@ -816,7 +816,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         }
         private void Stock(tmpStock item, string lastSync)
         {
-            var stock = new Stock();
+            var stock = new BalanceStock();
             stock.ProductId = item.ProductId;
             stock.Price = item.Price;
             stock.CostPrice = item.CostPrice;
@@ -828,7 +828,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             stock.LastSync = lastSync;
             stock.Status = true;
             stock.CreatedAt = DateTime.Now;
-            _context.Stocks.Add(stock);
+            _context.BalanceStocks.Add(stock);
         }
         private void ProductGroup(tmpProductGroup small_group, tmpProductGroup middle_group, tmpProductGroup big_group, List<int> list_product_group_add, List<int> list_product_group_update, List<int> list_product_group_updated, string lastSync)
         {
@@ -989,7 +989,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 id_Coffer = item.Coffer.IDs;
                                 id_Branch = item.Branch[0].IDs;
 
-                                var check_Stock = _context.Stocks.Where(x => x.ProductId == item.ProductId
+                                var check_Stock = _context.BalanceStocks.Where(x => x.ProductId == item.ProductId
                                   && x.Type == item.Type && x.CofferId == id_Coffer && x.BranchId == id_Branch);
                                 foreach (var s in check_Stock)
                                 {

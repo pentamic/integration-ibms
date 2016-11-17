@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Pentamic.Integration.Ibms.Models
 {
-    public class Stock
+    public class BalanceStock
     {
         [Key]
         public int Id { get; set; }
