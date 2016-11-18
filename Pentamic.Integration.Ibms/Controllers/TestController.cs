@@ -2151,6 +2151,8 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     var checkin = new CheckIn();
                                     checkin.IDs = item.IDs;
                                     checkin.CheckInCode = item.CheckInCode;
+                                    if (item.CreatedDate != null)
+                                        checkin.CreatedDate = item.CreatedDate;
                                     checkin.FeePort = item.FeePort;
                                     checkin.Status = item.Status;
                                     checkin.LastSync = lastSync;
@@ -2344,6 +2346,11 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         var checkin_update = _context.tblCheckIns.Where(x => x.IDs == item.IDs).FirstOrDefault();
                                         checkin_update.Status = item.Status;
                                         checkin_update.CheckInCode = item.CheckInCode;
+                                        if (item.CreatedDate != null)
+                                            checkin_update.CreatedDate = item.CreatedDate;
+                                        else
+                                            checkin_update.CreatedDate = null;
+
                                         checkin_update.FeePort = item.FeePort;
                                         checkin_update.LastSync = lastSync;
                                         checkin_update.ModifiedAt = DateTime.Now;

@@ -17,6 +17,8 @@ namespace Pentamic.Integration.Ibms.Models
         public int IDs { get; set; }
         [DataMember(Name = "checkin_code")]
         public string CheckInCode { get; set; }
+        [DataMember(Name = "checkin_date")]
+        public DateTime? CreatedDate { get; set; }
         [DataMember(Name = "fee_port")]
         public decimal FeePort { get; set; }
         [DataMember(Name = "status")]

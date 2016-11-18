@@ -14,6 +14,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int Id { get; set; }
         public int IDs { get; set; }
         public string CheckInCode { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public decimal FeePort { get; set; }
         public int Status { get; set; }
 
