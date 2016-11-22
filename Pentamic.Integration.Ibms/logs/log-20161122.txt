@@ -1,0 +1,482 @@
+2016-11-22 09:34:10.063 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lsreceipt": [
+      {
+        "idReceipt": 8212,
+        "receiptCode": "HD160205-05-131727",
+        "createdDate": "2016-02-05 13:17:27",
+        "customer": {
+          "id": 11464,
+          "contactId": "CUS160205131309",
+          "fullName": "Luxzn",
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 8,
+            "countryCode": "CN",
+            "countryName": "Trung Quốc",
+            "cityList": [
+              {
+                "id": 95,
+                "name": "Khác"
+              }
+            ]
+          },
+          "partner_group": 0
+        },
+        "lstprd": [
+          {
+            "id": 18138,
+            "productCode": "NEC11FP1400139",
+            "productName": "CHUỖI VÒNG CỔ NƯỚC NGỌT MÓC COPPER",
+            "price": 850000,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 850000,
+            "percentDiscount": 10,
+            "moneyDiscount": 85000,
+            "total": 765000,
+            "totalPay": 1215000,
+            "coffer": {
+              "id": 459,
+              "coffer_name": "TU 111",
+              "branch_id": 8,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 18217,
+            "productCode": "BAC11FP0100006",
+            "productName": "CHUỖI VÒNG TAY NƯỚC NGỌT MÓC COPPER",
+            "price": 500000,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 500000,
+            "percentDiscount": 10,
+            "moneyDiscount": 50000,
+            "total": 450000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 465,
+              "coffer_name": "TU 114",
+              "branch_id": 8,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "VISA",
+              "amount": 1215000,
+              "total": 1215000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 3,
+                "name": "BIDV 13810000089181"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 8,
+          "branchName": "30 NGUYỄN THIỆN THUẬT - NHA TRANG",
+          "address": "30 Nguyễn Thiện Thuật - Nha Trang - Khánh Hòa"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 1,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 8244,
+        "receiptCode": "HD160206-01-131913",
+        "createdDate": "2016-02-06 13:19:13",
+        "customer": {
+          "id": 11460,
+          "contactId": "CUS160205113343",
+          "fullName": "NGÔ THỊ HẰNG",
+          "emailAddress": "",
+          "phoneNumber": "0905254566",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 56,
+                "name": "Thừa Thiên Huế"
+              }
+            ]
+          },
+          "partner_group": 0
+        },
+        "lstprd": [
+          {
+            "id": 7087,
+            "productCode": "RIS14F1400293",
+            "productName": "NHẪN BẠC NƯỚC NGỌT",
+            "price": 1900000,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 1900000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 1900000,
+            "totalPay": 3800000,
+            "coffer": {
+              "id": 687,
+              "coffer_name": "Tu 12",
+              "branch_id": 15,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 2652,
+            "productCode": "EAS03FL1400037",
+            "productName": "BÔNG TAI BẠC NƯỚC NGỌT",
+            "price": 1900000,
+            "quantity": 1,
+            "unit": "ĐÔI",
+            "amount": 1900000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 1900000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 685,
+              "coffer_name": "Tu 11",
+              "branch_id": 15,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 68,
+            "full_name": "Lê Thị Phương Thảo",
+            "pecent": 100,
+            "money": 3800000,
+            "status": 1
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [
+            {
+              "amount": 3800000,
+              "total": 3800000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "status": 1
+            }
+          ],
+          "card_payment_list": []
+        },
+        "branch": {
+          "branchId": 15,
+          "branchName": "SHOWROOM 49 LÊ LỢI - HUẾ",
+          "address": "49 Lê Lợi, P. Phú Hội, TP. Huế"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 1,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30001,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-22 09:34:12.219 +07:00 [Information] Request: "application/json"
+2016-11-22 09:34:12.261 +07:00 [Information] Received package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":8212,\"receiptCode\":\"HD160205-05-131727\",\"createdDate\":\"2016-02-05 13:17:27\",\"customer\":{\"id\":11464,\"contactId\":\"CUS160205131309\",\"fullName\":\"Luxzn\",\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":8,\"countryCode\":\"CN\",\"countryName\":\"Trung Quốc\",\"cityList\":[{\"id\":95,\"name\":\"Khác\"}]},\"partner_group\":0},\"lstprd\":[{\"id\":18138,\"productCode\":\"NEC11FP1400139\",\"productName\":\"CHUỖI VÒNG CỔ NƯỚC NGỌT MÓC COPPER\",\"price\":850000,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":850000,\"percentDiscount\":10,\"moneyDiscount\":85000,\"total\":765000,\"totalPay\":1215000,\"coffer\":{\"id\":459,\"coffer_name\":\"TU 111\",\"branch_id\":8,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1},{\"id\":18217,\"productCode\":\"BAC11FP0100006\",\"productName\":\"CHUỖI VÒNG TAY NƯỚC NGỌT MÓC COPPER\",\"price\":500000,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":500000,\"percentDiscount\":10,\"moneyDiscount\":50000,\"total\":450000,\"totalPay\":0,\"coffer\":{\"id\":465,\"coffer_name\":\"TU 114\",\"branch_id\":8,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1}],\"lstDiscount\":[],\"lst_sale_staff\":[],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"VISA\",\"amount\":1215000,\"total\":1215000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":3,\"name\":\"BIDV 13810000089181\"},\"status\":1}]},\"branch\":{\"branchId\":8,\"branchName\":\"30 NGUYỄN THIỆN THUẬT - NHA TRANG\",\"address\":\"30 Nguyễn Thiện Thuật - Nha Trang - Khánh Hòa\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":1,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":8244,\"receiptCode\":\"HD160206-01-131913\",\"createdDate\":\"2016-02-06 13:19:13\",\"customer\":{\"id\":11460,\"contactId\":\"CUS160205113343\",\"fullName\":\"NGÔ THỊ HẰNG\",\"emailAddress\":\"\",\"phoneNumber\":\"0905254566\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":56,\"name\":\"Thừa Thiên Huế\"}]},\"partner_group\":0},\"lstprd\":[{\"id\":7087,\"productCode\":\"RIS14F1400293\",\"productName\":\"NHẪN BẠC NƯỚC NGỌT\",\"price\":1900000,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":1900000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":1900000,\"totalPay\":3800000,\"coffer\":{\"id\":687,\"coffer_name\":\"Tu 12\",\"branch_id\":15,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1},{\"id\":2652,\"productCode\":\"EAS03FL1400037\",\"productName\":\"BÔNG TAI BẠC NƯỚC NGỌT\",\"price\":1900000,\"quantity\":1,\"unit\":\"ĐÔI\",\"amount\":1900000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":1900000,\"totalPay\":0,\"coffer\":{\"id\":685,\"coffer_name\":\"Tu 11\",\"branch_id\":15,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":68,\"full_name\":\"Lê Thị Phương Thảo\",\"pecent\":100,\"money\":3800000,\"status\":1}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[{\"amount\":3800000,\"total\":3800000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"status\":1}],\"card_payment_list\":[]},\"branch\":{\"branchId\":15,\"branchName\":\"SHOWROOM 49 LÊ LỢI - HUẾ\",\"address\":\"49 Lê Lợi, P. Phú Hội, TP. Huế\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":1,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0}],\"status\":0}}"
+2016-11-22 09:47:35.540 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lsreceipt": [
+      {
+        "idReceipt": 8212,
+        "receiptCode": "HD160205-05-131727",
+        "createdDate": "2016-02-05 13:17:27",
+        "customer": {
+          "id": 11464,
+          "contactId": "CUS160205131309",
+          "fullName": "Luxzn",
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 8,
+            "countryCode": "CN",
+            "countryName": "Trung Quốc",
+            "cityList": [
+              {
+                "id": 95,
+                "name": "Khác"
+              }
+            ]
+          },
+          "partner_group": 0
+        },
+        "lstprd": [
+          {
+            "id": 18138,
+            "productCode": "NEC11FP1400139",
+            "productName": "CHUỖI VÒNG CỔ NƯỚC NGỌT MÓC COPPER",
+            "price": 850000,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 850000,
+            "percentDiscount": 10,
+            "moneyDiscount": 85000,
+            "total": 765000,
+            "totalPay": 1215000,
+            "coffer": {
+              "id": 459,
+              "coffer_name": "TU 111",
+              "branch_id": 8,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 18217,
+            "productCode": "BAC11FP0100006",
+            "productName": "CHUỖI VÒNG TAY NƯỚC NGỌT MÓC COPPER",
+            "price": 500000,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 500000,
+            "percentDiscount": 10,
+            "moneyDiscount": 50000,
+            "total": 450000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 465,
+              "coffer_name": "TU 114",
+              "branch_id": 8,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "VISA",
+              "amount": 1215000,
+              "total": 1215000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 3,
+                "name": "BIDV 13810000089181"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 8,
+          "branchName": "30 NGUYỄN THIỆN THUẬT - NHA TRANG",
+          "address": "30 Nguyễn Thiện Thuật - Nha Trang - Khánh Hòa"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 1,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 8244,
+        "receiptCode": "HD160206-01-131913",
+        "createdDate": "2016-02-06 13:19:13",
+        "customer": {
+          "id": 11460,
+          "contactId": "CUS160205113343",
+          "fullName": "NGÔ THỊ HẰNG",
+          "emailAddress": "",
+          "phoneNumber": "0905254566",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 56,
+                "name": "Thừa Thiên Huế"
+              }
+            ]
+          },
+          "partner_group": 0
+        },
+        "lstprd": [
+          {
+            "id": 7087,
+            "productCode": "RIS14F1400293",
+            "productName": "NHẪN BẠC NƯỚC NGỌT",
+            "price": 1900000,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 1900000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 1900000,
+            "totalPay": 3800000,
+            "coffer": {
+              "id": 687,
+              "coffer_name": "Tu 12",
+              "branch_id": 15,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          },
+          {
+            "id": 2652,
+            "productCode": "EAS03FL1400037",
+            "productName": "BÔNG TAI BẠC NƯỚC NGỌT",
+            "price": 1900000,
+            "quantity": 1,
+            "unit": "ĐÔI",
+            "amount": 1900000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 1900000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 685,
+              "coffer_name": "Tu 11",
+              "branch_id": 15,
+              "type": 2
+            },
+            "type": 2,
+            "saleStatus": 1,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 68,
+            "full_name": "Lê Thị Phương Thảo",
+            "pecent": 100,
+            "money": 3800000,
+            "status": 1
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [
+            {
+              "amount": 3800000,
+              "total": 3800000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "status": 1
+            }
+          ],
+          "card_payment_list": []
+        },
+        "branch": {
+          "branchId": 15,
+          "branchName": "SHOWROOM 49 LÊ LỢI - HUẾ",
+          "address": "49 Lê Lợi, P. Phú Hội, TP. Huế"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 1,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30001,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-22 09:47:37.119 +07:00 [Information] Request: "application/json"
+2016-11-22 09:47:37.215 +07:00 [Information] Received package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":8212,\"receiptCode\":\"HD160205-05-131727\",\"createdDate\":\"2016-02-05 13:17:27\",\"customer\":{\"id\":11464,\"contactId\":\"CUS160205131309\",\"fullName\":\"Luxzn\",\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":8,\"countryCode\":\"CN\",\"countryName\":\"Trung Quốc\",\"cityList\":[{\"id\":95,\"name\":\"Khác\"}]},\"partner_group\":0},\"lstprd\":[{\"id\":18138,\"productCode\":\"NEC11FP1400139\",\"productName\":\"CHUỖI VÒNG CỔ NƯỚC NGỌT MÓC COPPER\",\"price\":850000,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":850000,\"percentDiscount\":10,\"moneyDiscount\":85000,\"total\":765000,\"totalPay\":1215000,\"coffer\":{\"id\":459,\"coffer_name\":\"TU 111\",\"branch_id\":8,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1},{\"id\":18217,\"productCode\":\"BAC11FP0100006\",\"productName\":\"CHUỖI VÒNG TAY NƯỚC NGỌT MÓC COPPER\",\"price\":500000,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":500000,\"percentDiscount\":10,\"moneyDiscount\":50000,\"total\":450000,\"totalPay\":0,\"coffer\":{\"id\":465,\"coffer_name\":\"TU 114\",\"branch_id\":8,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1}],\"lstDiscount\":[],\"lst_sale_staff\":[],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"VISA\",\"amount\":1215000,\"total\":1215000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":3,\"name\":\"BIDV 13810000089181\"},\"status\":1}]},\"branch\":{\"branchId\":8,\"branchName\":\"30 NGUYỄN THIỆN THUẬT - NHA TRANG\",\"address\":\"30 Nguyễn Thiện Thuật - Nha Trang - Khánh Hòa\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":1,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":8244,\"receiptCode\":\"HD160206-01-131913\",\"createdDate\":\"2016-02-06 13:19:13\",\"customer\":{\"id\":11460,\"contactId\":\"CUS160205113343\",\"fullName\":\"NGÔ THỊ HẰNG\",\"emailAddress\":\"\",\"phoneNumber\":\"0905254566\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":56,\"name\":\"Thừa Thiên Huế\"}]},\"partner_group\":0},\"lstprd\":[{\"id\":7087,\"productCode\":\"RIS14F1400293\",\"productName\":\"NHẪN BẠC NƯỚC NGỌT\",\"price\":1900000,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":1900000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":1900000,\"totalPay\":3800000,\"coffer\":{\"id\":687,\"coffer_name\":\"Tu 12\",\"branch_id\":15,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1},{\"id\":2652,\"productCode\":\"EAS03FL1400037\",\"productName\":\"BÔNG TAI BẠC NƯỚC NGỌT\",\"price\":1900000,\"quantity\":1,\"unit\":\"ĐÔI\",\"amount\":1900000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":1900000,\"totalPay\":0,\"coffer\":{\"id\":685,\"coffer_name\":\"Tu 11\",\"branch_id\":15,\"type\":2},\"type\":2,\"saleStatus\":1,\"ibms_code\":1}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":68,\"full_name\":\"Lê Thị Phương Thảo\",\"pecent\":100,\"money\":3800000,\"status\":1}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[{\"amount\":3800000,\"total\":3800000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"status\":1}],\"card_payment_list\":[]},\"branch\":{\"branchId\":15,\"branchName\":\"SHOWROOM 49 LÊ LỢI - HUẾ\",\"address\":\"49 Lê Lợi, P. Phú Hội, TP. Huế\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":1,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0}],\"status\":0}}"
+2016-11-22 09:47:57.073 +07:00 [Information] Return package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-22 09:47:57.223 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 21940ms

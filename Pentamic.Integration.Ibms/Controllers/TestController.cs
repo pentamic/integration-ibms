@@ -1602,7 +1602,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 {
                                                     if (card.BankAccount.IDs != 0)
                                                     {
-                                                        card_payment.BankId = card.BankId;
+                                                        card_payment.BankId = card.BankAccount.IDs;
                                                         BankAccount(card, list_bank_account, list_bank_account_updated, lastSync);
                                                     }
                                                 }
@@ -1886,7 +1886,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     {
                                                         if (card.BankAccount.IDs != 0)
                                                         {
-                                                            card_payment.BankId = card.BankId;
+                                                            card_payment.BankId = card.BankAccount.IDs;
                                                             BankAccount(card, list_bank_account, list_bank_account_updated, lastSync);
                                                         }
                                                     }
