@@ -1,0 +1,999 @@
+2016-11-29 08:42:06.243 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:42:11.138 +07:00 [Information] Request: "application/json"
+2016-11-29 08:42:11.190 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:45:52.742 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:46:00.091 +07:00 [Information] Request: "application/json"
+2016-11-29 08:46:00.139 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:48:46.690 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":-1,\"err_message\":\"Inventory ID: 1 - Invalid column name 'Description'. ; \",\"protocol_status\":false,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"product_id\":5698,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6,\"type\":0},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1}]}}"
+2016-11-29 08:48:46.924 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 174524ms
+2016-11-29 08:51:30.718 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:51:31.590 +07:00 [Information] Request: "application/json"
+2016-11-29 08:51:31.633 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:51:42.904 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":-1,\"err_message\":\"Inventory ID: 2 - The 'Quantity' property on 'Inventory' could not be set to a 'System.Double' value. You must set this property to a non-null value of type 'System.Single'.  ; \",\"protocol_status\":false,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":2,\"product_id\":123,\"supplier\":null,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":null,\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:51:42.999 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 12348ms
+2016-11-29 08:53:27.081 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:53:27.542 +07:00 [Information] Request: "application/json"
+2016-11-29 08:53:27.584 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:53:49.126 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-29 08:53:53.493 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 26474ms
+2016-11-29 08:55:22.796 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:55:23.275 +07:00 [Information] Request: "application/json"
+2016-11-29 08:55:23.344 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:55:24.646 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":-1,\"err_message\":\"Inventory ID: 1 - Object reference not set to an instance of an object. ; Inventory ID: 2 - Object reference not set to an instance of an object. ; \",\"protocol_status\":false,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"product_id\":5698,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6,\"type\":0},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"supplier\":null,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":null,\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:55:24.708 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 1954ms
+2016-11-29 08:55:58.235 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:55:58.239 +07:00 [Information] Request: "application/json"
+2016-11-29 08:55:58.242 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:56:18.547 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":-1,\"err_message\":\"Inventory ID: 1 - Object reference not set to an instance of an object. ; Inventory ID: 2 - Object reference not set to an instance of an object. ; \",\"protocol_status\":false,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"product_id\":5698,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6,\"type\":0},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"supplier\":null,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":null,\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:56:18.548 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 20316ms
+2016-11-29 08:56:21.481 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:56:21.484 +07:00 [Information] Request: "application/json"
+2016-11-29 08:56:21.485 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:57:32.314 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":-1,\"err_message\":\"Inventory ID: 1 - Object reference not set to an instance of an object. ; Inventory ID: 2 - Object reference not set to an instance of an object. ; \",\"protocol_status\":false,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"product_id\":5698,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6,\"type\":0},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"supplier\":null,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27T17:33:59\",\"quantity\":2.0,\"price\":1000.0,\"amount\":2000.0,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1,\"type\":0},\"coffer_end\":null,\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\",\"address\":null},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 08:57:32.315 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 70835ms
+2016-11-29 08:59:57.357 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 08:59:58.542 +07:00 [Information] Request: "application/json"
+2016-11-29 08:59:58.591 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 09:00:12.036 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-29 09:00:12.089 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 14889ms
+2016-11-29 09:01:16.565 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 09:01:16.570 +07:00 [Information] Request: "application/json"
+2016-11-29 09:01:16.571 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 09:01:46.641 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-29 09:01:46.642 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 30079ms
+2016-11-29 09:03:20.811 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 09:03:21.232 +07:00 [Information] Request: "application/json"
+2016-11-29 09:03:21.273 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 09:03:32.146 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-29 09:03:32.217 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 11469ms
+2016-11-29 09:03:47.867 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 09:03:47.869 +07:00 [Information] Request: "application/json"
+2016-11-29 09:03:47.872 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 09:04:02.333 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-29 09:04:02.334 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 14468ms
+2016-11-29 09:06:07.838 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 09:06:08.780 +07:00 [Information] Request: "application/json"
+2016-11-29 09:06:08.820 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 09:06:24.591 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-29 09:06:24.683 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 16892ms
+2016-11-29 09:06:36.148 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "product_history": [
+      {
+        "id": 1,
+        "supplier": {
+          "id": 1,
+          "supplier_code": "LBP",
+          "supplier_name": "LongBeachPearl"
+        },
+        "product_id": 5698,
+        "product_code": "AL0200002",
+        "product_name": "HẠT NGỌC AKOYA",
+        "product_type": 1,
+        "code": "PCK161127-19-162153",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "coffer_end": {
+          "id": 9,
+          "coffer_name": "Tu 20",
+          "branch_id": 6
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Chuyển kho",
+        "type": 2,
+        "code_class": 1
+      },
+      {
+        "id": 2,
+        "product_id": 123,
+        "product_code": "9EAG01AL0200010",
+        "product_name": "BÔNG TAI VÀNG AKOYA",
+        "product_type": 2,
+        "code": "HD161127-06-191500",
+        "create_date": "2016-11-27 17:33:59",
+        "quantity": 2,
+        "price": 1000,
+        "amount": 2000,
+        "coffer_begin": {
+          "id": 1,
+          "coffer_name": "Tu 01",
+          "branch_id": 1
+        },
+        "location": {
+          "branchId": 1,
+          "branchName": "30 NGUYỄN THIỆN THUẬT",
+          "maChiNhanh": "LBP-30NT"
+        },
+        "description": "Bán hàng",
+        "type": 1,
+        "code_class": 2
+      }
+    ]
+  },
+  "protocol_id": 30003,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "admin",
+  "partner_pass": "admin"
+}
+2016-11-29 09:06:36.150 +07:00 [Information] Request: "application/json"
+2016-11-29 09:06:36.193 +07:00 [Information] Received package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":{\"product_history\":[{\"id\":1,\"supplier\":{\"id\":1,\"supplier_code\":\"LBP\",\"supplier_name\":\"LongBeachPearl\"},\"product_id\":5698,\"product_code\":\"AL0200002\",\"product_name\":\"HẠT NGỌC AKOYA\",\"product_type\":1,\"code\":\"PCK161127-19-162153\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"coffer_end\":{\"id\":9,\"coffer_name\":\"Tu 20\",\"branch_id\":6},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Chuyển kho\",\"type\":2,\"code_class\":1},{\"id\":2,\"product_id\":123,\"product_code\":\"9EAG01AL0200010\",\"product_name\":\"BÔNG TAI VÀNG AKOYA\",\"product_type\":2,\"code\":\"HD161127-06-191500\",\"create_date\":\"2016-11-27 17:33:59\",\"quantity\":2,\"price\":1000,\"amount\":2000,\"coffer_begin\":{\"id\":1,\"coffer_name\":\"Tu 01\",\"branch_id\":1},\"location\":{\"branchId\":1,\"branchName\":\"30 NGUYỄN THIỆN THUẬT\",\"maChiNhanh\":\"LBP-30NT\"},\"description\":\"Bán hàng\",\"type\":1,\"code_class\":2}]}}"
+2016-11-29 09:06:55.262 +07:00 [Information] Return package: "{\"protocol_id\":30003,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"admin\",\"partner_pass\":\"admin\",\"protocol_data\":null}"
+2016-11-29 09:06:55.263 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 19117ms

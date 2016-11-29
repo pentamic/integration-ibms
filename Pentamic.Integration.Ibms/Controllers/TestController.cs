@@ -23,13 +23,15 @@ namespace Pentamic.Integration.Ibms.Controllers
         private const int protocol_receipt = 30001;
         private const int protocol_stock = 30002;
         private const int protocol_product = 20000;
+        private const int protocol_inventory = 30003;
 
         enum ProtocolName
         {
             CheckIn=30000,
             Receipt=30001,
             Stock=30002,
-            Product=20000
+            Product=20000,
+            Inventory=30003
         };
         private ApplicationDbContext _context;
         public TestController()
@@ -132,6 +134,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     List<tmpCheckIn> returnCheckin = new List<tmpCheckIn>();//Luu tru nhung ban ghi bi loi
                     List<tmpProduct> returnProduct = new List<tmpProduct>();//Luu tru nhung ban ghi bi loi
                     List<tmpStock> returnStock = new List<tmpStock>();//Luu tru nhung ban ghi bi loi
+                    List<tmpInventory> returnInventory = new List<tmpInventory>();//Luu tru nhung ban ghi bi loi
 
                     if (protocol.protocol_id == protocol_checkin)//CheckIn
                     {
@@ -148,6 +151,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                     else if (protocol.protocol_id == protocol_stock)//Stock
                     {
                         SyncStock(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnStock, lastSync);
+                    }
+                    else if (protocol.protocol_id == protocol_inventory)//Inventory
+                    {
+                        SyncInventory(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnInventory, lastSync);
                     }
 
                     if (mess_err != "")
@@ -179,6 +186,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                         else if (protocol.protocol_id == protocol_stock)
                         {
                             result.protocol_data = new { lstprd = returnStock };
+                        }
+                        else if (protocol.protocol_id == protocol_inventory)
+                        {
+                            result.protocol_data = new { product_history = returnInventory };
                         }
                         Log.Information("Return package: {Package}", JsonConvert.SerializeObject(result));
                         return Ok(result);
@@ -246,6 +257,36 @@ namespace Pentamic.Integration.Ibms.Controllers
             {
                 protocol_status = false
             };
+        }
+        private void Supplier(tmpSupplier item, List<int> list_supplier, List<int> list_supplier_update, string lastSync)
+        {
+            if (list_supplier.Contains(item.IDs))//Create
+            {
+                var supplier = new Supplier();
+                supplier.IDs = item.IDs;
+                supplier.Name = item.Name;
+                supplier.Code = item.Code;
+                supplier.LastSync = lastSync;
+                supplier.CreatedAt = DateTime.Now;
+
+                _context.Suppliers.Add(supplier);
+                list_supplier.Remove(item.IDs);
+            }
+            else//Update
+            {
+                var update = _context.Suppliers.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                if (update != null && !list_supplier_update.Contains(item.IDs))
+                {
+                    if (update.Code != item.Code || update.Name != item.Name)
+                    {
+                        update.Code = item.Code;
+                        update.Name = item.Name;
+                        update.LastSync = lastSync;
+                        update.ModifiedAt = DateTime.Now;
+                        list_supplier_update.Add(item.IDs);
+                    }
+                }
+            }
         }
         private void Customer(tmpReceipt item, List<int> list_customer, List<int> list_customer_update, string lastSync)
         {
@@ -933,7 +974,8 @@ namespace Pentamic.Integration.Ibms.Controllers
             sync.Type = protocol.protocol_id == protocol_receipt ? "Receipt" :
                 protocol.protocol_id == protocol_checkin ? "CheckIn" :
                 protocol.protocol_id == protocol_product ? "Product" :
-                protocol.protocol_id == protocol_stock ? "Stock" : "";
+                protocol.protocol_id == protocol_stock ? "Stock" :
+                protocol.protocol_id == protocol_inventory ? "Inventory" : "";
             sync.RecordIdFailure = mess_id;
             sync.TotalRecord = totalRecord;
             sync.RecordSuccess = recordSuccess;
@@ -1695,7 +1737,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                             {
                                 if (list_bill_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
                                 {
-                                    var bill_remove = _context.Receipts.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                                    var bill_remove = _context.Receipts.Where(x => x.IDs == item.IDs && x.Status==1).FirstOrDefault();
                                     bill_remove.Status = item.Status;
                                     bill_remove.LastSync = lastSync;
                                     bill_remove.ModifiedAt = DateTime.Now;
@@ -2334,7 +2376,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                             {
                                 if (list_checkin_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
                                 {
-                                    var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                                    var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs && x.Status==1).FirstOrDefault();
                                     checkin_remove.Status = item.Status;
                                     checkin_remove.LastSync = lastSync;
                                     checkin_remove.ModifiedAt = DateTime.Now;
@@ -2545,6 +2587,178 @@ namespace Pentamic.Integration.Ibms.Controllers
             }
             #endregion
         }
+        private void SyncInventory(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess, out List<tmpInventory> returnInventory, string lastSync)
+        {
+            mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
+            returnInventory = new List<tmpInventory>();
+
+            #region Inventory
+            try
+            {
+                var xdata = ((JArray)protocol.protocol_data.product_history).ToObject<List<tmpInventory>>();
+                List<int> list_inventory_add = new List<int>();
+                List<int> list_inventory_update = new List<int>();
+                List<int> list_inventoty_remove = new List<int>();
+                List<int> list_supplier = new List<int>();
+                List<int> list_coffer = new List<int>();
+                
+
+                //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
+                List<int> list_supplier_update = new List<int>();
+                List<int> list_coffer_updated = new List<int>();
+              
+
+                #region GetDataAPI
+                //Get Id data from API
+                foreach (var item in xdata)
+                {
+                    //Neu ko co trong DB cho vao danh sach Insert
+                    if (!list_inventory_add.Contains(item.IDs))
+                        //if (_context.Inventorys.Where(x => x.IDs == item.IDs).Count() == 0)
+                            list_inventory_add.Add(item.IDs);
+
+                    //Neu da ton tai trong DB thi cho vao danh sach Update
+                    if (!list_inventory_update.Contains(item.IDs))
+                        if (_context.Inventorys.Where(x => x.IDs == item.IDs).Count() > 0)
+                            list_inventory_update.Add(item.IDs);
+
+                    if (item.SupplierId != null)
+                    {
+                        if (!list_supplier.Contains(item.SupplierId.IDs))
+                            if (_context.Suppliers.Where(x => x.IDs == item.SupplierId.IDs).Count() == 0)
+                                list_supplier.Add(item.SupplierId.IDs);
+
+                    }
+
+                    if (item.StockFrom != null)
+                    {
+                        if (!list_coffer.Contains(item.StockFrom.IDs))
+                            if (_context.Coffers.Where(x => x.IDs == item.StockFrom.IDs).Count() == 0)
+                                list_coffer.Add(item.StockFrom.IDs);
+                    }
+
+                    if (item.StockTo != null)
+                    {
+                        if (!list_coffer.Contains(item.StockTo.IDs))
+                            if (_context.Coffers.Where(x => x.IDs == item.StockTo.IDs).Count() == 0)
+                                list_coffer.Add(item.StockTo.IDs);
+                    }
+                }
+                #endregion
+
+                if (xdata != null)
+                {
+                    foreach (var item in xdata)
+                    {
+                        TotalRecord++;//Tang so ban ghi nhan duoc len
+                        try
+                        {
+                            _context = new ApplicationDbContext();
+                            if (list_inventory_update.Contains(item.IDs))
+                            {
+                                var inven_update = _context.Inventorys.Where(x => x.IDs == item.IDs && x.Status==1).FirstOrDefault();
+                                inven_update.Status = 0;
+                                inven_update.ModifiedAt = DateTime.Now;
+                                inven_update.LastSync = lastSync;
+                            }
+
+                            if (list_inventory_add.Contains(item.IDs))//Neu nam trong danh sach Insert
+                            {
+                                var inven = new Inventory();
+                                inven.IDs = item.IDs;
+                                inven.Code = item.Code;
+                                inven.ProductId = item.ProductId;
+                                inven.ProductType = item.ProductType;
+                                inven.CreatedDate = item.CreatedDate;
+                                inven.Quantity = item.Quantity;
+                                inven.Price = item.Price;
+                                inven.Amount = item.Amount;
+                                inven.Description = item.Description;
+                                inven.Type = item.Type;
+                                inven.Code_Class = item.Code_Class;
+                                inven.LastSync = lastSync;
+                                inven.CreatedAt = DateTime.Now;
+                                inven.Status = 1;
+
+                                if (item.Store != null)
+                                {
+                                    if (item.Store.IDs != 0)
+                                        inven.StoreId = item.Store.IDs;
+                                }
+
+                                #region Supplier
+                                if (item.SupplierId != null)
+                                {
+                                    if (item.SupplierId.IDs != 0)
+                                    {
+                                        Supplier(item.SupplierId, list_supplier, list_supplier_update, lastSync);
+                                        inven.SupplierId = item.SupplierId.IDs;
+                                    }
+                                        
+                                }
+                                #endregion
+
+                                #region CofferFrom
+                                if (item.StockFrom != null)
+                                {
+                                    if (item.StockFrom.IDs != 0)
+                                    {
+                                        inven.StockFromId = item.StockFrom.IDs;
+                                        Coffer(item.StockFrom, list_coffer, list_coffer_updated, lastSync);
+                                    }
+
+                                }
+                                #endregion
+
+                                #region CofferTo
+                                if (item.StockTo != null)
+                                {
+                                    if (item.StockTo.IDs != 0)
+                                    {
+                                        inven.StockToId = item.StockTo.IDs;
+                                        Coffer(item.StockFrom, list_coffer, list_coffer_updated, lastSync);
+                                    }
+
+                                }
+                                #endregion
+
+                                #region Location
+                                if (item.Store != null)
+                                {
+                                    if (item.Store.IDs != 0)
+                                    {
+                                        inven.StoreId = item.Store.IDs;
+                                    }
+
+                                }
+                                #endregion
+
+                                _context.Inventorys.Add(inven);
+                                
+                            }
+                            _context.SaveChanges();
+                            RecordSuccess++;//Tang so ban ghi luu thanh cong
+                        }//end try
+                        catch (Exception ex)
+                        {
+                            mess_id += item.IDs.ToString() + ",";//Luu Id bi loi
+                            mess_err += "Inventory ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
+                            returnInventory.Add(item);//Add ban ghi loi vao danh sach
+                            continue;
+                        }
+                    }
+                    //End Foreach
+                }
+                //end null 
+            }
+            //end catch
+            catch (Exception axx)
+            {
+                mess_err += GetExceptionDetail(axx);
+            }
+            #endregion
+        }
+
         private string GetExceptionDetail(Exception ax)
         {
             if (ax.InnerException != null)

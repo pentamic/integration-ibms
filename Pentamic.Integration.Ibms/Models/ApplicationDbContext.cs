@@ -47,6 +47,8 @@ namespace Pentamic.Integration.Ibms.Models
         public DbSet<BalanceStock> BalanceStocks { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<SettingAPI> SettingAPIs { get; set; }
+        public DbSet<Inventory> Inventorys { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
 
     }
 }
