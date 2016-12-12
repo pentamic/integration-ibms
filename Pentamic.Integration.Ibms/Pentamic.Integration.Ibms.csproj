@@ -198,6 +198,7 @@
     <Compile Include="Models\BalanceStock.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\tmpInventory.cs" />
+    <Compile Include="Models\tmpCoffer.cs" />
     <Compile Include="Models\tmpSupplier.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\ProductGroup.cs" />

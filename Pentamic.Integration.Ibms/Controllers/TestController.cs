@@ -24,6 +24,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         private const int protocol_stock = 30002;
         private const int protocol_product = 20000;
         private const int protocol_inventory = 30003;
+        private const int protocol_coffer = 30004;
 
         enum ProtocolName
         {
@@ -31,7 +32,8 @@ namespace Pentamic.Integration.Ibms.Controllers
             Receipt=30001,
             Stock=30002,
             Product=20000,
-            Inventory=30003
+            Inventory=30003,
+            Coffer = 30004
         };
         private ApplicationDbContext _context;
         public TestController()
@@ -135,6 +137,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     List<tmpProduct> returnProduct = new List<tmpProduct>();//Luu tru nhung ban ghi bi loi
                     List<tmpStock> returnStock = new List<tmpStock>();//Luu tru nhung ban ghi bi loi
                     List<tmpInventory> returnInventory = new List<tmpInventory>();//Luu tru nhung ban ghi bi loi
+                    List<tmpCoffer> returnCoffer = new List<tmpCoffer>();//Luu tru nhung ban ghi bi loi
 
                     if (protocol.protocol_id == protocol_checkin)//CheckIn
                     {
@@ -155,6 +158,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                     else if (protocol.protocol_id == protocol_inventory)//Inventory
                     {
                         SyncInventory(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnInventory, lastSync);
+                    }
+                    else if (protocol.protocol_id == protocol_coffer)//Coffer
+                    {
+                        SyncCoffer(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnCoffer, lastSync);
                     }
 
                     if (mess_err != "")
@@ -190,6 +197,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                         else if (protocol.protocol_id == protocol_inventory)
                         {
                             result.protocol_data = new { product_history = returnInventory };
+                        }
+                        else if (protocol.protocol_id == protocol_coffer)
+                        {
+                            result.protocol_data = new { coffer_list = returnCoffer };
                         }
                         Log.Information("Return package: {Package}", JsonConvert.SerializeObject(result));
                         return Ok(result);
@@ -1291,6 +1302,118 @@ namespace Pentamic.Integration.Ibms.Controllers
                             mess_id += item.IDs.ToString() + ",";//Luu Id bi loi
                             mess_err += "Product ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
                             returnProduct.Add(item);//Add ban ghi loi vao danh sach
+                            continue;
+                        }
+                    }
+                    //End Foreach
+                }
+                //end null 
+            }
+            //end catch
+            catch (Exception exc)
+            {
+                mess_err += GetExceptionDetail(exc);
+            }
+            #endregion
+        }
+        private void SyncCoffer(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess, out List<tmpCoffer> returnCoffer, string lastSync)
+        {
+            mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
+            returnCoffer = new List<tmpCoffer>();
+
+            #region Product
+            try
+            {
+                string input_err = "";
+                var xdata = ((JArray)protocol.protocol_data.coffer_list).ToObject<List<tmpCoffer>>();
+                List<int> list_coffer_add = new List<int>();
+                List<int> list_coffer_update = new List<int>();
+
+                #region GetDataAPI
+                //Get Id data from API
+                foreach (var item in xdata)
+                {
+                    if (item.IDs != 0)
+                    {
+                        if (!list_coffer_add.Contains(item.IDs))
+                        {
+                            if (_context.Coffers.Where(x => x.IDs == item.IDs).Count() == 0)
+                                list_coffer_add.Add(item.IDs);
+                            else
+                            if (!list_coffer_update.Contains(item.IDs))
+                                list_coffer_update.Add(item.IDs);
+                        }
+                    }
+                }
+                #endregion
+
+                if (xdata != null)
+                {
+                    foreach (var item in xdata)
+                    {
+                        TotalRecord++;//Tang so ban ghi nhan duoc len
+                        input_err = "";
+                        try
+                        {
+                            _context = new ApplicationDbContext();
+
+                            if (item.BranchId == 0)
+                                input_err = "Id Branch is null";
+                            if (Convert.ToString(item.Type) == "")
+                                input_err = "Id Type is null";
+
+                            if (input_err != "")
+                                throw new Exception(input_err);
+                            else
+                            {
+                                if (list_coffer_add.Contains(item.IDs))//Neu nam trong danh sach Insert
+                                {
+                                    #region Coffer
+                                    var cf = new Coffer();
+                                    cf.IDs = item.IDs;
+                                    cf.Name = item.Name;
+                                    cf.BranchId = item.BranchId;
+                                    cf.Type = item.Type;
+                                    cf.LastSync = lastSync;
+                                    cf.CreatedAt = DateTime.Now;
+                                    _context.Coffers.Add(cf);
+                                    list_coffer_add.Remove(item.IDs);
+
+                                    _context.SaveChanges();
+                                    #endregion
+                                }
+                                else
+                                {
+                                    if (list_coffer_update.Contains(item.IDs))//Neu nam trong danh sach Update
+                                    {
+                                        #region Coffer
+                                        var cfu = _context.Coffers.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                                        if (cfu != null && list_coffer_update.Contains(item.IDs))
+                                        {
+                                            if (cfu.Name != item.Name || cfu.Type != item.Type || cfu.BranchId != item.BranchId)
+                                            {
+                                                cfu.BranchId = item.BranchId;
+                                                cfu.Name = item.Name;
+                                                cfu.Type = item.Type;
+
+                                                cfu.LastSync = lastSync;
+                                                cfu.ModifiedAt = DateTime.Now;
+                                                _context.SaveChanges();
+                                            }
+                                            list_coffer_update.Remove(item.IDs);
+
+                                        }
+                                        #endregion
+                                    }
+                                }
+                                RecordSuccess++;//Tang so ban ghi luu thanh cong
+                            }
+                        }//end try
+                        catch (Exception ex)
+                        {
+                            mess_id += item.IDs.ToString() + ",";//Luu Id bi loi
+                            mess_err += "Coffer ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
+                            returnCoffer.Add(item);//Add ban ghi loi vao danh sach
                             continue;
                         }
                     }
