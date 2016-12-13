@@ -9,18 +9,20 @@ using System.Web;
 namespace Pentamic.Integration.Ibms.Models
 {
     [DataContract(Name = "payee_list")]
-    public class Payee
+    public class ReceiptPayee
     {
         [Key]
         public int Id { get; set; }
         [DataMember(Name = "id")]
-        public int IDs { get; set; }
-        [DataMember(Name = "payee_name")]
-        public string Name { get; set; }
+        public int PayeeId { get; set; }
         [DataMember(Name = "payee_commission")]
-        public int Commission { get; set; }
-        [DataMember(Name = "payee_phone")]
-        public string Phone { get; set; }
+        public double Commission { get; set; }
+        [DataMember(Name = "payee_money")]
+        public decimal Money { get; set; }
+        [DataMember(Name = "payee_type")]
+        public int PayeeType { get; set; }
+        public int? CheckInId { get; set; }
+        public int? ReceiptId { get; set; }
 
         public string LastSync { get; set; }
         public DateTime? CreatedAt { get; set; }

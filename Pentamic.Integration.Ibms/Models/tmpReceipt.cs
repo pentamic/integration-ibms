@@ -26,7 +26,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int Status { get; set; }
 
         [DataMember(Name = "checkin")]
-        public tmpCheckIn checkin { get; set; }
+        public tmpCheckIn_receipt checkin { get; set; }
         [DataMember(Name = "customer")]
         public tmpCustomer customer { get; set; }
         [DataMember(Name = "lstprd")]

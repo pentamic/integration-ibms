@@ -995,6 +995,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             sync.Message = mess_err;
             sync.Type = protocol.protocol_id == protocol_receipt ? "Receipt" :
                 protocol.protocol_id == protocol_checkin ? "CheckIn" :
+                protocol.protocol_id == protocol_coffer ? "Coffer" :
                 protocol.protocol_id == protocol_product ? "Product" :
                 protocol.protocol_id == protocol_stock ? "Stock" :
                 protocol.protocol_id == protocol_inventory ? "Inventory" :
@@ -1612,6 +1613,24 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     {
                                         if (item.checkin.IDs != 0)
                                             bill.CheckinId = item.checkin.IDs;
+
+                                        if (item.checkin.payee_list != null)
+                                        {
+                                            foreach (var rp in item.checkin.payee_list)
+                                            {
+                                                var rpa = new ReceiptPayee();
+                                                rpa.PayeeId = rp.PayeeId;
+                                                rpa.Commission = rp.Commission;
+                                                rpa.Money = rp.Money;
+                                                rpa.PayeeType = rp.PayeeType;
+                                                rpa.ReceiptId = item.IDs;
+                                                rpa.CheckInId = item.checkin.IDs;
+                                                rpa.LastSync = lastSync;
+                                                rpa.CreatedAt = DateTime.Now;
+                                                _context.ReceiptPayees.Add(rpa);
+                                            }
+                                           
+                                        }
                                     }
                                     #region Customer
                                     if (item.customer != null)
@@ -1750,7 +1769,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     {
                                         if (item.branch.IDs != 0)
                                         {
-                                            Bill_Branch(item, list_location, list_location_updated, lastSync);
+                                            //Bill_Branch(item, list_location, list_location_updated, lastSync);
                                             bill.BranchId = item.branch.IDs;
                                         }
                                         else throw new Exception("Branch Id is NULL");
@@ -1894,6 +1913,28 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         {
                                             if (item.checkin.IDs != 0)
                                                 receipt_update.CheckinId = item.checkin.IDs;
+
+                                            if (item.checkin.payee_list != null)
+                                            {
+                                                var del_receipt_payee = _context.ReceiptPayees
+                                               .Where(x => x.ReceiptId == item.IDs && x.CheckInId==item.checkin.IDs);
+                                                _context.ReceiptPayees.RemoveRange(del_receipt_payee);
+
+                                                foreach (var rp in item.checkin.payee_list)
+                                                {
+                                                    var rpa = new ReceiptPayee();
+                                                    rpa.PayeeId = rp.PayeeId;
+                                                    rpa.CheckInId = item.checkin.IDs;
+                                                    rpa.ReceiptId = item.IDs;
+                                                    rpa.Commission = rp.Commission;
+                                                    rpa.Money = rp.Money;
+                                                    rpa.PayeeType = rp.PayeeType;
+                                                    rpa.LastSync = lastSync;
+                                                    rpa.ModifiedAt = DateTime.Now;
+                                                    _context.ReceiptPayees.Add(rpa);
+                                                }
+
+                                            }
                                         }
 
                                         #region Customer
@@ -2034,7 +2075,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         {
                                             if (item.branch.IDs != 0)
                                             {
-                                                Bill_Branch(item, list_location, list_location_updated, lastSync);
+                                                //Bill_Branch(item, list_location, list_location_updated, lastSync);
                                                 receipt_update.BranchId = item.branch.IDs;
                                             }
                                             else throw new Exception("Branch Id is NULL");
@@ -2497,7 +2538,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     {
                                         if (item.location.IDs != 0)
                                         {
-                                            Branch(item, list_location, lastSync);
+                                            //Branch(item, list_location, lastSync);
                                             checkin.BranchId = item.location.IDs;
                                         }
                                         else throw new Exception("Branch Id is NULL");
@@ -2691,7 +2732,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         {
                                             if (item.location.IDs != 0)
                                             {
-                                                Branch(item, list_location, lastSync);
+                                                //Branch(item, list_location, lastSync);
                                                 checkin_update.BranchId = item.location.IDs;
                                             }
                                             else throw new Exception("Branch Id is NULL");
