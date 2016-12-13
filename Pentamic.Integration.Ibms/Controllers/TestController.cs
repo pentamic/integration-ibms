@@ -25,6 +25,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         private const int protocol_product = 20000;
         private const int protocol_inventory = 30003;
         private const int protocol_coffer = 30004;
+        private const int protocol_store = 30005;
 
         enum ProtocolName
         {
@@ -33,7 +34,8 @@ namespace Pentamic.Integration.Ibms.Controllers
             Stock=30002,
             Product=20000,
             Inventory=30003,
-            Coffer = 30004
+            Coffer = 30004,
+            Store=30005
         };
         private ApplicationDbContext _context;
         public TestController()
@@ -138,6 +140,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     List<tmpStock> returnStock = new List<tmpStock>();//Luu tru nhung ban ghi bi loi
                     List<tmpInventory> returnInventory = new List<tmpInventory>();//Luu tru nhung ban ghi bi loi
                     List<tmpCoffer> returnCoffer = new List<tmpCoffer>();//Luu tru nhung ban ghi bi loi
+                    List<tmpBranch> returnStore = new List<tmpBranch>();//Luu tru nhung ban ghi bi loi
 
                     if (protocol.protocol_id == protocol_checkin)//CheckIn
                     {
@@ -162,6 +165,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                     else if (protocol.protocol_id == protocol_coffer)//Coffer
                     {
                         SyncCoffer(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnCoffer, lastSync);
+                    }
+                    else if (protocol.protocol_id == protocol_store)//Store
+                    {
+                        SyncStore(protocol, out mess_err, out mess_id, out totalRecord, out recordSuccess, out returnStore, lastSync);
                     }
 
                     if (mess_err != "")
@@ -201,6 +208,10 @@ namespace Pentamic.Integration.Ibms.Controllers
                         else if (protocol.protocol_id == protocol_coffer)
                         {
                             result.protocol_data = new { coffer_list = returnCoffer };
+                        }
+                        else if (protocol.protocol_id == protocol_store)
+                        {
+                            result.protocol_data = new { lstBranch = returnStore };
                         }
                         Log.Information("Return package: {Package}", JsonConvert.SerializeObject(result));
                         return Ok(result);
@@ -986,7 +997,8 @@ namespace Pentamic.Integration.Ibms.Controllers
                 protocol.protocol_id == protocol_checkin ? "CheckIn" :
                 protocol.protocol_id == protocol_product ? "Product" :
                 protocol.protocol_id == protocol_stock ? "Stock" :
-                protocol.protocol_id == protocol_inventory ? "Inventory" : "";
+                protocol.protocol_id == protocol_inventory ? "Inventory" :
+                protocol.protocol_id == protocol_store ? "Store" : "";
             sync.RecordIdFailure = mess_id;
             sync.TotalRecord = totalRecord;
             sync.RecordSuccess = recordSuccess;
@@ -2881,7 +2893,130 @@ namespace Pentamic.Integration.Ibms.Controllers
             }
             #endregion
         }
+        private void SyncStore(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess, out List<tmpBranch> returnStore, string lastSync)
+        {
+            mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
+            returnStore = new List<tmpBranch>();
+            #region Store
+            try
+            {
+                string input_err = "";
+                var xdata = ((JArray)protocol.protocol_data.lstBranch).ToObject<List<tmpBranch>>();
+                List<int> list_store_add = new List<int>();
+                List<int> list_store_update = new List<int>();
 
+                #region GetDataAPI
+                //Get Id data from API
+                foreach (var item in xdata)
+                {
+                    if (item.IDs != 0)
+                    {
+                        if (!list_store_add.Contains(item.IDs))
+                        {
+                            if (_context.Branchs.Where(x => x.IDs == item.IDs).Count() == 0)
+                                list_store_add.Add(item.IDs);
+                            else
+                            if (!list_store_update.Contains(item.IDs))
+                                list_store_update.Add(item.IDs);
+                        }
+                    }
+                }
+                #endregion
+
+                if (xdata != null)
+                {
+                    foreach (var item in xdata)
+                    {
+                        TotalRecord++;//Tang so ban ghi nhan duoc len
+                        input_err = "";
+                        try
+                        {
+                            _context = new ApplicationDbContext();
+
+                            if (item.IDs == 0)
+                                input_err = "Id Branch is null";
+                            if (Convert.ToString(item.BranchCode) == "")
+                                input_err = "Id BranchCode is null";
+                            if (Convert.ToString(item.BranchName) == "")
+                                input_err = "Id BranchName is null";
+
+                            if (input_err != "")
+                                throw new Exception(input_err);
+                            else
+                            {
+                                if (list_store_add.Contains(item.IDs))//Neu nam trong danh sach Insert
+                                {
+                                    #region Store
+                                    var cf = new Branch();
+                                    cf.IDs = item.IDs;
+                                    cf.BranchName = item.BranchName;
+                                    cf.BranchCode = item.BranchCode;
+                                    cf.Address = item.Address;
+                                    cf.Phone= item.Phone;
+                                    cf.LastSync = lastSync;
+                                    cf.CreatedAt = DateTime.Now;
+                                    if (item.Country != null)
+                                    {
+                                        cf.CountryId = item.Country.IDs;
+                                    }
+                                    _context.Branchs.Add(cf);
+                                    list_store_add.Remove(item.IDs);
+
+                                    _context.SaveChanges();
+                                    #endregion
+                                }
+                                else
+                                {
+                                    if (list_store_update.Contains(item.IDs))//Neu nam trong danh sach Update
+                                    {
+                                        #region Store
+                                        var cfu = _context.Branchs.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                                        if (cfu != null && list_store_update.Contains(item.IDs))
+                                        {
+                                            if (cfu.BranchCode != item.BranchCode || cfu.BranchName != item.BranchName)
+                                            {
+                                                cfu.BranchCode = item.BranchCode;
+                                                cfu.BranchName = item.BranchName;
+                                                cfu.Address = item.Address;
+                                                cfu.Phone = item.Phone;
+                                                if (item.Country != null)
+                                                {
+                                                    cfu.CountryId = item.Country.IDs;
+                                                }
+                                                else cfu.CountryId = null;
+
+                                                cfu.LastSync = lastSync;
+                                                cfu.ModifiedAt = DateTime.Now;
+                                                _context.SaveChanges();
+                                            }
+                                            list_store_update.Remove(item.IDs);
+
+                                        }
+                                        #endregion
+                                    }
+                                }
+                                RecordSuccess++;//Tang so ban ghi luu thanh cong
+                            }
+                        }//end try
+                        catch (Exception ex)
+                        {
+                            mess_id += item.IDs.ToString() + ",";//Luu Id bi loi
+                            mess_err += "Branch ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
+                            returnStore.Add(item);//Add ban ghi loi vao danh sach
+                            continue;
+                        }
+                    }
+                    //End Foreach
+                }
+                //end null 
+            }
+            //end catch
+            catch (Exception exc)
+            {
+                mess_err += GetExceptionDetail(exc);
+            }
+            #endregion
+        }
         private string GetExceptionDetail(Exception ax)
         {
             if (ax.InnerException != null)

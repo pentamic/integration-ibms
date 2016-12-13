@@ -1,0 +1,105 @@
+2016-12-13 08:59:13.498 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lstBranch": [
+      {
+        "branchId": 1,
+        "maChiNhanh": "HCM-01",
+        "branchName": "HỘI SỞ",
+        "address": "Số 3 đường 3 tháng 2, Quận 10, HCM",
+        "phoneNumber": "0812345678",
+        "country": {
+          "id": 1,
+          "countryCode": "VN",
+          "countryName": "Việt Nam",
+          "cityList": [
+            {
+              "id": 2,
+              "name": "TP HCM"
+            }
+          ]
+        }
+      },
+      {
+        "branchId": 6,
+        "maChiNhanh": "MN-01",
+        "branchName": "96 Mũi Né",
+        "address": "96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận",
+        "phoneNumber": "0812345678",
+        "country": {
+          "id": 1,
+          "countryCode": "VN",
+          "countryName": "Việt Nam",
+          "cityList": [
+            {
+              "id": 4,
+              "name": "Bình Thuận"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "protocol_id": 30005,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "API",
+  "partner_pass": "123"
+}
+2016-12-13 08:59:19.371 +07:00 [Information] Request: "application/json"
+2016-12-13 08:59:19.433 +07:00 [Information] Received package: "{\"protocol_id\":30005,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":{\"lstBranch\":[{\"branchId\":1,\"maChiNhanh\":\"HCM-01\",\"branchName\":\"HỘI SỞ\",\"address\":\"Số 3 đường 3 tháng 2, Quận 10, HCM\",\"phoneNumber\":\"0812345678\",\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":2,\"name\":\"TP HCM\"}]}},{\"branchId\":6,\"maChiNhanh\":\"MN-01\",\"branchName\":\"96 Mũi Né\",\"address\":\"96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận\",\"phoneNumber\":\"0812345678\",\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":4,\"name\":\"Bình Thuận\"}]}}]}}"
+2016-12-13 08:59:29.890 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 17264ms
+2016-12-13 08:59:52.960 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lstBranch": [
+      {
+        "branchId": 1,
+        "maChiNhanh": "HCM-01",
+        "branchName": "HỘI SỞ",
+        "address": "Số 3 đường 3 tháng 2, Quận 10, HCM",
+        "phoneNumber": "0812345678",
+        "country": {
+          "id": 1,
+          "countryCode": "VN",
+          "countryName": "Việt Nam",
+          "cityList": [
+            {
+              "id": 2,
+              "name": "TP HCM"
+            }
+          ]
+        }
+      },
+      {
+        "branchId": 6,
+        "maChiNhanh": "MN-01",
+        "branchName": "96 Mũi Né",
+        "address": "96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận",
+        "phoneNumber": "0812345678",
+        "country": {
+          "id": 1,
+          "countryCode": "VN",
+          "countryName": "Việt Nam",
+          "cityList": [
+            {
+              "id": 4,
+              "name": "Bình Thuận"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "protocol_id": 30005,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "API",
+  "partner_pass": "123"
+}
+2016-12-13 08:59:52.964 +07:00 [Information] Request: "application/json"
+2016-12-13 08:59:52.965 +07:00 [Information] Received package: "{\"protocol_id\":30005,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":{\"lstBranch\":[{\"branchId\":1,\"maChiNhanh\":\"HCM-01\",\"branchName\":\"HỘI SỞ\",\"address\":\"Số 3 đường 3 tháng 2, Quận 10, HCM\",\"phoneNumber\":\"0812345678\",\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":2,\"name\":\"TP HCM\"}]}},{\"branchId\":6,\"maChiNhanh\":\"MN-01\",\"branchName\":\"96 Mũi Né\",\"address\":\"96 Nguyễn Đình Chiểu, Mũi Né, Bình Thuận\",\"phoneNumber\":\"0812345678\",\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":4,\"name\":\"Bình Thuận\"}]}}]}}"
+2016-12-13 09:02:27.887 +07:00 [Information] Return package: "{\"protocol_id\":30005,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":null}"
+2016-12-13 09:02:34.344 +07:00 [Information] HTTP "POST" "/api/test/json" responded 200 in 161386ms
