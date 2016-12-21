@@ -14,7 +14,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int IDs { get; set; }
         public int ProductId { get; set; }
         public int ProductType { get; set; }
-
+        public string ProductCode { get; set; }
         public int? SupplierId { get; set; }
 
         public string Code { get; set; }

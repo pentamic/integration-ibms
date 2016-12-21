@@ -2878,6 +2878,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 inven.IDs = item.IDs;
                                 inven.Code = item.Code;
                                 inven.ProductId = item.ProductId;
+                                inven.ProductCode = item.ProductCode;
                                 inven.ProductType = item.ProductType;
                                 inven.CreatedDate = item.CreatedDate;
                                 inven.Quantity = item.Quantity;

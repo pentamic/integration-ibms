@@ -19,6 +19,8 @@ namespace Pentamic.Integration.Ibms.Models
         public int ProductId { get; set; }
         [DataMember(Name = "product_type")]
         public int ProductType { get; set; }
+        [DataMember(Name = "product_code")]
+        public string ProductCode { get; set; }
 
         [DataMember(Name = "supplier")]
         public tmpSupplier SupplierId { get; set; }
