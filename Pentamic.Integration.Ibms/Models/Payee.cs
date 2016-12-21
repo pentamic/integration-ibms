@@ -18,7 +18,7 @@ namespace Pentamic.Integration.Ibms.Models
         [DataMember(Name = "payee_name")]
         public string Name { get; set; }
         [DataMember(Name = "payee_commission")]
-        public int Commission { get; set; }
+        public double Commission { get; set; }
         [DataMember(Name = "payee_phone")]
         public string Phone { get; set; }
 

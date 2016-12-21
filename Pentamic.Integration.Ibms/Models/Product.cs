@@ -32,6 +32,9 @@ namespace Pentamic.Integration.Ibms.Models
         public int? ProductGroupId2 { get; set; }
         public int? ProductGroupId3 { get; set; }
         public string LastSync { get; set; }
+        public string ProductGroup1Name { get; set; }
+        public string ProductGroup2Name { get; set; }
+        public string ProductGroup3Name { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
     }

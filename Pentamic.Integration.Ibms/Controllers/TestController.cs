@@ -881,6 +881,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         {
             var stock = new BalanceStock();
             stock.ProductId = item.ProductId;
+            stock.ProductCode = item.ProductCode;
             stock.Price = item.Price;
             stock.CostPrice = item.CostPrice;
             stock.CreateDate = item.CreateDate;
@@ -1010,7 +1011,7 @@ namespace Pentamic.Integration.Ibms.Controllers
         {
             mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
             returnStock = new List<tmpStock>();
-
+            //SYnc Ton KHo
             #region Stock
             try
             {
@@ -1055,7 +1056,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 id_Coffer = item.Coffer.IDs;
                                 id_Branch = item.Branch[0].IDs;
 
-                                var check_Stock = _context.BalanceStocks.Where(x => x.ProductId == item.ProductId
+                                var check_Stock = _context.BalanceStocks.Where(x => x.ProductCode == item.ProductCode
                                   && x.Type == item.Type && x.CofferId == id_Coffer && x.BranchId == id_Branch);
                                 foreach (var s in check_Stock)
                                 {
@@ -1073,7 +1074,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         }//end try
                         catch (Exception axx)
                         {
-                            mess_id += item.ProductId.ToString() + ",";//Luu Id bi loi
+                            mess_id += item.ProductCode.ToString() + ",";//Luu Id bi loi
                             mess_err += "Balance Stock contains Product Id: " + item.ProductId.ToString() + " - " + GetExceptionDetail(axx) + " ; ";//Luu thong bao
                             returnStock.Add(item);//Add ban ghi loi vao danh sach
                             continue;
@@ -1100,14 +1101,14 @@ namespace Pentamic.Integration.Ibms.Controllers
             {
                 string input_err = "";
                 var xdata = ((JArray)protocol.protocol_data.lstprd).ToObject<List<tmpProduct>>();
-                List<int> list_product_add = new List<int>();
-                List<int> list_product_update = new List<int>();
+                List<string> list_product_add = new List<string>();
+                List<string> list_product_update = new List<string>();
 
                 List<int> list_product_group_add = new List<int>();
                 List<int> list_product_group_update = new List<int>();
 
                 //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
-                List<int> list_product_updated = new List<int>();
+                List<string> list_product_updated = new List<string>();
                 List<int> list_product_group_updated = new List<int>();
 
                 #region GetDataAPI
@@ -1116,13 +1117,13 @@ namespace Pentamic.Integration.Ibms.Controllers
                 {
                     if (item.IDs != 0)
                     {
-                        if (!list_product_add.Contains(item.IDs))
+                        if (!list_product_add.Contains(item.Code))
                         {
-                            if (_context.Products.Where(x => x.IDs == item.IDs).Count() == 0)
-                                list_product_add.Add(item.IDs);
+                            if (_context.Products.Where(x => x.Code == item.Code).Count() == 0)
+                                list_product_add.Add(item.Code);
                             else
-                            if (!list_product_update.Contains(item.IDs))
-                                list_product_update.Add(item.IDs);
+                            if (!list_product_update.Contains(item.Code))
+                                list_product_update.Add(item.Code);
                         }
 
                         if (item.small_group != null)
@@ -1193,7 +1194,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 throw new Exception(input_err);
                             else
                             {
-                                if (list_product_add.Contains(item.IDs))//Neu nam trong danh sach Insert
+                                if (list_product_add.Contains(item.Code))//Neu nam trong danh sach Insert
                                 {
                                     #region Product
                                     var prd = new Product();
@@ -1215,21 +1216,30 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     prd.TotalWeight = item.TotalWeight;
                                     prd.Type = item.Type;
                                     if (item.small_group != null)
+                                    {
                                         prd.ProductGroupId1 = item.small_group.IDs;
+                                        prd.ProductGroup1Name = item.small_group.Name;
+                                    }
                                     else
                                     {
                                         input_err = "Product contains small_group is null";
                                         throw new Exception(input_err);
                                     }
                                     if (item.middle_group != null)
+                                    {
                                         prd.ProductGroupId2 = item.middle_group.IDs;
+                                        prd.ProductGroup2Name = item.middle_group.Name;
+                                    }
                                     else
                                     {
                                         input_err = "Product contains middle_group is null";
                                         throw new Exception(input_err);
                                     }
                                     if (item.big_group != null)
+                                    {
                                         prd.ProductGroupId3 = item.big_group.IDs;
+                                        prd.ProductGroup3Name = item.big_group.Name;
+                                    }
                                     else
                                     {
                                         input_err = "Product contains big_group is null";
@@ -1238,7 +1248,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     prd.LastSync = lastSync;
                                     prd.CreatedAt = DateTime.Now;
                                     _context.Products.Add(prd);
-                                    list_product_add.Remove(item.IDs);
+                                    list_product_add.Remove(item.Code);
 
                                     //Add Product Group
                                     ProductGroup(item.small_group, item.middle_group, item.big_group, list_product_group_add, list_product_group_update, list_product_group_updated, lastSync);
@@ -1251,11 +1261,11 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 }
                                 else
                                 {
-                                    if (list_product_update.Contains(item.IDs))//Neu nam trong danh sach Update
+                                    if (list_product_update.Contains(item.Code))//Neu nam trong danh sach Update
                                     {
                                         #region Product
-                                        var prd = _context.Products.Where(x => x.IDs == item.IDs).FirstOrDefault();
-                                        if (prd != null && !list_product_updated.Contains(item.IDs))
+                                        var prd = _context.Products.Where(x => x.Code==item.Code).FirstOrDefault();
+                                        if (prd != null && !list_product_updated.Contains(item.Code))
                                         {
                                             prd.Code = item.Code;
                                             prd.Name = item.Name;
@@ -1274,21 +1284,30 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             prd.TotalWeight = item.TotalWeight;
                                             prd.Type = item.Type;
                                             if (item.small_group != null)
+                                            {
                                                 prd.ProductGroupId1 = item.small_group.IDs;
+                                                prd.ProductGroup1Name = item.small_group.Name;
+                                            }
                                             else
                                             {
                                                 input_err = "Product contains small_group is null";
                                                 throw new Exception(input_err);
                                             }
                                             if (item.middle_group != null)
+                                            {
                                                 prd.ProductGroupId2 = item.middle_group.IDs;
+                                                prd.ProductGroup2Name = item.middle_group.Name;
+                                            }
                                             else
                                             {
                                                 input_err = "Product contains middle_group is null";
                                                 throw new Exception(input_err);
                                             }
                                             if (item.big_group != null)
+                                            {
                                                 prd.ProductGroupId3 = item.big_group.IDs;
+                                                prd.ProductGroup3Name = item.big_group.Name;
+                                            }
                                             else
                                             {
                                                 input_err = "Product contains big_group is null";
@@ -1296,7 +1315,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             }
                                             prd.LastSync = lastSync;
                                             prd.ModifiedAt = DateTime.Now;
-                                            list_product_updated.Add(item.IDs);
+                                            list_product_updated.Add(item.Code);
 
                                             //Add Product Group
                                             ProductGroup(item.small_group, item.middle_group, item.big_group, list_product_group_add, list_product_group_update, list_product_group_updated, lastSync);
@@ -1313,7 +1332,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         catch (Exception ex)
                         {
                             mess_id += item.IDs.ToString() + ",";//Luu Id bi loi
-                            mess_err += "Product ID: " + item.IDs.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
+                            mess_err += "Product Code: " + item.Code.ToString() + " - " + GetExceptionDetail(ex) + " ; ";//Luu thong bao
                             returnProduct.Add(item);//Add ban ghi loi vao danh sach
                             continue;
                         }
@@ -1334,7 +1353,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
             returnCoffer = new List<tmpCoffer>();
 
-            #region Product
+            #region Coffer
             try
             {
                 string input_err = "";
@@ -1462,6 +1481,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_city = new List<int>();
                 List<int> list_voucher = new List<int>();
                 List<int> list_bank_account = new List<int>();
+                List<int> list_payee = new List<int>();
 
                 //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
                 List<int> list_customer_update = new List<int>();
@@ -1564,7 +1584,18 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     list_voucher.Add(d.VoucherId);
                         }
                     }
-
+                    if (item.checkin != null)
+                    {
+                        if (item.checkin.payee_list != null)
+                        {
+                            foreach (var r in item.checkin.payee_list)
+                            {
+                                if (!list_payee.Contains(r.PayeeId))
+                                    if (_context.Payes.Where(x => x.IDs == r.PayeeId).Count() == 0)
+                                        list_payee.Add(r.PayeeId);
+                            }
+                        }
+                    }
                     if (item.payment != null)
                     {
                         if (item.payment.card_payment_list != null)
@@ -1628,6 +1659,8 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 rpa.LastSync = lastSync;
                                                 rpa.CreatedAt = DateTime.Now;
                                                 _context.ReceiptPayees.Add(rpa);
+
+                                                Payee(new Models.Payee { Name = rp.PayeeName, Commission = rp.Commission, Phone="", IDs = rp.PayeeId }, list_payee, lastSync);
                                             }
                                            
                                         }
@@ -1702,6 +1735,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 var receipt_detail = new ReceiptDetail();
                                                 receipt_detail.ReceiptId = item.IDs;
                                                 receipt_detail.ProductId = s.Id;
+                                                receipt_detail.ProductCode = s.ProductCode;
                                                 receipt_detail.Price = s.Price;
                                                 receipt_detail.Quantity = s.Quantity;
                                                 receipt_detail.Unit = s.Unit;
@@ -2007,7 +2041,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     var receipt_detail = new ReceiptDetail();
                                                     receipt_detail.ReceiptId = item.IDs;
                                                     receipt_detail.ProductId = s.Id;
-                                                    
+                                                    receipt_detail.ProductCode = s.ProductCode;
                                                     receipt_detail.Price = s.Price;
                                                     receipt_detail.Quantity = s.Quantity;
                                                     receipt_detail.Unit = s.Unit;
