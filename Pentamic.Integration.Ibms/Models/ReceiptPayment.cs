@@ -30,6 +30,8 @@ namespace Pentamic.Integration.Ibms.Models
         public int ReceiptId { get; set; }
         public int? BankId { get; set; }
         public bool IsDeposit { get; set; }
+        [DataMember(Name = "create_date")]
+        public DateTime? DateDeposit { get; set; }
         public string LastSync { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }

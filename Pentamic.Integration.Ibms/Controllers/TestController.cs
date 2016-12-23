@@ -29,13 +29,13 @@ namespace Pentamic.Integration.Ibms.Controllers
 
         enum ProtocolName
         {
-            CheckIn=30000,
-            Receipt=30001,
-            Stock=30002,
-            Product=20000,
-            Inventory=30003,
+            CheckIn = 30000,
+            Receipt = 30001,
+            Stock = 30002,
+            Product = 20000,
+            Inventory = 30003,
             Coffer = 30004,
-            Store=30005
+            Store = 30005
         };
         private ApplicationDbContext _context;
         public TestController()
@@ -333,7 +333,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var update = _context.tblCustomers.Where(x => x.IDs == item.customer.IDs).FirstOrDefault();
                 if (update != null && !list_customer_update.Contains(item.customer.IDs))
                 {
-                    if (update.Code != item.customer.Code || update.Name!=item.customer.Name)
+                    if (update.Code != item.customer.Code || update.Name != item.customer.Name)
                     {
                         update.Code = item.customer.Code;
                         update.Name = item.customer.Name;
@@ -490,7 +490,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var update = _context.tblCountrys.Where(x => x.IDs == item.IDs).FirstOrDefault();
                 if (update != null && !list_country_updated.Contains(item.IDs))
                 {
-                    if (update.Code != item.Code || update.Name!=item.Name)
+                    if (update.Code != item.Code || update.Name != item.Name)
                     {
                         update.Code = item.Code;
                         update.Name = item.Name;
@@ -1007,7 +1007,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             _context.DataSyncs.Add(sync);
             _context.SaveChanges();
         }
-        private void SyncStock(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess,out List<tmpStock> returnStock, string lastSync)
+        private void SyncStock(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess, out List<tmpStock> returnStock, string lastSync)
         {
             mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
             returnStock = new List<tmpStock>();
@@ -1091,7 +1091,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             }
             #endregion
         }
-        private void SyncProduct(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess,out List<tmpProduct> returnProduct, string lastSync)
+        private void SyncProduct(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess, out List<tmpProduct> returnProduct, string lastSync)
         {
             mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
             returnProduct = new List<tmpProduct>();
@@ -1255,7 +1255,7 @@ namespace Pentamic.Integration.Ibms.Controllers
 
                                     _context.SaveChanges();
 
-                                    
+
 
                                     #endregion
                                 }
@@ -1264,7 +1264,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     if (list_product_update.Contains(item.Code))//Neu nam trong danh sach Update
                                     {
                                         #region Product
-                                        var prd = _context.Products.Where(x => x.Code==item.Code).FirstOrDefault();
+                                        var prd = _context.Products.Where(x => x.Code == item.Code).FirstOrDefault();
                                         if (prd != null && !list_product_updated.Contains(item.Code))
                                         {
                                             prd.Code = item.Code;
@@ -1321,7 +1321,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             ProductGroup(item.small_group, item.middle_group, item.big_group, list_product_group_add, list_product_group_update, list_product_group_updated, lastSync);
 
                                             _context.SaveChanges();
-                                            
+
                                         }
                                         #endregion
                                     }
@@ -1460,7 +1460,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             }
             #endregion
         }
-        private void SyncReceipt(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess,out List<tmpReceipt> returnReceipt, string lastSync)
+        private void SyncReceipt(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess, out List<tmpReceipt> returnReceipt, string lastSync)
         {
             mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
             returnReceipt = new List<tmpReceipt>();
@@ -1498,7 +1498,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 //Get Id data from API
                 foreach (var item in xdata)
                 {
-                    if (item.Status==1)//Neu status = 1
+                    if (item.Status == 1)//Neu status = 1
                     {
                         //Neu ko co trong DB cho vao danh sach Insert
                         if (!list_bill_add.Contains(item.IDs))
@@ -1660,9 +1660,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 rpa.CreatedAt = DateTime.Now;
                                                 _context.ReceiptPayees.Add(rpa);
 
-                                                Payee(new Models.Payee { Name = rp.PayeeName, Commission = rp.Commission, Phone="", IDs = rp.PayeeId }, list_payee, lastSync);
+                                                Payee(new Models.Payee { Name = rp.PayeeName, Commission = rp.Commission, Phone = "", IDs = rp.PayeeId }, list_payee, lastSync);
                                             }
-                                           
+
                                         }
                                     }
                                     #region Customer
@@ -1749,7 +1749,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 receipt_detail.IBMSCode = s.IBMSCode;
                                                 receipt_detail.LastSync = lastSync;
                                                 receipt_detail.CreatedAt = DateTime.Now;
-                                                
+
 
                                                 if (s.coffer != null)
                                                 {
@@ -1870,29 +1870,35 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     #region PaymentDeposit
                                     if (item.paymentDeposit != null)
                                     {
+
                                         if (item.paymentDeposit.card_payment_list != null)
                                         {
                                             foreach (var card in item.paymentDeposit.card_payment_list)
                                             {
-                                                var card_payment = new ReceiptPayment();
-                                                card_payment.ReceiptId = item.IDs;
-                                                card_payment.BankCardType = card.BankCardType;
-                                                card_payment.Amount = card.Amount;
-                                                card_payment.Total = card.Total;
-                                                card_payment.PaymentType = 2;
-                                                card_payment.CurrencyCode = card.CurrencyCode;
-                                                card_payment.ExchangeRate = card.ExchangeRate;
-                                                if (card.BankAccount != null)
+                                                if (card.DateDeposit != null)
                                                 {
-                                                    if (card.BankAccount.IDs != 0)
-                                                        card_payment.BankId = card.BankId;
-                                                }
-                                                card_payment.Status = card.Status;
-                                                card_payment.IsDeposit = true;
-                                                card_payment.LastSync = lastSync;
-                                                card_payment.CreatedAt = DateTime.Now;
+                                                    var card_payment = new ReceiptPayment();
+                                                    card_payment.ReceiptId = item.IDs;
+                                                    card_payment.BankCardType = card.BankCardType;
+                                                    card_payment.Amount = card.Amount;
+                                                    card_payment.Total = card.Total;
+                                                    card_payment.PaymentType = 2;
+                                                    card_payment.DateDeposit = card.DateDeposit;
+                                                    card_payment.CurrencyCode = card.CurrencyCode;
+                                                    card_payment.ExchangeRate = card.ExchangeRate;
+                                                    if (card.BankAccount != null)
+                                                    {
+                                                        if (card.BankAccount.IDs != 0)
+                                                            card_payment.BankId = card.BankId;
+                                                    }
+                                                    card_payment.Status = card.Status;
+                                                    card_payment.IsDeposit = true;
+                                                    card_payment.LastSync = lastSync;
+                                                    card_payment.CreatedAt = DateTime.Now;
 
-                                                _context.CardPayments.Add(card_payment);
+                                                    _context.CardPayments.Add(card_payment);
+                                                }
+                                                else throw new Exception("Payment Deposit of receipt Id " + item.IDs + " contain Create_date is NULL");
                                             }
                                         }
 
@@ -1900,19 +1906,24 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         {
                                             foreach (var cash in item.paymentDeposit.cash_payment_list)
                                             {
-                                                var cash_payment = new ReceiptPayment();
-                                                cash_payment.ReceiptId = item.IDs;
-                                                cash_payment.Amount = cash.Amount;
-                                                cash_payment.Total = cash.Total;
-                                                cash_payment.PaymentType = 1;
-                                                cash_payment.CurrencyCode = cash.CurrencyCode;
-                                                cash_payment.ExchangeRate = cash.ExchangeRate;
-                                                cash_payment.Status = cash.Status;
-                                                cash_payment.IsDeposit = true;
-                                                cash_payment.LastSync = lastSync;
-                                                cash_payment.CreatedAt = DateTime.Now;
+                                                if (cash.DateDeposit != null)
+                                                {
+                                                    var cash_payment = new ReceiptPayment();
+                                                    cash_payment.ReceiptId = item.IDs;
+                                                    cash_payment.Amount = cash.Amount;
+                                                    cash_payment.Total = cash.Total;
+                                                    cash_payment.PaymentType = 1;
+                                                    cash_payment.DateDeposit = cash.DateDeposit;
+                                                    cash_payment.CurrencyCode = cash.CurrencyCode;
+                                                    cash_payment.ExchangeRate = cash.ExchangeRate;
+                                                    cash_payment.Status = cash.Status;
+                                                    cash_payment.IsDeposit = true;
+                                                    cash_payment.LastSync = lastSync;
+                                                    cash_payment.CreatedAt = DateTime.Now;
 
-                                                _context.CardPayments.Add(cash_payment);
+                                                    _context.CardPayments.Add(cash_payment);
+                                                }
+                                                else throw new Exception("Payment Deposit of receipt Id " + item.IDs + " contain Create_date is NULL");
                                             }
                                         }
                                     }
@@ -1925,7 +1936,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                             {
                                 if (list_bill_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
                                 {
-                                    var bill_remove = _context.Receipts.Where(x => x.IDs == item.IDs && x.Status==1).FirstOrDefault();
+                                    var bill_remove = _context.Receipts.Where(x => x.IDs == item.IDs && x.Status == 1).FirstOrDefault();
                                     bill_remove.Status = item.Status;
                                     bill_remove.LastSync = lastSync;
                                     bill_remove.ModifiedAt = DateTime.Now;
@@ -1951,7 +1962,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             if (item.checkin.payee_list != null)
                                             {
                                                 var del_receipt_payee = _context.ReceiptPayees
-                                               .Where(x => x.ReceiptId == item.IDs && x.CheckInId==item.checkin.IDs);
+                                               .Where(x => x.ReceiptId == item.IDs && x.CheckInId == item.checkin.IDs);
                                                 _context.ReceiptPayees.RemoveRange(del_receipt_payee);
 
                                                 foreach (var rp in item.checkin.payee_list)
@@ -2055,7 +2066,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     receipt_detail.IBMSCode = s.IBMSCode;
                                                     receipt_detail.LastSync = lastSync;
                                                     receipt_detail.CreatedAt = DateTime.Now;
-                                                    
+
 
                                                     if (s.coffer != null)
                                                     {
@@ -2177,29 +2188,35 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         #region PaymentDeposit
                                         if (item.paymentDeposit != null)
                                         {
+
                                             if (item.paymentDeposit.card_payment_list != null)
                                             {
                                                 foreach (var card in item.paymentDeposit.card_payment_list)
                                                 {
-                                                    var card_payment = new ReceiptPayment();
-                                                    card_payment.ReceiptId = item.IDs;
-                                                    card_payment.BankCardType = card.BankCardType;
-                                                    card_payment.Amount = card.Amount;
-                                                    card_payment.Total = card.Total;
-                                                    card_payment.PaymentType = 2;
-                                                    card_payment.CurrencyCode = card.CurrencyCode;
-                                                    card_payment.ExchangeRate = card.ExchangeRate;
-                                                    if (card.BankAccount != null)
+                                                    if (card.DateDeposit != null)
                                                     {
-                                                        if (card.BankAccount.IDs != 0)
-                                                            card_payment.BankId = card.BankId;
-                                                    }
-                                                    card_payment.Status = card.Status;
-                                                    card_payment.IsDeposit = true;
-                                                    card_payment.LastSync = lastSync;
-                                                    card_payment.CreatedAt = DateTime.Now;
+                                                        var card_payment = new ReceiptPayment();
+                                                        card_payment.ReceiptId = item.IDs;
+                                                        card_payment.BankCardType = card.BankCardType;
+                                                        card_payment.Amount = card.Amount;
+                                                        card_payment.Total = card.Total;
+                                                        card_payment.PaymentType = 2;
+                                                        card_payment.DateDeposit = card.DateDeposit;
+                                                        card_payment.CurrencyCode = card.CurrencyCode;
+                                                        card_payment.ExchangeRate = card.ExchangeRate;
+                                                        if (card.BankAccount != null)
+                                                        {
+                                                            if (card.BankAccount.IDs != 0)
+                                                                card_payment.BankId = card.BankId;
+                                                        }
+                                                        card_payment.Status = card.Status;
+                                                        card_payment.IsDeposit = true;
+                                                        card_payment.LastSync = lastSync;
+                                                        card_payment.CreatedAt = DateTime.Now;
 
-                                                    _context.CardPayments.Add(card_payment);
+                                                        _context.CardPayments.Add(card_payment);
+                                                    }
+                                                    else throw new Exception("Payment Deposit of receipt Id " + item.IDs + " contain Create_date is NULL");
                                                 }
                                             }
 
@@ -2207,19 +2224,24 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             {
                                                 foreach (var cash in item.paymentDeposit.cash_payment_list)
                                                 {
-                                                    var cash_payment = new ReceiptPayment();
-                                                    cash_payment.ReceiptId = item.IDs;
-                                                    cash_payment.Amount = cash.Amount;
-                                                    cash_payment.Total = cash.Total;
-                                                    cash_payment.PaymentType = 1;
-                                                    cash_payment.CurrencyCode = cash.CurrencyCode;
-                                                    cash_payment.ExchangeRate = cash.ExchangeRate;
-                                                    cash_payment.Status = cash.Status;
-                                                    cash_payment.IsDeposit = true;
-                                                    cash_payment.LastSync = lastSync;
-                                                    cash_payment.CreatedAt = DateTime.Now;
+                                                    if (cash.DateDeposit != null)
+                                                    {
+                                                        var cash_payment = new ReceiptPayment();
+                                                        cash_payment.ReceiptId = item.IDs;
+                                                        cash_payment.Amount = cash.Amount;
+                                                        cash_payment.Total = cash.Total;
+                                                        cash_payment.PaymentType = 1;
+                                                        cash_payment.DateDeposit = cash.DateDeposit;
+                                                        cash_payment.CurrencyCode = cash.CurrencyCode;
+                                                        cash_payment.ExchangeRate = cash.ExchangeRate;
+                                                        cash_payment.Status = cash.Status;
+                                                        cash_payment.IsDeposit = true;
+                                                        cash_payment.LastSync = lastSync;
+                                                        cash_payment.CreatedAt = DateTime.Now;
 
-                                                    _context.CardPayments.Add(cash_payment);
+                                                        _context.CardPayments.Add(cash_payment);
+                                                    }
+                                                    else throw new Exception("Payment Deposit of receipt Id " + item.IDs + " contain Create_date is NULL");
                                                 }
                                             }
                                         }
@@ -2249,7 +2271,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             }
             #endregion
         }
-        private void SyncCheckIn(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess,out List<tmpCheckIn> returnCheckin, string lastSync)
+        private void SyncCheckIn(Protocol protocol, out string mess_err, out string mess_id, out int TotalRecord, out int RecordSuccess, out List<tmpCheckIn> returnCheckin, string lastSync)
         {
             mess_err = ""; mess_id = ""; TotalRecord = 0; RecordSuccess = 0;
             returnCheckin = new List<tmpCheckIn>();
@@ -2289,7 +2311,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 //Get Id data from API
                 foreach (var item in xdata)
                 {
-                    if (item.Status==1)//Neu status = 1
+                    if (item.Status == 1)//Neu status = 1
                     {
                         //Neu ko co trong DB cho vao danh sach Insert
                         if (!list_checkin_add.Contains(item.IDs))
@@ -2586,7 +2608,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                             {
                                 if (list_checkin_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
                                 {
-                                    var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs && x.Status==1).FirstOrDefault();
+                                    var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs && x.Status == 1).FirstOrDefault();
                                     checkin_remove.Status = item.Status;
                                     checkin_remove.LastSync = lastSync;
                                     checkin_remove.ModifiedAt = DateTime.Now;
@@ -2811,12 +2833,12 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_inventoty_remove = new List<int>();
                 List<int> list_supplier = new List<int>();
                 List<int> list_coffer = new List<int>();
-                
+
 
                 //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
                 List<int> list_supplier_update = new List<int>();
                 List<int> list_coffer_updated = new List<int>();
-              
+
 
                 #region GetDataAPI
                 //Get Id data from API
@@ -2825,7 +2847,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     //Neu ko co trong DB cho vao danh sach Insert
                     if (!list_inventory_add.Contains(item.IDs))
                         //if (_context.Inventorys.Where(x => x.IDs == item.IDs).Count() == 0)
-                            list_inventory_add.Add(item.IDs);
+                        list_inventory_add.Add(item.IDs);
 
                     //Neu da ton tai trong DB thi cho vao danh sach Update
                     if (!list_inventory_update.Contains(item.IDs))
@@ -2866,7 +2888,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                             _context = new ApplicationDbContext();
                             if (list_inventory_update.Contains(item.IDs))
                             {
-                                var inven_update = _context.Inventorys.Where(x => x.IDs == item.IDs && x.Status==1).FirstOrDefault();
+                                var inven_update = _context.Inventorys.Where(x => x.IDs == item.IDs && x.Status == 1).FirstOrDefault();
                                 inven_update.Status = 0;
                                 inven_update.ModifiedAt = DateTime.Now;
                                 inven_update.LastSync = lastSync;
@@ -2905,7 +2927,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         Supplier(item.SupplierId, list_supplier, list_supplier_update, lastSync);
                                         inven.SupplierId = item.SupplierId.IDs;
                                     }
-                                        
+
                                 }
                                 #endregion
 
@@ -2945,7 +2967,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 #endregion
 
                                 _context.Inventorys.Add(inven);
-                                
+
                             }
                             _context.SaveChanges();
                             RecordSuccess++;//Tang so ban ghi luu thanh cong
@@ -3028,7 +3050,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     cf.BranchName = item.BranchName;
                                     cf.BranchCode = item.BranchCode;
                                     cf.Address = item.Address;
-                                    cf.Phone= item.Phone;
+                                    cf.Phone = item.Phone;
                                     cf.LastSync = lastSync;
                                     cf.CreatedAt = DateTime.Now;
                                     if (item.Country != null)
