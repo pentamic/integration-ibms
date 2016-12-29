@@ -1119,7 +1119,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                     {
                         if (!list_product_add.Contains(item.Code))
                         {
-                            if (_context.Products.Where(x => x.Code == item.Code).Count() == 0)
+                            if (_context.Products.Where(x => x.IDs == item.IDs && x.Type==item.Type).Count() == 0)
                                 list_product_add.Add(item.Code);
                             else
                             if (!list_product_update.Contains(item.Code))
@@ -1264,7 +1264,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     if (list_product_update.Contains(item.Code))//Neu nam trong danh sach Update
                                     {
                                         #region Product
-                                        var prd = _context.Products.Where(x => x.Code == item.Code).FirstOrDefault();
+                                        var prd = _context.Products.Where(x => x.IDs == item.IDs && x.Type == item.Type).FirstOrDefault();
                                         if (prd != null && !list_product_updated.Contains(item.Code))
                                         {
                                             prd.Code = item.Code;
