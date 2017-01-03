@@ -187,6 +187,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PentamicController.cs" />
     <Compile Include="Helpers\LogRequestAndResponseHandler.cs" />
     <Compile Include="Helpers\WebApiExceptionLogger.cs" />
     <Compile Include="Controllers\TestController.cs" />
