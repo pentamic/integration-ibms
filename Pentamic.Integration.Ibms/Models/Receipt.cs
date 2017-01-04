@@ -17,6 +17,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int? CheckinId { get; set; }
         public int? CustomerId { get; set; }
         public int? BranchId { get; set; }
+        public string BranchCode { get; set; }
         public decimal TotalPay { get; set; }
         public int BillType { get; set; }
         public int Status { get; set; }

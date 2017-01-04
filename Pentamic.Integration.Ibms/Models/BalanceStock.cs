@@ -19,6 +19,7 @@ namespace Pentamic.Integration.Ibms.Models
         public DateTime CreateDate { get; set; }
         public double Quantity { get; set; }
         public int BranchId { get; set; }
+        public string BranchCode { get; set; }
         public int CofferId { get; set; }
         public int Type { get; set; }
         public bool Status { get; set; }

@@ -25,6 +25,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int? TourGuideId { get; set; }
         public int? VisitorTypeId { get; set; }
         public int? BranchId { get; set; }
+        public string BranchCode { get; set; }
         public string LastSync { get; set; }
         public int? PartnerId { get; set; }
         public DateTime? CreatedAt { get; set; }

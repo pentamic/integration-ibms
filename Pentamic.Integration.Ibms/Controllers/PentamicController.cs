@@ -889,6 +889,7 @@ namespace Pentamic.Integration.Ibms.Controllers
             stock.Type = item.Type;
             stock.CofferId = item.Coffer.IDs;
             stock.BranchId = item.Branch[0].IDs;
+            stock.BranchCode = item.Branch[0].BranchCode;
             stock.LastSync = lastSync;
             stock.Status = true;
             stock.CreatedAt = DateTime.Now;
@@ -1449,6 +1450,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                             continue;
                         }
                     }
+
                     //End Foreach
                 }
                 //end null 
@@ -1805,6 +1807,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         {
                                             //Bill_Branch(item, list_location, list_location_updated, lastSync);
                                             bill.BranchId = item.branch.IDs;
+                                            bill.BranchCode = item.branch.BranchCode;
                                         }
                                         else throw new Exception("Branch Id is NULL");
                                     }
@@ -2122,6 +2125,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             {
                                                 //Bill_Branch(item, list_location, list_location_updated, lastSync);
                                                 receipt_update.BranchId = item.branch.IDs;
+                                                receipt_update.BranchCode = item.branch.BranchCode;
                                             }
                                             else throw new Exception("Branch Id is NULL");
                                         }
@@ -2596,6 +2600,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         {
                                             //Branch(item, list_location, lastSync);
                                             checkin.BranchId = item.location.IDs;
+                                            checkin.BranchCode = item.location.BranchCode;
                                         }
                                         else throw new Exception("Branch Id is NULL");
                                     }
@@ -2790,6 +2795,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             {
                                                 //Branch(item, list_location, lastSync);
                                                 checkin_update.BranchId = item.location.IDs;
+                                                checkin_update.BranchCode = item.location.BranchCode;
                                             }
                                             else throw new Exception("Branch Id is NULL");
                                         }
