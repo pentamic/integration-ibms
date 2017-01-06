@@ -2652,6 +2652,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         if (item.fee_port_contact.IDs != 0)
                                         {
                                             FeePortName(item.fee_port_contact, list_contact_fee, list_contact_fee_updated, lastSync);
+                                            checkin.ContactFeePortId = item.fee_port_contact.IDs;
                                             checkin.FeePort = item.fee_port_contact.FeePort;
                                         }
                                         else throw new Exception("Contact Fee Port is NULL");
@@ -2857,9 +2858,15 @@ namespace Pentamic.Integration.Ibms.Controllers
                                             if (item.fee_port_contact.IDs != 0)
                                             {
                                                 FeePortName(item.fee_port_contact, list_contact_fee, list_contact_fee_updated, lastSync);
+                                                checkin_update.ContactFeePortId = item.fee_port_contact.IDs;
                                                 checkin_update.FeePort = item.fee_port_contact.FeePort;
                                             }
                                             else throw new Exception("Contact Fee Port is NULL");
+                                        }
+                                        else
+                                        {
+                                            checkin_update.ContactFeePortId = null;
+                                            checkin_update.FeePort = 0;
                                         }
                                         #endregion
                                     }

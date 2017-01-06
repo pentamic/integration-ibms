@@ -24,6 +24,7 @@ namespace Pentamic.Integration.Ibms.Models
         public int? DriverId { get; set; }
         public int? TourGuideId { get; set; }
         public int? VisitorTypeId { get; set; }
+        public int? ContactFeePortId { get; set; }
         public int? BranchId { get; set; }
         public string BranchCode { get; set; }
         public string LastSync { get; set; }
