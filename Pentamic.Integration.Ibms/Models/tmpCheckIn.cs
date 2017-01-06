@@ -19,8 +19,7 @@ namespace Pentamic.Integration.Ibms.Models
         public string CheckInCode { get; set; }
         [DataMember(Name = "checkin_date")]
         public DateTime? CreatedDate { get; set; }
-        [DataMember(Name = "fee_port")]
-        public decimal FeePort { get; set; }
+       
         [DataMember(Name = "status")]
         public int Status { get; set; }
 
@@ -53,7 +52,9 @@ namespace Pentamic.Integration.Ibms.Models
 
         [DataMember(Name = "location")]
         public Branch location { get; set; }
-        
+        [DataMember(Name = "fee_port_contact")]
+        public tmpFeePort fee_port_contact { get; set; }
+
 
     }
 }

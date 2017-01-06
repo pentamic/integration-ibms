@@ -50,5 +50,7 @@ namespace Pentamic.Integration.Ibms.Models
         public DbSet<Inventory> Inventorys { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<ReceiptPayee> ReceiptPayees { get; set; }
+        public DbSet<ContactFeePort> ContactFeePorts { get; set; }
+
     }
 }

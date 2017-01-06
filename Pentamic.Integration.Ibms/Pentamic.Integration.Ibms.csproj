@@ -190,7 +190,6 @@
     <Compile Include="Controllers\PentamicController.cs" />
     <Compile Include="Helpers\LogRequestAndResponseHandler.cs" />
     <Compile Include="Helpers\WebApiExceptionLogger.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,6 +200,8 @@
     <Compile Include="Models\tmpBranch.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\tmpCheckIn_receipt.cs" />
+    <Compile Include="Models\ContactFeePort.cs" />
+    <Compile Include="Models\tmpFeePort.cs" />
     <Compile Include="Models\tmpInventory.cs" />
     <Compile Include="Models\tmpCoffer.cs" />
     <Compile Include="Models\tmpSupplier.cs" />

@@ -349,6 +349,38 @@ namespace Pentamic.Integration.Ibms.Controllers
                 }
             }
         }
+
+        private void FeePortName(tmpFeePort item, List<int> list_fee, List<int> list_fee_update, string lastSync)
+        {
+            if (list_fee.Contains(item.IDs))//Create
+            {
+                var fee = new ContactFeePort();
+                fee.IDs = item.IDs;
+                fee.Name = item.Name;
+                fee.Email = item.Email;
+                fee.Phone = item.Phone;
+                fee.LastSync = lastSync;
+                fee.CreatedAt = DateTime.Now;
+                _context.ContactFeePorts.Add(fee);
+                list_fee.Remove(item.IDs);
+            }
+            else
+            {
+                var update = _context.ContactFeePorts.Where(x => x.IDs == item.IDs).FirstOrDefault();
+                if (update != null && !list_fee_update.Contains(item.IDs))
+                {
+                    if (update.Name != item.Name)
+                    {
+                        update.Name = item.Name;
+                        update.Email = item.Email;
+                        update.Phone = item.Phone;
+                        update.LastSync = lastSync;
+                        update.ModifiedAt = DateTime.Now;
+                        list_fee_update.Add(item.IDs);
+                    }
+                }
+            }
+        }
         private void Saleman(ReceiptSalesStaff item, List<int> list_sales, List<int> list_sales_update, string lastSync)
         {
             if (list_sales.Contains(item.SalemanId))//Create
@@ -2298,6 +2330,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_location = new List<int>();
                 List<int> list_payee = new List<int>();
                 List<int> list_nationality = new List<int>();
+                List<int> list_contact_fee = new List<int>();
 
                 //List chua nhung item da xu ly, de tranh xu ly lai vao cac lan sau
                 List<int> list_card_maker_updated = new List<int>();
@@ -2310,6 +2343,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 List<int> list_location_updated = new List<int>();
                 List<int> list_payee_updated = new List<int>();
                 List<int> list_nationality_updated = new List<int>();
+                List<int> list_contact_fee_updated = new List<int>();
 
                 #region GetDataAPI
                 //Get Id data from API
@@ -2409,6 +2443,12 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     list_nationality.Add(nati.NationalityId);
                         }
                     }
+                    if (item.fee_port_contact != null)
+                    {
+                        if (!list_contact_fee.Contains(item.fee_port_contact.IDs))
+                            if (_context.ContactFeePorts.Where(x => x.IDs == item.fee_port_contact.IDs).Count() == 0)
+                                list_contact_fee.Add(item.fee_port_contact.IDs);
+                    }
                 }
                 #endregion
 
@@ -2431,7 +2471,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     checkin.CheckInCode = item.CheckInCode;
                                     if (item.CreatedDate != null)
                                         checkin.CreatedDate = item.CreatedDate;
-                                    checkin.FeePort = item.FeePort;
+                                    
                                     checkin.Status = item.Status;
                                     checkin.LastSync = lastSync;
                                     checkin.CreatedAt = DateTime.Now;
@@ -2606,6 +2646,17 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     }
                                     #endregion
 
+                                    #region ContactFee
+                                    if (item.fee_port_contact != null)
+                                    {
+                                        if (item.fee_port_contact.IDs != 0)
+                                        {
+                                            FeePortName(item.fee_port_contact, list_contact_fee, list_contact_fee_updated, lastSync);
+                                            checkin.FeePort = item.fee_port_contact.FeePort;
+                                        }
+                                        else throw new Exception("Contact Fee Port is NULL");
+                                    }
+                                    #endregion
                                     _context.tblCheckIns.Add(checkin);
                                 }
                             }
@@ -2630,7 +2681,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         else
                                             checkin_update.CreatedDate = null;
 
-                                        checkin_update.FeePort = item.FeePort;
+                                        
                                         checkin_update.LastSync = lastSync;
                                         checkin_update.ModifiedAt = DateTime.Now;
 
@@ -2798,6 +2849,17 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 checkin_update.BranchCode = item.location.BranchCode;
                                             }
                                             else throw new Exception("Branch Id is NULL");
+                                        }
+                                        #endregion
+                                        #region ContactFee
+                                        if (item.fee_port_contact != null)
+                                        {
+                                            if (item.fee_port_contact.IDs != 0)
+                                            {
+                                                FeePortName(item.fee_port_contact, list_contact_fee, list_contact_fee_updated, lastSync);
+                                                checkin_update.FeePort = item.fee_port_contact.FeePort;
+                                            }
+                                            else throw new Exception("Contact Fee Port is NULL");
                                         }
                                         #endregion
                                     }
