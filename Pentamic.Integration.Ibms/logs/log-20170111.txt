@@ -1,0 +1,1923 @@
+2017-01-11 10:06:49.510 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lsreceipt": [
+      {
+        "idReceipt": 29119,
+        "receiptCode": "HD170102-04-223400",
+        "createdDate": "2017-01-03 17:35:11",
+        "customer": {
+          "id": 47231,
+          "contactId": "CUS170102223400",
+          "fullName": "ELTAN WAKS",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 42,
+            "countryName": "Philippine",
+            "cityList": [
+              {
+                "id": 147,
+                "name": "Khác"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 54,
+            "productCode": "CHS0900002",
+            "productName": "DÂY CHUYỀN BẠC",
+            "price": 800000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 800000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 800000,
+            "totalPay": 11200000,
+            "coffer": {
+              "id": 1627,
+              "coffer_name": "TU 31",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 522,
+            "productCode": "PES0600001",
+            "productName": "MẶT BẠC",
+            "price": 300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 300000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 300000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1600,
+              "coffer_name": "TU 17",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 32,
+            "productCode": "TL0100002",
+            "productName": "HẠT NGỌC TAHITI",
+            "price": 4500000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 4500000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 4500000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1618,
+              "coffer_name": "TU 26",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 54,
+            "productCode": "CHS0900002",
+            "productName": "DÂY CHUYỀN BẠC",
+            "price": 800000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 800000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 800000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1627,
+              "coffer_name": "TU 31",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          },
+          {
+            "id": 522,
+            "productCode": "PES0600001",
+            "productName": "MẶT BẠC",
+            "price": 300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 300000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 300000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1600,
+              "coffer_name": "TU 17",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          },
+          {
+            "id": 32,
+            "productCode": "TL0100002",
+            "productName": "HẠT NGỌC TAHITI",
+            "price": 4500000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 4500000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 4500000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1618,
+              "coffer_name": "TU 26",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 3331000,
+              "total": 3331000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 20,
+                "name": "VCB - 0091000605231"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 4,
+          "branchName": "SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "89 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ02"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [
+            {
+              "amount": 100,
+              "total": 2269000,
+              "currency_code": "USD",
+              "exchange_rate": 22690,
+              "create_date": "2017-01-02 22:34:00",
+              "status": 0
+            },
+            {
+              "amount": 100,
+              "total": 2269000,
+              "currency_code": "USD",
+              "exchange_rate": 22690,
+              "create_date": "2017-01-02 22:34:00",
+              "status": 0
+            }
+          ],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29193,
+        "receiptCode": "HD170104-02-084211",
+        "createdDate": "2017-01-04 08:42:11",
+        "checkin": {
+          "id": 48896,
+          "card_type": {
+            "id": 880,
+            "card_name": "01TN044"
+          },
+          "partner_group": {
+            "partner": {
+              "id": 33337,
+              "fullName": "TƯ NHÂN",
+              "contactType": 0,
+              "sex": 0,
+              "relationship": 0,
+              "shoppingPurpose": 0,
+              "shoppingType": 0,
+              "salary": 0,
+              "partner_group": 0,
+              "status": 0
+            },
+            "id": 0,
+            "contactType": 0,
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 0,
+            "status": 0
+          },
+          "visitor_type": {
+            "id": 10,
+            "visitor_type_name": "Khách non-travel (tư nhân)"
+          },
+          "payee_list": [
+            {
+              "id": 33316,
+              "payee_name": "HỒ NGỌC THUẬN",
+              "payee_commission": 20,
+              "payee_money": 40000,
+              "payee_type": 2
+            }
+          ],
+          "fee_port": 0,
+          "status": 0
+        },
+        "customer": {
+          "id": 47329,
+          "contactId": "CUS170104084154",
+          "fullName": "Co Tien",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 15,
+                "name": "Bình Phước"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 5437,
+            "productCode": "LBIC-AW00012",
+            "productName": "NHANG VÒNG LOẠI 2 (TEM TRẮNG)",
+            "price": 200000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "BỘ",
+            "amount": 200000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 200000,
+            "totalPay": 200000,
+            "coffer": {
+              "id": 1998,
+              "coffer_name": "TH.04",
+              "branch_id": 22,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 33108,
+            "full_name": "Hoàng Minh Lâm",
+            "pecent": 100,
+            "money": 160000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [
+            {
+              "amount": 200000,
+              "total": 200000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "status": 1
+            }
+          ],
+          "card_payment_list": []
+        },
+        "branch": {
+          "branchId": 22,
+          "branchName": "SHOP TRẦM HƯƠNG - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ04"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29333,
+        "receiptCode": "HD170106-01-181851",
+        "createdDate": "2017-01-06 18:37:02",
+        "customer": {
+          "id": 47517,
+          "contactId": "CUS170106181851",
+          "fullName": "Chị Hạnh",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "0942388869",
+          "sex": 0,
+          "birthday": "1987-05-03",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 1,
+                "name": "Hà Nội"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 30680,
+            "productCode": "LNEG06SP0100015",
+            "productName": "Chuỗi vòng cổ móc vàng Southsea",
+            "price": 240300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 240300000,
+            "percentDiscount": 20,
+            "moneyDiscount": 48060000,
+            "total": 192240000,
+            "totalPay": 192240000,
+            "coffer": {
+              "id": 1746,
+              "coffer_name": "Tu 09",
+              "branch_id": 19,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "LNEG06SP0100015",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 12757,
+            "full_name": "Nguyễn Thị Hường",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 4406,
+            "full_name": "Đặng Khánh Linh",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 4406,
+            "full_name": "Đặng Khánh Linh",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 12757,
+            "full_name": "Nguyễn Thị Hường",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 192240000,
+              "total": 192240000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 45,
+                "name": "VTB - 102010002391353"
+              },
+              "status": 0
+            },
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 192240000,
+              "total": 192240000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 45,
+                "name": "VTB - 102010002391353"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 19,
+          "branchName": "SHOP VINCOM - BÀ TRIỆU - HÀ NỘI",
+          "address": "191 Bà Triệu - Phường Lê Đại Hành - Quận Hai Bà trưng - Hà Nội",
+          "maChiNhanh": "TMLBPHN01"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29425,
+        "receiptCode": "HD170108-05-094844",
+        "createdDate": "2017-01-08 09:48:44",
+        "customer": {
+          "id": 47614,
+          "contactId": "CUS170108094827",
+          "fullName": "Marianne",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "1961-02-14",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 34,
+            "countryName": "ĐAN MẠCH",
+            "cityList": [
+              {
+                "id": 136,
+                "name": "ĐAN MẠCH"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 15156,
+            "productCode": "NES11FP1400256",
+            "productName": "CHUỖI VÒNG CỔ MÓC BẠC NƯỚC NGỌT",
+            "price": 4300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 4300000,
+            "percentDiscount": 8,
+            "moneyDiscount": 344000,
+            "total": 3956000,
+            "totalPay": 4830000,
+            "coffer": {
+              "id": 1065,
+              "coffer_name": "TU 58",
+              "branch_id": 3,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 1
+          },
+          {
+            "id": 30039,
+            "productCode": "EAS06FL1400094",
+            "productName": "BONG TAI BAC NUOC NGOT ( ST )",
+            "price": 950000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "ĐÔI",
+            "amount": 950000,
+            "percentDiscount": 8,
+            "moneyDiscount": 76000,
+            "total": 874000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 949,
+              "coffer_name": "TU 07",
+              "branch_id": 3,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 135,
+            "full_name": "Cù Thị Hoa",
+            "pecent": 100,
+            "money": 4830000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "branch": {
+          "branchId": 3,
+          "branchName": "SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ01"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [
+            {
+              "amount": 500000,
+              "total": 500000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "create_date": "2017-01-08 09:48:44",
+              "status": 0
+            }
+          ],
+          "card_payment_list": []
+        },
+        "bill_type": 2,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30001,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "API",
+  "partner_pass": "123"
+}
+2017-01-11 10:06:54.129 +07:00 [Information] Request: "application/json"
+2017-01-11 10:06:54.213 +07:00 [Information] Received package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":29119,\"receiptCode\":\"HD170102-04-223400\",\"createdDate\":\"2017-01-03 17:35:11\",\"customer\":{\"id\":47231,\"contactId\":\"CUS170102223400\",\"fullName\":\"ELTAN WAKS\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":42,\"countryName\":\"Philippine\",\"cityList\":[{\"id\":147,\"name\":\"Khác\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":800000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":800000,\"totalPay\":11200000,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":300000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":300000,\"totalPay\":0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000,\"costPrice\":0,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":4500000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":4500000,\"totalPay\":0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":800000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":800000,\"totalPay\":0,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":300000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":300000,\"totalPay\":0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000,\"costPrice\":0,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":4500000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":4500000,\"totalPay\":0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":3331000,\"total\":3331000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":20,\"name\":\"VCB - 0091000605231\"},\"status\":1}]},\"branch\":{\"branchId\":4,\"branchName\":\"SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"89 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ02\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"amount\":100,\"total\":2269000,\"currency_code\":\"USD\",\"exchange_rate\":22690,\"create_date\":\"2017-01-02 22:34:00\",\"status\":0},{\"amount\":100,\"total\":2269000,\"currency_code\":\"USD\",\"exchange_rate\":22690,\"create_date\":\"2017-01-02 22:34:00\",\"status\":0}],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29193,\"receiptCode\":\"HD170104-02-084211\",\"createdDate\":\"2017-01-04 08:42:11\",\"checkin\":{\"id\":48896,\"card_type\":{\"id\":880,\"card_name\":\"01TN044\"},\"partner_group\":{\"partner\":{\"id\":33337,\"fullName\":\"TƯ NHÂN\",\"contactType\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0,\"status\":0},\"id\":0,\"contactType\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0,\"status\":0},\"visitor_type\":{\"id\":10,\"visitor_type_name\":\"Khách non-travel (tư nhân)\"},\"payee_list\":[{\"id\":33316,\"payee_name\":\"HỒ NGỌC THUẬN\",\"payee_commission\":20,\"payee_money\":40000,\"payee_type\":2}],\"fee_port\":0,\"status\":0},\"customer\":{\"id\":47329,\"contactId\":\"CUS170104084154\",\"fullName\":\"Co Tien\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":15,\"name\":\"Bình Phước\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":5437,\"productCode\":\"LBIC-AW00012\",\"productName\":\"NHANG VÒNG LOẠI 2 (TEM TRẮNG)\",\"price\":200000,\"costPrice\":0,\"quantity\":1,\"unit\":\"BỘ\",\"amount\":200000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":200000,\"totalPay\":200000,\"coffer\":{\"id\":1998,\"coffer_name\":\"TH.04\",\"branch_id\":22,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":33108,\"full_name\":\"Hoàng Minh Lâm\",\"pecent\":100,\"money\":160000,\"status\":0}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[{\"amount\":200000,\"total\":200000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"status\":1}],\"card_payment_list\":[]},\"branch\":{\"branchId\":22,\"branchName\":\"SHOP TRẦM HƯƠNG - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ04\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29333,\"receiptCode\":\"HD170106-01-181851\",\"createdDate\":\"2017-01-06 18:37:02\",\"customer\":{\"id\":47517,\"contactId\":\"CUS170106181851\",\"fullName\":\"Chị Hạnh\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"0942388869\",\"sex\":0,\"birthday\":\"1987-05-03\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":1,\"name\":\"Hà Nội\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":30680,\"productCode\":\"LNEG06SP0100015\",\"productName\":\"Chuỗi vòng cổ móc vàng Southsea\",\"price\":240300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":240300000,\"percentDiscount\":20,\"moneyDiscount\":48060000,\"total\":192240000,\"totalPay\":192240000,\"coffer\":{\"id\":1746,\"coffer_name\":\"Tu 09\",\"branch_id\":19,\"type\":2},\"type\":2,\"warrantyCode\":\"LNEG06SP0100015\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":12757,\"full_name\":\"Nguyễn Thị Hường\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":4406,\"full_name\":\"Đặng Khánh Linh\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":4406,\"full_name\":\"Đặng Khánh Linh\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":12757,\"full_name\":\"Nguyễn Thị Hường\",\"pecent\":50,\"money\":96120000,\"status\":0}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":192240000,\"total\":192240000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":45,\"name\":\"VTB - 102010002391353\"},\"status\":0},{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":192240000,\"total\":192240000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":45,\"name\":\"VTB - 102010002391353\"},\"status\":1}]},\"branch\":{\"branchId\":19,\"branchName\":\"SHOP VINCOM - BÀ TRIỆU - HÀ NỘI\",\"address\":\"191 Bà Triệu - Phường Lê Đại Hành - Quận Hai Bà trưng - Hà Nội\",\"maChiNhanh\":\"TMLBPHN01\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29425,\"receiptCode\":\"HD170108-05-094844\",\"createdDate\":\"2017-01-08 09:48:44\",\"customer\":{\"id\":47614,\"contactId\":\"CUS170108094827\",\"fullName\":\"Marianne\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"1961-02-14\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":34,\"countryName\":\"ĐAN MẠCH\",\"cityList\":[{\"id\":136,\"name\":\"ĐAN MẠCH\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":15156,\"productCode\":\"NES11FP1400256\",\"productName\":\"CHUỖI VÒNG CỔ MÓC BẠC NƯỚC NGỌT\",\"price\":4300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":4300000,\"percentDiscount\":8,\"moneyDiscount\":344000,\"total\":3956000,\"totalPay\":4830000,\"coffer\":{\"id\":1065,\"coffer_name\":\"TU 58\",\"branch_id\":3,\"type\":2},\"type\":2,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":1},{\"id\":30039,\"productCode\":\"EAS06FL1400094\",\"productName\":\"BONG TAI BAC NUOC NGOT ( ST )\",\"price\":950000,\"costPrice\":0,\"quantity\":1,\"unit\":\"ĐÔI\",\"amount\":950000,\"percentDiscount\":8,\"moneyDiscount\":76000,\"total\":874000,\"totalPay\":0,\"coffer\":{\"id\":949,\"coffer_name\":\"TU 07\",\"branch_id\":3,\"type\":2},\"type\":2,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":1}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":135,\"full_name\":\"Cù Thị Hoa\",\"pecent\":100,\"money\":4830000,\"status\":0}],\"totalPay\":0,\"branch\":{\"branchId\":3,\"branchName\":\"SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ01\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"amount\":500000,\"total\":500000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"create_date\":\"2017-01-08 09:48:44\",\"status\":0}],\"card_payment_list\":[]},\"bill_type\":2,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0}],\"status\":0}}"
+2017-01-11 10:07:38.370 +07:00 [Information] Return package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":-1,\"err_message\":\"Receipt ID: 29119 - Object reference not set to an instance of an object. ; Receipt ID: 29193 - Object reference not set to an instance of an object. ; \",\"protocol_status\":false,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":29119,\"receiptCode\":\"HD170102-04-223400\",\"createdDate\":\"2017-01-03T17:35:11\",\"totalPay\":0.0,\"bill_type\":1,\"status\":0,\"checkin\":null,\"customer\":{\"id\":47231,\"contactId\":\"CUS170102223400\",\"fullName\":\"ELTAN WAKS\",\"emailAddress\":\"\",\"phoneNumber\":\"\",\"birthday\":null,\"country\":{\"id\":42,\"countryCode\":null,\"countryName\":\"Philippine\",\"cityList\":[{\"id\":147,\"name\":\"Khác\"}]}},\"lstprd\":[{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":800000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":800000.0,\"totalPay\":11200000.0,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":2,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":300000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":300000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":2,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000.0,\"Quantity\":1.0,\"unit\":\"VIÊN\",\"amount\":4500000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":4500000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":2,\"ibms_code\":0},{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":800000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":800000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":300000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":300000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000.0,\"Quantity\":1.0,\"unit\":\"VIÊN\",\"amount\":4500000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":4500000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[],\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"bank_card_type\":\"MasterCard\",\"amount\":3331000.0,\"total\":3331000.0,\"currency_code\":\"VND\",\"exchange_rate\":1.0,\"status\":1,\"bank_account\":{\"id\":20,\"name\":\"VCB - 0091000605231\"},\"create_date\":null}]},\"branch\":{\"branchId\":4,\"branchName\":\"SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"maChiNhanh\":\"TMLBPPQ02\",\"address\":\"89 Trần Hưng Đạo, Dương Đông, Phú Quốc\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"bank_card_type\":null,\"amount\":100.0,\"total\":2269000.0,\"currency_code\":\"USD\",\"exchange_rate\":22690.0,\"status\":0,\"bank_account\":null,\"create_date\":\"2017-01-02T22:34:00\"},{\"bank_card_type\":null,\"amount\":100.0,\"total\":2269000.0,\"currency_code\":\"USD\",\"exchange_rate\":22690.0,\"status\":0,\"bank_account\":null,\"create_date\":\"2017-01-02T22:34:00\"}],\"card_payment_list\":[]}},{\"idReceipt\":29193,\"receiptCode\":\"HD170104-02-084211\",\"createdDate\":\"2017-01-04T08:42:11\",\"totalPay\":0.0,\"bill_type\":1,\"status\":0,\"checkin\":{\"id\":48896,\"payee_list\":[{\"id\":33316,\"payee_name\":\"HỒ NGỌC THUẬN\",\"payee_commission\":20.0,\"payee_money\":40000.0,\"payee_type\":2}]},\"customer\":{\"id\":47329,\"contactId\":\"CUS170104084154\",\"fullName\":\"Co Tien\",\"emailAddress\":\"\",\"phoneNumber\":\"\",\"birthday\":null,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":15,\"name\":\"Bình Phước\"}]}},\"lstprd\":[{\"id\":5437,\"productCode\":\"LBIC-AW00012\",\"productName\":\"NHANG VÒNG LOẠI 2 (TEM TRẮNG)\",\"price\":200000.0,\"Quantity\":1.0,\"unit\":\"BỘ\",\"amount\":200000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":200000.0,\"totalPay\":200000.0,\"coffer\":{\"id\":1998,\"coffer_name\":\"TH.04\",\"branch_id\":22,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":33108,\"full_name\":\"Hoàng Minh Lâm\",\"pecent\":100.0,\"money\":160000.0,\"status\":0}],\"payment\":{\"cash_payment_list\":[{\"bank_card_type\":null,\"amount\":200000.0,\"total\":200000.0,\"currency_code\":\"VND\",\"exchange_rate\":1.0,\"status\":1,\"bank_account\":null,\"create_date\":null}],\"card_payment_list\":[]},\"branch\":{\"branchId\":22,\"branchName\":\"SHOP TRẦM HƯƠNG - PHÚ QUỐC\",\"maChiNhanh\":\"TMLBPPQ04\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]}}]}}"
+2017-01-11 10:07:38.979 +07:00 [Information] HTTP "POST" "/api/pentamic/json" responded 200 in 53233ms
+2017-01-11 10:07:42.663 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lsreceipt": [
+      {
+        "idReceipt": 29119,
+        "receiptCode": "HD170102-04-223400",
+        "createdDate": "2017-01-03 17:35:11",
+        "customer": {
+          "id": 47231,
+          "contactId": "CUS170102223400",
+          "fullName": "ELTAN WAKS",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 42,
+            "countryName": "Philippine",
+            "cityList": [
+              {
+                "id": 147,
+                "name": "Khác"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 54,
+            "productCode": "CHS0900002",
+            "productName": "DÂY CHUYỀN BẠC",
+            "price": 800000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 800000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 800000,
+            "totalPay": 11200000,
+            "coffer": {
+              "id": 1627,
+              "coffer_name": "TU 31",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 522,
+            "productCode": "PES0600001",
+            "productName": "MẶT BẠC",
+            "price": 300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 300000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 300000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1600,
+              "coffer_name": "TU 17",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 32,
+            "productCode": "TL0100002",
+            "productName": "HẠT NGỌC TAHITI",
+            "price": 4500000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 4500000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 4500000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1618,
+              "coffer_name": "TU 26",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 54,
+            "productCode": "CHS0900002",
+            "productName": "DÂY CHUYỀN BẠC",
+            "price": 800000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 800000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 800000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1627,
+              "coffer_name": "TU 31",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          },
+          {
+            "id": 522,
+            "productCode": "PES0600001",
+            "productName": "MẶT BẠC",
+            "price": 300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 300000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 300000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1600,
+              "coffer_name": "TU 17",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          },
+          {
+            "id": 32,
+            "productCode": "TL0100002",
+            "productName": "HẠT NGỌC TAHITI",
+            "price": 4500000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 4500000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 4500000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1618,
+              "coffer_name": "TU 26",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 3331000,
+              "total": 3331000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 20,
+                "name": "VCB - 0091000605231"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 4,
+          "branchName": "SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "89 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ02"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [
+            {
+              "amount": 100,
+              "total": 2269000,
+              "currency_code": "USD",
+              "exchange_rate": 22690,
+              "create_date": "2017-01-02 22:34:00",
+              "status": 0
+            },
+            {
+              "amount": 100,
+              "total": 2269000,
+              "currency_code": "USD",
+              "exchange_rate": 22690,
+              "create_date": "2017-01-02 22:34:00",
+              "status": 0
+            }
+          ],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29193,
+        "receiptCode": "HD170104-02-084211",
+        "createdDate": "2017-01-04 08:42:11",
+        "checkin": {
+          "id": 48896,
+          "card_type": {
+            "id": 880,
+            "card_name": "01TN044"
+          },
+          "partner_group": {
+            "partner": {
+              "id": 33337,
+              "fullName": "TƯ NHÂN",
+              "contactType": 0,
+              "sex": 0,
+              "relationship": 0,
+              "shoppingPurpose": 0,
+              "shoppingType": 0,
+              "salary": 0,
+              "partner_group": 0,
+              "status": 0
+            },
+            "id": 0,
+            "contactType": 0,
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 0,
+            "status": 0
+          },
+          "visitor_type": {
+            "id": 10,
+            "visitor_type_name": "Khách non-travel (tư nhân)"
+          },
+          "payee_list": [
+            {
+              "id": 33316,
+              "payee_name": "HỒ NGỌC THUẬN",
+              "payee_commission": 20,
+              "payee_money": 40000,
+              "payee_type": 2
+            }
+          ],
+          "fee_port": 0,
+          "status": 0
+        },
+        "customer": {
+          "id": 47329,
+          "contactId": "CUS170104084154",
+          "fullName": "Co Tien",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 15,
+                "name": "Bình Phước"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 5437,
+            "productCode": "LBIC-AW00012",
+            "productName": "NHANG VÒNG LOẠI 2 (TEM TRẮNG)",
+            "price": 200000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "BỘ",
+            "amount": 200000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 200000,
+            "totalPay": 200000,
+            "coffer": {
+              "id": 1998,
+              "coffer_name": "TH.04",
+              "branch_id": 22,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 33108,
+            "full_name": "Hoàng Minh Lâm",
+            "pecent": 100,
+            "money": 160000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [
+            {
+              "amount": 200000,
+              "total": 200000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "status": 1
+            }
+          ],
+          "card_payment_list": []
+        },
+        "branch": {
+          "branchId": 22,
+          "branchName": "SHOP TRẦM HƯƠNG - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ04"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29333,
+        "receiptCode": "HD170106-01-181851",
+        "createdDate": "2017-01-06 18:37:02",
+        "customer": {
+          "id": 47517,
+          "contactId": "CUS170106181851",
+          "fullName": "Chị Hạnh",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "0942388869",
+          "sex": 0,
+          "birthday": "1987-05-03",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 1,
+                "name": "Hà Nội"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 30680,
+            "productCode": "LNEG06SP0100015",
+            "productName": "Chuỗi vòng cổ móc vàng Southsea",
+            "price": 240300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 240300000,
+            "percentDiscount": 20,
+            "moneyDiscount": 48060000,
+            "total": 192240000,
+            "totalPay": 192240000,
+            "coffer": {
+              "id": 1746,
+              "coffer_name": "Tu 09",
+              "branch_id": 19,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "LNEG06SP0100015",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 12757,
+            "full_name": "Nguyễn Thị Hường",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 4406,
+            "full_name": "Đặng Khánh Linh",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 4406,
+            "full_name": "Đặng Khánh Linh",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 12757,
+            "full_name": "Nguyễn Thị Hường",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 192240000,
+              "total": 192240000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 45,
+                "name": "VTB - 102010002391353"
+              },
+              "status": 0
+            },
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 192240000,
+              "total": 192240000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 45,
+                "name": "VTB - 102010002391353"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 19,
+          "branchName": "SHOP VINCOM - BÀ TRIỆU - HÀ NỘI",
+          "address": "191 Bà Triệu - Phường Lê Đại Hành - Quận Hai Bà trưng - Hà Nội",
+          "maChiNhanh": "TMLBPHN01"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29425,
+        "receiptCode": "HD170108-05-094844",
+        "createdDate": "2017-01-08 09:48:44",
+        "customer": {
+          "id": 47614,
+          "contactId": "CUS170108094827",
+          "fullName": "Marianne",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "1961-02-14",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 34,
+            "countryName": "ĐAN MẠCH",
+            "cityList": [
+              {
+                "id": 136,
+                "name": "ĐAN MẠCH"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 15156,
+            "productCode": "NES11FP1400256",
+            "productName": "CHUỖI VÒNG CỔ MÓC BẠC NƯỚC NGỌT",
+            "price": 4300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 4300000,
+            "percentDiscount": 8,
+            "moneyDiscount": 344000,
+            "total": 3956000,
+            "totalPay": 4830000,
+            "coffer": {
+              "id": 1065,
+              "coffer_name": "TU 58",
+              "branch_id": 3,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 1
+          },
+          {
+            "id": 30039,
+            "productCode": "EAS06FL1400094",
+            "productName": "BONG TAI BAC NUOC NGOT ( ST )",
+            "price": 950000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "ĐÔI",
+            "amount": 950000,
+            "percentDiscount": 8,
+            "moneyDiscount": 76000,
+            "total": 874000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 949,
+              "coffer_name": "TU 07",
+              "branch_id": 3,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 135,
+            "full_name": "Cù Thị Hoa",
+            "pecent": 100,
+            "money": 4830000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "branch": {
+          "branchId": 3,
+          "branchName": "SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ01"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [
+            {
+              "amount": 500000,
+              "total": 500000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "create_date": "2017-01-08 09:48:44",
+              "status": 0
+            }
+          ],
+          "card_payment_list": []
+        },
+        "bill_type": 2,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30001,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "API",
+  "partner_pass": "123"
+}
+2017-01-11 10:07:42.673 +07:00 [Information] Request: "application/json"
+2017-01-11 10:07:42.675 +07:00 [Information] Received package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":29119,\"receiptCode\":\"HD170102-04-223400\",\"createdDate\":\"2017-01-03 17:35:11\",\"customer\":{\"id\":47231,\"contactId\":\"CUS170102223400\",\"fullName\":\"ELTAN WAKS\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":42,\"countryName\":\"Philippine\",\"cityList\":[{\"id\":147,\"name\":\"Khác\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":800000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":800000,\"totalPay\":11200000,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":300000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":300000,\"totalPay\":0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000,\"costPrice\":0,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":4500000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":4500000,\"totalPay\":0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":800000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":800000,\"totalPay\":0,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":300000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":300000,\"totalPay\":0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000,\"costPrice\":0,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":4500000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":4500000,\"totalPay\":0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":3331000,\"total\":3331000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":20,\"name\":\"VCB - 0091000605231\"},\"status\":1}]},\"branch\":{\"branchId\":4,\"branchName\":\"SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"89 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ02\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"amount\":100,\"total\":2269000,\"currency_code\":\"USD\",\"exchange_rate\":22690,\"create_date\":\"2017-01-02 22:34:00\",\"status\":0},{\"amount\":100,\"total\":2269000,\"currency_code\":\"USD\",\"exchange_rate\":22690,\"create_date\":\"2017-01-02 22:34:00\",\"status\":0}],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29193,\"receiptCode\":\"HD170104-02-084211\",\"createdDate\":\"2017-01-04 08:42:11\",\"checkin\":{\"id\":48896,\"card_type\":{\"id\":880,\"card_name\":\"01TN044\"},\"partner_group\":{\"partner\":{\"id\":33337,\"fullName\":\"TƯ NHÂN\",\"contactType\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0,\"status\":0},\"id\":0,\"contactType\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0,\"status\":0},\"visitor_type\":{\"id\":10,\"visitor_type_name\":\"Khách non-travel (tư nhân)\"},\"payee_list\":[{\"id\":33316,\"payee_name\":\"HỒ NGỌC THUẬN\",\"payee_commission\":20,\"payee_money\":40000,\"payee_type\":2}],\"fee_port\":0,\"status\":0},\"customer\":{\"id\":47329,\"contactId\":\"CUS170104084154\",\"fullName\":\"Co Tien\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":15,\"name\":\"Bình Phước\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":5437,\"productCode\":\"LBIC-AW00012\",\"productName\":\"NHANG VÒNG LOẠI 2 (TEM TRẮNG)\",\"price\":200000,\"costPrice\":0,\"quantity\":1,\"unit\":\"BỘ\",\"amount\":200000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":200000,\"totalPay\":200000,\"coffer\":{\"id\":1998,\"coffer_name\":\"TH.04\",\"branch_id\":22,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":33108,\"full_name\":\"Hoàng Minh Lâm\",\"pecent\":100,\"money\":160000,\"status\":0}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[{\"amount\":200000,\"total\":200000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"status\":1}],\"card_payment_list\":[]},\"branch\":{\"branchId\":22,\"branchName\":\"SHOP TRẦM HƯƠNG - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ04\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29333,\"receiptCode\":\"HD170106-01-181851\",\"createdDate\":\"2017-01-06 18:37:02\",\"customer\":{\"id\":47517,\"contactId\":\"CUS170106181851\",\"fullName\":\"Chị Hạnh\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"0942388869\",\"sex\":0,\"birthday\":\"1987-05-03\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":1,\"name\":\"Hà Nội\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":30680,\"productCode\":\"LNEG06SP0100015\",\"productName\":\"Chuỗi vòng cổ móc vàng Southsea\",\"price\":240300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":240300000,\"percentDiscount\":20,\"moneyDiscount\":48060000,\"total\":192240000,\"totalPay\":192240000,\"coffer\":{\"id\":1746,\"coffer_name\":\"Tu 09\",\"branch_id\":19,\"type\":2},\"type\":2,\"warrantyCode\":\"LNEG06SP0100015\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":12757,\"full_name\":\"Nguyễn Thị Hường\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":4406,\"full_name\":\"Đặng Khánh Linh\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":4406,\"full_name\":\"Đặng Khánh Linh\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":12757,\"full_name\":\"Nguyễn Thị Hường\",\"pecent\":50,\"money\":96120000,\"status\":0}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":192240000,\"total\":192240000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":45,\"name\":\"VTB - 102010002391353\"},\"status\":0},{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":192240000,\"total\":192240000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":45,\"name\":\"VTB - 102010002391353\"},\"status\":1}]},\"branch\":{\"branchId\":19,\"branchName\":\"SHOP VINCOM - BÀ TRIỆU - HÀ NỘI\",\"address\":\"191 Bà Triệu - Phường Lê Đại Hành - Quận Hai Bà trưng - Hà Nội\",\"maChiNhanh\":\"TMLBPHN01\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29425,\"receiptCode\":\"HD170108-05-094844\",\"createdDate\":\"2017-01-08 09:48:44\",\"customer\":{\"id\":47614,\"contactId\":\"CUS170108094827\",\"fullName\":\"Marianne\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"1961-02-14\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":34,\"countryName\":\"ĐAN MẠCH\",\"cityList\":[{\"id\":136,\"name\":\"ĐAN MẠCH\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":15156,\"productCode\":\"NES11FP1400256\",\"productName\":\"CHUỖI VÒNG CỔ MÓC BẠC NƯỚC NGỌT\",\"price\":4300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":4300000,\"percentDiscount\":8,\"moneyDiscount\":344000,\"total\":3956000,\"totalPay\":4830000,\"coffer\":{\"id\":1065,\"coffer_name\":\"TU 58\",\"branch_id\":3,\"type\":2},\"type\":2,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":1},{\"id\":30039,\"productCode\":\"EAS06FL1400094\",\"productName\":\"BONG TAI BAC NUOC NGOT ( ST )\",\"price\":950000,\"costPrice\":0,\"quantity\":1,\"unit\":\"ĐÔI\",\"amount\":950000,\"percentDiscount\":8,\"moneyDiscount\":76000,\"total\":874000,\"totalPay\":0,\"coffer\":{\"id\":949,\"coffer_name\":\"TU 07\",\"branch_id\":3,\"type\":2},\"type\":2,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":1}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":135,\"full_name\":\"Cù Thị Hoa\",\"pecent\":100,\"money\":4830000,\"status\":0}],\"totalPay\":0,\"branch\":{\"branchId\":3,\"branchName\":\"SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ01\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"amount\":500000,\"total\":500000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"create_date\":\"2017-01-08 09:48:44\",\"status\":0}],\"card_payment_list\":[]},\"bill_type\":2,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0}],\"status\":0}}"
+2017-01-11 10:08:38.876 +07:00 [Information] Return package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":-1,\"err_message\":\"Receipt ID: 29119 - Object reference not set to an instance of an object. ; Receipt ID: 29193 - Object reference not set to an instance of an object. ; \",\"protocol_status\":false,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":29119,\"receiptCode\":\"HD170102-04-223400\",\"createdDate\":\"2017-01-03T17:35:11\",\"totalPay\":0.0,\"bill_type\":1,\"status\":0,\"checkin\":null,\"customer\":{\"id\":47231,\"contactId\":\"CUS170102223400\",\"fullName\":\"ELTAN WAKS\",\"emailAddress\":\"\",\"phoneNumber\":\"\",\"birthday\":null,\"country\":{\"id\":42,\"countryCode\":null,\"countryName\":\"Philippine\",\"cityList\":[{\"id\":147,\"name\":\"Khác\"}]}},\"lstprd\":[{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":800000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":800000.0,\"totalPay\":11200000.0,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":2,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":300000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":300000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":2,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000.0,\"Quantity\":1.0,\"unit\":\"VIÊN\",\"amount\":4500000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":4500000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":2,\"ibms_code\":0},{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":800000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":800000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000.0,\"Quantity\":1.0,\"unit\":\"CHIẾC\",\"amount\":300000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":300000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000.0,\"Quantity\":1.0,\"unit\":\"VIÊN\",\"amount\":4500000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":4500000.0,\"totalPay\":0.0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[],\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"bank_card_type\":\"MasterCard\",\"amount\":3331000.0,\"total\":3331000.0,\"currency_code\":\"VND\",\"exchange_rate\":1.0,\"status\":1,\"bank_account\":{\"id\":20,\"name\":\"VCB - 0091000605231\"},\"create_date\":null}]},\"branch\":{\"branchId\":4,\"branchName\":\"SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"maChiNhanh\":\"TMLBPPQ02\",\"address\":\"89 Trần Hưng Đạo, Dương Đông, Phú Quốc\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"bank_card_type\":null,\"amount\":100.0,\"total\":2269000.0,\"currency_code\":\"USD\",\"exchange_rate\":22690.0,\"status\":0,\"bank_account\":null,\"create_date\":\"2017-01-02T22:34:00\"},{\"bank_card_type\":null,\"amount\":100.0,\"total\":2269000.0,\"currency_code\":\"USD\",\"exchange_rate\":22690.0,\"status\":0,\"bank_account\":null,\"create_date\":\"2017-01-02T22:34:00\"}],\"card_payment_list\":[]}},{\"idReceipt\":29193,\"receiptCode\":\"HD170104-02-084211\",\"createdDate\":\"2017-01-04T08:42:11\",\"totalPay\":0.0,\"bill_type\":1,\"status\":0,\"checkin\":{\"id\":48896,\"payee_list\":[{\"id\":33316,\"payee_name\":\"HỒ NGỌC THUẬN\",\"payee_commission\":20.0,\"payee_money\":40000.0,\"payee_type\":2}]},\"customer\":{\"id\":47329,\"contactId\":\"CUS170104084154\",\"fullName\":\"Co Tien\",\"emailAddress\":\"\",\"phoneNumber\":\"\",\"birthday\":null,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":15,\"name\":\"Bình Phước\"}]}},\"lstprd\":[{\"id\":5437,\"productCode\":\"LBIC-AW00012\",\"productName\":\"NHANG VÒNG LOẠI 2 (TEM TRẮNG)\",\"price\":200000.0,\"Quantity\":1.0,\"unit\":\"BỘ\",\"amount\":200000.0,\"percentDiscount\":0.0,\"moneyDiscount\":0.0,\"total\":200000.0,\"totalPay\":200000.0,\"coffer\":{\"id\":1998,\"coffer_name\":\"TH.04\",\"branch_id\":22,\"type\":1},\"type\":1,\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":33108,\"full_name\":\"Hoàng Minh Lâm\",\"pecent\":100.0,\"money\":160000.0,\"status\":0}],\"payment\":{\"cash_payment_list\":[{\"bank_card_type\":null,\"amount\":200000.0,\"total\":200000.0,\"currency_code\":\"VND\",\"exchange_rate\":1.0,\"status\":1,\"bank_account\":null,\"create_date\":null}],\"card_payment_list\":[]},\"branch\":{\"branchId\":22,\"branchName\":\"SHOP TRẦM HƯƠNG - PHÚ QUỐC\",\"maChiNhanh\":\"TMLBPPQ04\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]}}]}}"
+2017-01-11 10:08:38.877 +07:00 [Information] HTTP "POST" "/api/pentamic/json" responded 200 in 56216ms
+2017-01-11 10:11:07.774 +07:00 [Information] Request body: {
+  "protocol_data": {
+    "lsreceipt": [
+      {
+        "idReceipt": 29119,
+        "receiptCode": "HD170102-04-223400",
+        "createdDate": "2017-01-03 17:35:11",
+        "customer": {
+          "id": 47231,
+          "contactId": "CUS170102223400",
+          "fullName": "ELTAN WAKS",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 42,
+            "countryName": "Philippine",
+            "cityList": [
+              {
+                "id": 147,
+                "name": "Khác"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 54,
+            "productCode": "CHS0900002",
+            "productName": "DÂY CHUYỀN BẠC",
+            "price": 800000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 800000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 800000,
+            "totalPay": 11200000,
+            "coffer": {
+              "id": 1627,
+              "coffer_name": "TU 31",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 522,
+            "productCode": "PES0600001",
+            "productName": "MẶT BẠC",
+            "price": 300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 300000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 300000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1600,
+              "coffer_name": "TU 17",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 32,
+            "productCode": "TL0100002",
+            "productName": "HẠT NGỌC TAHITI",
+            "price": 4500000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 4500000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 4500000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1618,
+              "coffer_name": "TU 26",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 0
+          },
+          {
+            "id": 54,
+            "productCode": "CHS0900002",
+            "productName": "DÂY CHUYỀN BẠC",
+            "price": 800000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 800000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 800000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1627,
+              "coffer_name": "TU 31",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          },
+          {
+            "id": 522,
+            "productCode": "PES0600001",
+            "productName": "MẶT BẠC",
+            "price": 300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 300000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 300000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1600,
+              "coffer_name": "TU 17",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          },
+          {
+            "id": 32,
+            "productCode": "TL0100002",
+            "productName": "HẠT NGỌC TAHITI",
+            "price": 4500000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "VIÊN",
+            "amount": 4500000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 4500000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 1618,
+              "coffer_name": "TU 26",
+              "branch_id": 4,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 3331000,
+              "total": 3331000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 20,
+                "name": "VCB - 0091000605231"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 4,
+          "branchName": "SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "89 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ02"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [
+            {
+              "amount": 100,
+              "total": 2269000,
+              "currency_code": "USD",
+              "exchange_rate": 22690,
+              "create_date": "2017-01-02 22:34:00",
+              "status": 0
+            },
+            {
+              "amount": 100,
+              "total": 2269000,
+              "currency_code": "USD",
+              "exchange_rate": 22690,
+              "create_date": "2017-01-02 22:34:00",
+              "status": 0
+            }
+          ],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29193,
+        "receiptCode": "HD170104-02-084211",
+        "createdDate": "2017-01-04 08:42:11",
+        "checkin": {
+          "id": 48896,
+          "card_type": {
+            "id": 880,
+            "card_name": "01TN044"
+          },
+          "partner_group": {
+            "partner": {
+              "id": 33337,
+              "fullName": "TƯ NHÂN",
+              "contactType": 0,
+              "sex": 0,
+              "relationship": 0,
+              "shoppingPurpose": 0,
+              "shoppingType": 0,
+              "salary": 0,
+              "partner_group": 0,
+              "status": 0
+            },
+            "id": 0,
+            "contactType": 0,
+            "sex": 0,
+            "relationship": 0,
+            "shoppingPurpose": 0,
+            "shoppingType": 0,
+            "salary": 0,
+            "partner_group": 0,
+            "status": 0
+          },
+          "visitor_type": {
+            "id": 10,
+            "visitor_type_name": "Khách non-travel (tư nhân)"
+          },
+          "payee_list": [
+            {
+              "id": 33316,
+              "payee_name": "HỒ NGỌC THUẬN",
+              "payee_commission": 20,
+              "payee_money": 40000,
+              "payee_type": 2
+            }
+          ],
+          "fee_port": 0,
+          "status": 0
+        },
+        "customer": {
+          "id": 47329,
+          "contactId": "CUS170104084154",
+          "fullName": "Co Tien",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 15,
+                "name": "Bình Phước"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 5437,
+            "productCode": "LBIC-AW00012",
+            "productName": "NHANG VÒNG LOẠI 2 (TEM TRẮNG)",
+            "price": 200000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "BỘ",
+            "amount": 200000,
+            "percentDiscount": 0,
+            "moneyDiscount": 0,
+            "total": 200000,
+            "totalPay": 200000,
+            "coffer": {
+              "id": 1998,
+              "coffer_name": "TH.04",
+              "branch_id": 22,
+              "type": 1
+            },
+            "type": 1,
+            "warrantyCode": "",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 33108,
+            "full_name": "Hoàng Minh Lâm",
+            "pecent": 100,
+            "money": 160000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [
+            {
+              "amount": 200000,
+              "total": 200000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "status": 1
+            }
+          ],
+          "card_payment_list": []
+        },
+        "branch": {
+          "branchId": 22,
+          "branchName": "SHOP TRẦM HƯƠNG - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ04"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29333,
+        "receiptCode": "HD170106-01-181851",
+        "createdDate": "2017-01-06 18:37:02",
+        "customer": {
+          "id": 47517,
+          "contactId": "CUS170106181851",
+          "fullName": "Chị Hạnh",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "0942388869",
+          "sex": 0,
+          "birthday": "1987-05-03",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 1,
+            "countryCode": "VN",
+            "countryName": "Việt Nam",
+            "cityList": [
+              {
+                "id": 1,
+                "name": "Hà Nội"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 30680,
+            "productCode": "LNEG06SP0100015",
+            "productName": "Chuỗi vòng cổ móc vàng Southsea",
+            "price": 240300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 240300000,
+            "percentDiscount": 20,
+            "moneyDiscount": 48060000,
+            "total": 192240000,
+            "totalPay": 192240000,
+            "coffer": {
+              "id": 1746,
+              "coffer_name": "Tu 09",
+              "branch_id": 19,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "LNEG06SP0100015",
+            "saleStatus": 1,
+            "ibms_code": 0
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 12757,
+            "full_name": "Nguyễn Thị Hường",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 4406,
+            "full_name": "Đặng Khánh Linh",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 4406,
+            "full_name": "Đặng Khánh Linh",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          },
+          {
+            "id": 12757,
+            "full_name": "Nguyễn Thị Hường",
+            "pecent": 50,
+            "money": 96120000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "payment": {
+          "cash_payment_list": [],
+          "card_payment_list": [
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 192240000,
+              "total": 192240000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 45,
+                "name": "VTB - 102010002391353"
+              },
+              "status": 0
+            },
+            {
+              "id": 0,
+              "bank_card_type": "MasterCard",
+              "amount": 192240000,
+              "total": 192240000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "bank_account": {
+                "id": 45,
+                "name": "VTB - 102010002391353"
+              },
+              "status": 1
+            }
+          ]
+        },
+        "branch": {
+          "branchId": 19,
+          "branchName": "SHOP VINCOM - BÀ TRIỆU - HÀ NỘI",
+          "address": "191 Bà Triệu - Phường Lê Đại Hành - Quận Hai Bà trưng - Hà Nội",
+          "maChiNhanh": "TMLBPHN01"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [],
+          "card_payment_list": []
+        },
+        "bill_type": 1,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      },
+      {
+        "idReceipt": 29425,
+        "receiptCode": "HD170108-05-094844",
+        "createdDate": "2017-01-08 09:48:44",
+        "customer": {
+          "id": 47614,
+          "contactId": "CUS170108094827",
+          "fullName": "Marianne",
+          "contactType": 0,
+          "emailAddress": "",
+          "phoneNumber": "",
+          "sex": 0,
+          "birthday": "1961-02-14",
+          "relationship": 0,
+          "shoppingPurpose": 0,
+          "shoppingType": 0,
+          "salary": 0,
+          "country": {
+            "id": 34,
+            "countryName": "ĐAN MẠCH",
+            "cityList": [
+              {
+                "id": 136,
+                "name": "ĐAN MẠCH"
+              }
+            ]
+          },
+          "partner_group": 0,
+          "status": 0
+        },
+        "lstprd": [
+          {
+            "id": 15156,
+            "productCode": "NES11FP1400256",
+            "productName": "CHUỖI VÒNG CỔ MÓC BẠC NƯỚC NGỌT",
+            "price": 4300000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "CHIẾC",
+            "amount": 4300000,
+            "percentDiscount": 8,
+            "moneyDiscount": 344000,
+            "total": 3956000,
+            "totalPay": 4830000,
+            "coffer": {
+              "id": 1065,
+              "coffer_name": "TU 58",
+              "branch_id": 3,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 1
+          },
+          {
+            "id": 30039,
+            "productCode": "EAS06FL1400094",
+            "productName": "BONG TAI BAC NUOC NGOT ( ST )",
+            "price": 950000,
+            "costPrice": 0,
+            "quantity": 1,
+            "unit": "ĐÔI",
+            "amount": 950000,
+            "percentDiscount": 8,
+            "moneyDiscount": 76000,
+            "total": 874000,
+            "totalPay": 0,
+            "coffer": {
+              "id": 949,
+              "coffer_name": "TU 07",
+              "branch_id": 3,
+              "type": 2
+            },
+            "type": 2,
+            "warrantyCode": "",
+            "saleStatus": 2,
+            "ibms_code": 1
+          }
+        ],
+        "lstDiscount": [],
+        "lst_sale_staff": [
+          {
+            "id": 135,
+            "full_name": "Cù Thị Hoa",
+            "pecent": 100,
+            "money": 4830000,
+            "status": 0
+          }
+        ],
+        "totalPay": 0,
+        "branch": {
+          "branchId": 3,
+          "branchName": "SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC",
+          "address": "124 Trần Hưng Đạo, Dương Đông, Phú Quốc",
+          "maChiNhanh": "TMLBPPQ01"
+        },
+        "paymentDeposit": {
+          "cash_payment_list": [
+            {
+              "amount": 500000,
+              "total": 500000,
+              "currency_code": "VND",
+              "exchange_rate": 1,
+              "create_date": "2017-01-08 09:48:44",
+              "status": 0
+            }
+          ],
+          "card_payment_list": []
+        },
+        "bill_type": 2,
+        "status": 0,
+        "payType": 0,
+        "typeTransaction": 0,
+        "depositTotal": 0
+      }
+    ],
+    "status": 0
+  },
+  "protocol_id": 30001,
+  "branch_id": 0,
+  "err_code": 1,
+  "err_message": "POST",
+  "protocol_status": true,
+  "partner_name": "API",
+  "partner_pass": "123"
+}
+2017-01-11 10:11:08.652 +07:00 [Information] Request: "application/json"
+2017-01-11 10:11:08.695 +07:00 [Information] Received package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"POST\",\"protocol_status\":true,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":{\"lsreceipt\":[{\"idReceipt\":29119,\"receiptCode\":\"HD170102-04-223400\",\"createdDate\":\"2017-01-03 17:35:11\",\"customer\":{\"id\":47231,\"contactId\":\"CUS170102223400\",\"fullName\":\"ELTAN WAKS\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":42,\"countryName\":\"Philippine\",\"cityList\":[{\"id\":147,\"name\":\"Khác\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":800000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":800000,\"totalPay\":11200000,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":300000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":300000,\"totalPay\":0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000,\"costPrice\":0,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":4500000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":4500000,\"totalPay\":0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":0},{\"id\":54,\"productCode\":\"CHS0900002\",\"productName\":\"DÂY CHUYỀN BẠC\",\"price\":800000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":800000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":800000,\"totalPay\":0,\"coffer\":{\"id\":1627,\"coffer_name\":\"TU 31\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0},{\"id\":522,\"productCode\":\"PES0600001\",\"productName\":\"MẶT BẠC\",\"price\":300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":300000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":300000,\"totalPay\":0,\"coffer\":{\"id\":1600,\"coffer_name\":\"TU 17\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0},{\"id\":32,\"productCode\":\"TL0100002\",\"productName\":\"HẠT NGỌC TAHITI\",\"price\":4500000,\"costPrice\":0,\"quantity\":1,\"unit\":\"VIÊN\",\"amount\":4500000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":4500000,\"totalPay\":0,\"coffer\":{\"id\":1618,\"coffer_name\":\"TU 26\",\"branch_id\":4,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":3331000,\"total\":3331000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":20,\"name\":\"VCB - 0091000605231\"},\"status\":1}]},\"branch\":{\"branchId\":4,\"branchName\":\"SHOP 89 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"89 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ02\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"amount\":100,\"total\":2269000,\"currency_code\":\"USD\",\"exchange_rate\":22690,\"create_date\":\"2017-01-02 22:34:00\",\"status\":0},{\"amount\":100,\"total\":2269000,\"currency_code\":\"USD\",\"exchange_rate\":22690,\"create_date\":\"2017-01-02 22:34:00\",\"status\":0}],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29193,\"receiptCode\":\"HD170104-02-084211\",\"createdDate\":\"2017-01-04 08:42:11\",\"checkin\":{\"id\":48896,\"card_type\":{\"id\":880,\"card_name\":\"01TN044\"},\"partner_group\":{\"partner\":{\"id\":33337,\"fullName\":\"TƯ NHÂN\",\"contactType\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0,\"status\":0},\"id\":0,\"contactType\":0,\"sex\":0,\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"partner_group\":0,\"status\":0},\"visitor_type\":{\"id\":10,\"visitor_type_name\":\"Khách non-travel (tư nhân)\"},\"payee_list\":[{\"id\":33316,\"payee_name\":\"HỒ NGỌC THUẬN\",\"payee_commission\":20,\"payee_money\":40000,\"payee_type\":2}],\"fee_port\":0,\"status\":0},\"customer\":{\"id\":47329,\"contactId\":\"CUS170104084154\",\"fullName\":\"Co Tien\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":15,\"name\":\"Bình Phước\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":5437,\"productCode\":\"LBIC-AW00012\",\"productName\":\"NHANG VÒNG LOẠI 2 (TEM TRẮNG)\",\"price\":200000,\"costPrice\":0,\"quantity\":1,\"unit\":\"BỘ\",\"amount\":200000,\"percentDiscount\":0,\"moneyDiscount\":0,\"total\":200000,\"totalPay\":200000,\"coffer\":{\"id\":1998,\"coffer_name\":\"TH.04\",\"branch_id\":22,\"type\":1},\"type\":1,\"warrantyCode\":\"\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":33108,\"full_name\":\"Hoàng Minh Lâm\",\"pecent\":100,\"money\":160000,\"status\":0}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[{\"amount\":200000,\"total\":200000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"status\":1}],\"card_payment_list\":[]},\"branch\":{\"branchId\":22,\"branchName\":\"SHOP TRẦM HƯƠNG - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ04\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29333,\"receiptCode\":\"HD170106-01-181851\",\"createdDate\":\"2017-01-06 18:37:02\",\"customer\":{\"id\":47517,\"contactId\":\"CUS170106181851\",\"fullName\":\"Chị Hạnh\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"0942388869\",\"sex\":0,\"birthday\":\"1987-05-03\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":1,\"countryCode\":\"VN\",\"countryName\":\"Việt Nam\",\"cityList\":[{\"id\":1,\"name\":\"Hà Nội\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":30680,\"productCode\":\"LNEG06SP0100015\",\"productName\":\"Chuỗi vòng cổ móc vàng Southsea\",\"price\":240300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":240300000,\"percentDiscount\":20,\"moneyDiscount\":48060000,\"total\":192240000,\"totalPay\":192240000,\"coffer\":{\"id\":1746,\"coffer_name\":\"Tu 09\",\"branch_id\":19,\"type\":2},\"type\":2,\"warrantyCode\":\"LNEG06SP0100015\",\"saleStatus\":1,\"ibms_code\":0}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":12757,\"full_name\":\"Nguyễn Thị Hường\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":4406,\"full_name\":\"Đặng Khánh Linh\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":4406,\"full_name\":\"Đặng Khánh Linh\",\"pecent\":50,\"money\":96120000,\"status\":0},{\"id\":12757,\"full_name\":\"Nguyễn Thị Hường\",\"pecent\":50,\"money\":96120000,\"status\":0}],\"totalPay\":0,\"payment\":{\"cash_payment_list\":[],\"card_payment_list\":[{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":192240000,\"total\":192240000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":45,\"name\":\"VTB - 102010002391353\"},\"status\":0},{\"id\":0,\"bank_card_type\":\"MasterCard\",\"amount\":192240000,\"total\":192240000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"bank_account\":{\"id\":45,\"name\":\"VTB - 102010002391353\"},\"status\":1}]},\"branch\":{\"branchId\":19,\"branchName\":\"SHOP VINCOM - BÀ TRIỆU - HÀ NỘI\",\"address\":\"191 Bà Triệu - Phường Lê Đại Hành - Quận Hai Bà trưng - Hà Nội\",\"maChiNhanh\":\"TMLBPHN01\"},\"paymentDeposit\":{\"cash_payment_list\":[],\"card_payment_list\":[]},\"bill_type\":1,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0},{\"idReceipt\":29425,\"receiptCode\":\"HD170108-05-094844\",\"createdDate\":\"2017-01-08 09:48:44\",\"customer\":{\"id\":47614,\"contactId\":\"CUS170108094827\",\"fullName\":\"Marianne\",\"contactType\":0,\"emailAddress\":\"\",\"phoneNumber\":\"\",\"sex\":0,\"birthday\":\"1961-02-14\",\"relationship\":0,\"shoppingPurpose\":0,\"shoppingType\":0,\"salary\":0,\"country\":{\"id\":34,\"countryName\":\"ĐAN MẠCH\",\"cityList\":[{\"id\":136,\"name\":\"ĐAN MẠCH\"}]},\"partner_group\":0,\"status\":0},\"lstprd\":[{\"id\":15156,\"productCode\":\"NES11FP1400256\",\"productName\":\"CHUỖI VÒNG CỔ MÓC BẠC NƯỚC NGỌT\",\"price\":4300000,\"costPrice\":0,\"quantity\":1,\"unit\":\"CHIẾC\",\"amount\":4300000,\"percentDiscount\":8,\"moneyDiscount\":344000,\"total\":3956000,\"totalPay\":4830000,\"coffer\":{\"id\":1065,\"coffer_name\":\"TU 58\",\"branch_id\":3,\"type\":2},\"type\":2,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":1},{\"id\":30039,\"productCode\":\"EAS06FL1400094\",\"productName\":\"BONG TAI BAC NUOC NGOT ( ST )\",\"price\":950000,\"costPrice\":0,\"quantity\":1,\"unit\":\"ĐÔI\",\"amount\":950000,\"percentDiscount\":8,\"moneyDiscount\":76000,\"total\":874000,\"totalPay\":0,\"coffer\":{\"id\":949,\"coffer_name\":\"TU 07\",\"branch_id\":3,\"type\":2},\"type\":2,\"warrantyCode\":\"\",\"saleStatus\":2,\"ibms_code\":1}],\"lstDiscount\":[],\"lst_sale_staff\":[{\"id\":135,\"full_name\":\"Cù Thị Hoa\",\"pecent\":100,\"money\":4830000,\"status\":0}],\"totalPay\":0,\"branch\":{\"branchId\":3,\"branchName\":\"SHOWROOM 124 TRẦN HƯNG ĐẠO - PHÚ QUỐC\",\"address\":\"124 Trần Hưng Đạo, Dương Đông, Phú Quốc\",\"maChiNhanh\":\"TMLBPPQ01\"},\"paymentDeposit\":{\"cash_payment_list\":[{\"amount\":500000,\"total\":500000,\"currency_code\":\"VND\",\"exchange_rate\":1,\"create_date\":\"2017-01-08 09:48:44\",\"status\":0}],\"card_payment_list\":[]},\"bill_type\":2,\"status\":0,\"payType\":0,\"typeTransaction\":0,\"depositTotal\":0}],\"status\":0}}"
+2017-01-11 10:11:23.722 +07:00 [Information] Return package: "{\"protocol_id\":30001,\"branch_id\":0,\"err_code\":1,\"err_message\":\"SUCCESS\",\"protocol_status\":true,\"partner_name\":\"API\",\"partner_pass\":\"123\",\"protocol_data\":null}"
+2017-01-11 10:11:23.808 +07:00 [Information] HTTP "POST" "/api/pentamic/json" responded 200 in 16176ms

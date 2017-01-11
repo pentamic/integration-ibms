@@ -1971,10 +1971,14 @@ namespace Pentamic.Integration.Ibms.Controllers
                             {
                                 if (list_bill_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
                                 {
-                                    var bill_remove = _context.Receipts.Where(x => x.IDs == item.IDs && x.Status == 1).FirstOrDefault();
-                                    bill_remove.Status = item.Status;
-                                    bill_remove.LastSync = lastSync;
-                                    bill_remove.ModifiedAt = DateTime.Now;
+                                    var bill_remove = _context.Receipts.Where(x => x.IDs == item.IDs && x.Status == 1);
+                                    foreach (var item_d in bill_remove)
+                                    {
+                                        item_d.Status = item.Status;
+                                        item_d.LastSync = lastSync;
+                                        item_d.ModifiedAt = DateTime.Now;
+                                    }
+                                    
                                 }
                                 else
                                 {
@@ -2665,10 +2669,14 @@ namespace Pentamic.Integration.Ibms.Controllers
                             {
                                 if (list_checkin_remove.Contains(item.IDs))//Neu nam trong danh sach Remove, Update Status ve 0
                                 {
-                                    var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs && x.Status == 1).FirstOrDefault();
-                                    checkin_remove.Status = item.Status;
-                                    checkin_remove.LastSync = lastSync;
-                                    checkin_remove.ModifiedAt = DateTime.Now;
+                                    var checkin_remove = _context.tblCheckIns.Where(x => x.IDs == item.IDs && x.Status == 1);
+                                    foreach (var item_d in checkin_remove)
+                                    {
+                                        item_d.Status = item.Status;
+                                        item_d.LastSync = lastSync;
+                                        item_d.ModifiedAt = DateTime.Now;
+                                    }
+                                   
                                 }
                                 else
                                 {
@@ -2963,10 +2971,14 @@ namespace Pentamic.Integration.Ibms.Controllers
                             _context = new ApplicationDbContext();
                             if (list_inventory_update.Contains(item.IDs))
                             {
-                                var inven_update = _context.Inventorys.Where(x => x.IDs == item.IDs && x.Status == 1).FirstOrDefault();
-                                inven_update.Status = 0;
-                                inven_update.ModifiedAt = DateTime.Now;
-                                inven_update.LastSync = lastSync;
+                                var inven_update = _context.Inventorys.Where(x => x.IDs == item.IDs && x.Status == 1);
+                                foreach (var item_d in inven_update)
+                                {
+                                    item_d.Status = 0;
+                                    item_d.ModifiedAt = DateTime.Now;
+                                    item_d.LastSync = lastSync;
+                                }
+                               
                             }
 
                             if (list_inventory_add.Contains(item.IDs))//Neu nam trong danh sach Insert
