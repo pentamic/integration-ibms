@@ -471,7 +471,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 }
             }
         }
-        private void Coffer(Coffer item, List<int> list_coffer, List<int> list_coffer_update, string lastSync)
+        private void Coffer(Coffer item, List<int> list_coffer, List<int> list_coffer_update, string lastSync,string branchCode)
         {
             if (list_coffer.Contains(item.IDs))//Create
             {
@@ -482,7 +482,8 @@ namespace Pentamic.Integration.Ibms.Controllers
                 coffer.Type = item.Type;
                 coffer.LastSync = lastSync;
                 coffer.CreatedAt = DateTime.Now;
-
+                if(branchCode!="")
+                    coffer.BranchCode = branchCode;
                 _context.Coffers.Add(coffer);
                 list_coffer.Remove(item.IDs);
             }
@@ -496,6 +497,9 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.Name = item.Name;
                         update.Type = item.Type;
                         update.BranchId = item.BranchId;
+                        if (branchCode != "")
+                            update.BranchCode = branchCode;
+                        else update.BranchCode = null;
                         update.LastSync = lastSync;
                         update.ModifiedAt = DateTime.Now;
                         list_coffer_update.Add(item.IDs);
@@ -1752,6 +1756,20 @@ namespace Pentamic.Integration.Ibms.Controllers
 
                                     }
                                     #endregion
+                                    string branchCode = "";
+                                    #region Branch
+                                    if (item.branch != null)
+                                    {
+                                        if (item.branch.IDs != 0)
+                                        {
+                                            //Bill_Branch(item, list_location, list_location_updated, lastSync);
+                                            bill.BranchId = item.branch.IDs;
+                                            bill.BranchCode = item.branch.BranchCode;
+                                            branchCode = item.branch.BranchCode;
+                                        }
+                                        else throw new Exception("Branch Id is NULL");
+                                    }
+                                    #endregion
 
                                     #region Product
                                     if (item.lstprd != null)
@@ -1790,7 +1808,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                     if (s.coffer.IDs != 0)
                                                     {
                                                         receipt_detail.CofferId = s.coffer.IDs;
-                                                        Coffer(s.coffer, list_coffer, list_coffer_updated, lastSync);
+                                                        Coffer(s.coffer, list_coffer, list_coffer_updated, lastSync, branchCode);
                                                     }
                                                     else throw new Exception("ProductId " + s.Id.ToString() + "contain Coffer Id is NULL");
                                                 }
@@ -1832,18 +1850,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     }
                                     #endregion
 
-                                    #region Branch
-                                    if (item.branch != null)
-                                    {
-                                        if (item.branch.IDs != 0)
-                                        {
-                                            //Bill_Branch(item, list_location, list_location_updated, lastSync);
-                                            bill.BranchId = item.branch.IDs;
-                                            bill.BranchCode = item.branch.BranchCode;
-                                        }
-                                        else throw new Exception("Branch Id is NULL");
-                                    }
-                                    #endregion
+                                   
 
                                     var del_payment = _context.CardPayments.Where(x => x.ReceiptId == item.IDs);
                                     _context.CardPayments.RemoveRange(del_payment);
@@ -2074,6 +2081,20 @@ namespace Pentamic.Integration.Ibms.Controllers
 
                                         }
                                         #endregion
+                                        string branchCode = "";
+                                        #region Branch
+                                        if (item.branch != null)
+                                        {
+                                            if (item.branch.IDs != 0)
+                                            {
+                                                //Bill_Branch(item, list_location, list_location_updated, lastSync);
+                                                receipt_update.BranchId = item.branch.IDs;
+                                                receipt_update.BranchCode = item.branch.BranchCode;
+                                                branchCode = item.branch.BranchCode;
+                                            }
+                                            else throw new Exception("Branch Id is NULL");
+                                        }
+                                        #endregion
 
                                         #region Product
                                         if (item.lstprd != null)
@@ -2112,7 +2133,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                         if (s.coffer.IDs != 0)
                                                         {
                                                             receipt_detail.CofferId = s.coffer.IDs;
-                                                            Coffer(s.coffer, list_coffer, list_coffer_updated, lastSync);
+                                                            Coffer(s.coffer, list_coffer, list_coffer_updated, lastSync, branchCode);
                                                         }
                                                         else throw new Exception("ProductId " + s.Id.ToString() + " contains Coffer Id is NULL");
                                                     }
@@ -2154,18 +2175,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                         }
                                         #endregion
 
-                                        #region Branch
-                                        if (item.branch != null)
-                                        {
-                                            if (item.branch.IDs != 0)
-                                            {
-                                                //Bill_Branch(item, list_location, list_location_updated, lastSync);
-                                                receipt_update.BranchId = item.branch.IDs;
-                                                receipt_update.BranchCode = item.branch.BranchCode;
-                                            }
-                                            else throw new Exception("Branch Id is NULL");
-                                        }
-                                        #endregion
+                                        
 
                                         var del_payment = _context.CardPayments.Where(x => x.ReceiptId == item.IDs);
                                         _context.CardPayments.RemoveRange(del_payment);
@@ -3018,13 +3028,28 @@ namespace Pentamic.Integration.Ibms.Controllers
                                 }
                                 #endregion
 
+                                string branchCode = "";
+                                #region Location
+                                if (item.Store != null)
+                                {
+                                    if (item.Store.IDs != 0)
+                                    {
+                                        inven.StoreId = item.Store.IDs;
+                                        var x = _context.Branchs.Where(n => n.IDs == item.Store.IDs);
+                                        if(x!=null)
+                                            branchCode = x.FirstOrDefault().BranchCode;
+                                    }
+
+                                }
+                                #endregion
+
                                 #region CofferFrom
                                 if (item.StockFrom != null)
                                 {
                                     if (item.StockFrom.IDs != 0)
                                     {
                                         inven.StockFromId = item.StockFrom.IDs;
-                                        Coffer(item.StockFrom, list_coffer, list_coffer_updated, lastSync);
+                                        Coffer(item.StockFrom, list_coffer, list_coffer_updated, lastSync, branchCode);
                                     }
 
                                 }
@@ -3036,22 +3061,12 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     if (item.StockTo.IDs != 0)
                                     {
                                         inven.StockToId = item.StockTo.IDs;
-                                        Coffer(item.StockFrom, list_coffer, list_coffer_updated, lastSync);
+                                        Coffer(item.StockFrom, list_coffer, list_coffer_updated, lastSync, branchCode);
                                     }
 
                                 }
                                 #endregion
-
-                                #region Location
-                                if (item.Store != null)
-                                {
-                                    if (item.Store.IDs != 0)
-                                    {
-                                        inven.StoreId = item.Store.IDs;
-                                    }
-
-                                }
-                                #endregion
+                               
 
                                 _context.Inventorys.Add(inven);
 
