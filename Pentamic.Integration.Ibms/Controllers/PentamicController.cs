@@ -499,7 +499,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                         update.BranchId = item.BranchId;
                         if (branchCode != "")
                             update.BranchCode = branchCode;
-                        else update.BranchCode = null;
+                        //else update.BranchCode = null;
                         update.LastSync = lastSync;
                         update.ModifiedAt = DateTime.Now;
                         list_coffer_update.Add(item.IDs);
@@ -1397,7 +1397,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                 var xdata = ((JArray)protocol.protocol_data.coffer_list).ToObject<List<tmpCoffer>>();
                 List<int> list_coffer_add = new List<int>();
                 List<int> list_coffer_update = new List<int>();
-
+                var list_branch = new Dictionary<int, string>();
                 #region GetDataAPI
                 //Get Id data from API
                 foreach (var item in xdata)
@@ -1442,6 +1442,19 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     cf.IDs = item.IDs;
                                     cf.Name = item.Name;
                                     cf.BranchId = item.BranchId;
+                                    try
+                                    {
+                                        if (list_branch.Any(v => v.Key == item.BranchId))
+                                            cf.BranchCode = list_branch.Where(c => c.Key == item.BranchId).FirstOrDefault().Value;
+                                        else
+                                        {
+                                            var _code= _context.Branchs.Where(n => n.Id == item.BranchId).FirstOrDefault().BranchCode;
+                                            cf.BranchCode = _code;
+                                            list_branch.Add(item.BranchId, _code);
+                                        }
+                                    }
+                                    catch { continue; }
+
                                     cf.Type = item.Type;
                                     cf.LastSync = lastSync;
                                     cf.CreatedAt = DateTime.Now;
@@ -1464,6 +1477,18 @@ namespace Pentamic.Integration.Ibms.Controllers
                                                 cfu.BranchId = item.BranchId;
                                                 cfu.Name = item.Name;
                                                 cfu.Type = item.Type;
+                                                try
+                                                {
+                                                    if (list_branch.Any(v => v.Key == item.BranchId))
+                                                        cfu.BranchCode = list_branch.Where(c => c.Key == item.BranchId).FirstOrDefault().Value;
+                                                    else
+                                                    {
+                                                        var _code = _context.Branchs.Where(n => n.Id == item.BranchId).FirstOrDefault().BranchCode;
+                                                        cfu.BranchCode = _code;
+                                                        list_branch.Add(item.BranchId, _code);
+                                                    }
+                                                }
+                                                catch { continue; }
 
                                                 cfu.LastSync = lastSync;
                                                 cfu.ModifiedAt = DateTime.Now;
@@ -3036,7 +3061,7 @@ namespace Pentamic.Integration.Ibms.Controllers
                                     {
                                         inven.StoreId = item.Store.IDs;
                                         var x = _context.Branchs.Where(n => n.IDs == item.Store.IDs);
-                                        if(x!=null)
+                                        if(x.Count()>0)
                                             branchCode = x.FirstOrDefault().BranchCode;
                                     }
 
